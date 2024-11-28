@@ -1,0 +1,174 @@
+[
+  {
+    "ContainingType": "Assess_23_10_24_Backend.Controllers.UserController",
+    "Method": "CreateUser",
+    "RelativePath": "api/User/CreateUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "App.Core.Models.User.CreateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "App.Common.Models.AppResponse\u00601[[App.Core.Models.User.UserDto, App.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Assess_23_10_24_Backend.Controllers.UserController",
+    "Method": "DeleteUserById",
+    "RelativePath": "api/User/DeleteUserById/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Assess_23_10_24_Backend.Controllers.UserController",
+    "Method": "GetAllUser",
+    "RelativePath": "api/User/GetAllUser/{searchWord}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchWord",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[App.Core.Models.User.UserWithoutPassDto, App.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Assess_23_10_24_Backend.Controllers.UserController",
+    "Method": "GetRefreshToken",
+    "RelativePath": "api/User/GetRefreshToken/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "App.Common.Models.AppResponse\u00601[[App.Core.Models.User.UserLoginResponseDto, App.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Assess_23_10_24_Backend.Controllers.UserController",
+    "Method": "GetUserById",
+    "RelativePath": "api/User/GetUserById/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "App.Common.Models.AppResponse\u00601[[App.Core.Models.User.UserWithoutPassDto, App.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Assess_23_10_24_Backend.Controllers.UserController",
+    "Method": "LoginUser",
+    "RelativePath": "api/User/LoginUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "App.Core.Models.User.UserLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "App.Common.Models.AppResponse\u00601[[App.Core.Models.User.UserLoginResponseDto, App.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Assess_23_10_24_Backend.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/User/UpdateUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDto",
+        "Type": "App.Core.Models.User.UpdateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "App.Common.Models.AppResponse\u00601[[App.Core.Models.User.UserWithoutPassDto, App.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
