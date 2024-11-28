@@ -3,11 +3,14 @@ using App.Core;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
+using System.IO;
 using System.Text;
 using ValidatorsAndExceptionFilter.Filters;
 
@@ -25,6 +28,7 @@ namespace Ecom_Assessment_Backend
             //builder.Services.AddInfrastructure(configuration);
             builder.Services.AddInfrastructure(configuration);
             builder.Services.AddApplication();
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             //builder.Services.AddControllers();
             builder.Services.AddControllers(options =>
@@ -32,7 +36,7 @@ namespace Ecom_Assessment_Backend
                 options.Filters.Add<AppExceptionFilterAttribute>();
             });
 
-       
+
 
             // Add CORS policy
             builder.Services.AddCors(options =>
@@ -108,6 +112,26 @@ namespace Ecom_Assessment_Backend
             // Enable CORS before routing
             app.UseCors("AllowLocalhost");
 
+            // Serve static files
+            app.UseStaticFiles(); // This will allow the serving of static files
+
+            // If the uploads folder is outside the default wwwroot folder, serve it explicitly
+            //app.UseStaticFiles(new StaticFileOptions
+            //{
+            //    FileProvider = new PhysicalFileProvider(
+            //        Path.Combine(Directory.GetCurrentDirectory(), "Uploads")),
+            //    RequestPath = "/uploads"
+            //});
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images")),
+                RequestPath = "/wwwroot/Images"
+            });
+
+
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -133,7 +157,7 @@ namespace Ecom_Assessment_Backend
 
             app.MapControllers();
 
-          
+
 
 
             app.Run();

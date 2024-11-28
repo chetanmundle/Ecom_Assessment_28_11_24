@@ -8,8 +8,12 @@ namespace App.Core.Interface
 {
     public interface IEncryptionService
     {
-        string EncryptData(string plainText);
+        string Hash(string username);
 
-        string DecryptData(string encryptedData);
+        //string EncryptData(string plainText);
+
+        //string DecryptData(string encryptedData);
+
+        //bool VerifyPassword(string password, string hashedPassword);
     }
 }

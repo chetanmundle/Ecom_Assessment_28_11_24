@@ -18,9 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="App\User\" />
-    <Folder Include="Models\" />
-    <Folder Include="Validations\" />
+    <Folder Include="App\User\Query\" />
   </ItemGroup>
 
 </Project>
