@@ -50,21 +50,25 @@ namespace App.Core.App.User.Commond
             user.UserName = _encryptionService.Hash(username);
             user.Password = _encryptionService.Hash(password);
 
-
-            var isExist = await _appDbContext.Set<Domain.Entities.User>()
-                                .FirstOrDefaultAsync(u => user.Email == u.Email || user.UserName == u.UserName);
-
-            if (isExist is not null)
+            // checking email exist or not
+            var isEmailExist = await _appDbContext.Set<Domain.Entities.User>()
+                                .FirstOrDefaultAsync(u => user.Email == u.Email,cancellationToken);
+            if (isEmailExist is not null)
             {
                 return AppResponse.Fail<UserWithoutPassDto>(
                       null,
-                    user.Email == isExist.Email ? "Email is Alread Exist" : "Conflict To Creating the Username",
+                    "Email is Alread Exist",
                     HttpStatusCodes.BadRequest);
             }
 
+            // Checking username is already exist
+            var coutUsernameStartsWith = await _appDbContext.Set<Domain.Entities.User>()
+                                              .CountAsync(u => u.UserName == user.UserName,cancellationToken);
+            if(coutUsernameStartsWith > 0) user.UserName = _encryptionService.Hash(username.ToUpper());
+
             await _appDbContext.Set<Domain.Entities.User>().AddAsync(user, cancellationToken);
 
-            await _appDbContext.SaveChangesAsync();
+            await _appDbContext.SaveChangesAsync(cancellationToken);
 
             return AppResponse.Success<UserWithoutPassDto>(
                     user.Adapt<UserWithoutPassDto>(),
