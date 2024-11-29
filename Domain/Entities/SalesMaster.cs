@@ -7,7 +7,7 @@ namespace Domain.Entities
     {
         [Key]
         public string InvoiceId { get; set; }
-        public DateTime InvoiceDate { get; set; }
+        public DateTime? InvoiceDate { get; set; }
         public float SubTotal { get; set; }
         public string DeliveryAddress { get; set; }
         public int? DeliveryZipCode { get; set; }

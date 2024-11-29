@@ -23,6 +23,7 @@ namespace ImageUpload.Service
 
         public AppResponse<string> Upload(IFormFile file)
         {
+            
             // Valid extensions
             List<string> validExtensions = new List<string>() { ".jpg", ".png", ".jpeg" };
             string extension = Path.GetExtension(file.FileName);
@@ -54,13 +55,13 @@ namespace ImageUpload.Service
 
             // Get the host and scheme from HttpContext
             var request = _httpContextAccessor.HttpContext.Request;
-            string scheme = request.Scheme;  // e.g. http or https
-            string host = request.Host.Value; // e.g. localhost:5000 or example.com
+            string scheme = request.Scheme;  
+            string host = request.Host.Value; 
 
             // Generate the full URL
             string fileUrl = $"{scheme}://{host}/wwwroot/Images/{filename}";
 
-            return AppResponse.Success<string>(fileUrl, "File Saved Successfully", App.Common.Constants.HttpStatusCodes.BadRequest);
+            return AppResponse.Success<string>(fileUrl, "File Saved Successfully", App.Common.Constants.HttpStatusCodes.OK);
         }
     }
 }

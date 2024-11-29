@@ -1,6 +1,7 @@
 ﻿using App.Core.Interface;
 using App.Core.Interfaces;
 using Infrastructure.context;
+using Infrastructure.Repository;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -17,8 +18,9 @@ namespace Infrastructure
             // Bind Database context
             services.AddScoped<IAppDbContext, AppDbContext>();
 
-            // Register the User Service
-            //services.AddScoped<IUserRepository, UserRepository>();
+            // Register the Domain Service
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICountryStateRepository, CountryStateRepository>();
 
             //Register Jwt Service
             services.AddScoped<IJwtService, JwtService>();

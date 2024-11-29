@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241128170134_createdbyAdded")]
-    partial class createdbyAdded
+    [Migration("20241129080421_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -202,7 +202,7 @@ namespace Infrastructure.Migrations
                     b.Property<int?>("DeliveryZipCode")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("InvoiceDate")
+                    b.Property<DateTime?>("InvoiceDate")
                         .HasColumnType("datetime2");
 
                     b.Property<float>("SubTotal")

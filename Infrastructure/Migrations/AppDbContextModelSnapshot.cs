@@ -199,7 +199,7 @@ namespace Infrastructure.Migrations
                     b.Property<int?>("DeliveryZipCode")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("InvoiceDate")
+                    b.Property<DateTime?>("InvoiceDate")
                         .HasColumnType("datetime2");
 
                     b.Property<float>("SubTotal")

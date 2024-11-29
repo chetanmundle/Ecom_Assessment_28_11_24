@@ -17,20 +17,25 @@ namespace Ecom_Assessment_Backend.Controllers
     public class UserController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IEncryptionService _encryptionService;
-        private readonly IAppDbContext _appDbContext;
+        private readonly IUserRepository _userRepository;
 
-        public UserController(IMediator mediator,IEncryptionService e,IAppDbContext b)
+        public UserController(IMediator mediator, IUserRepository userRepository)
         {
             _mediator = mediator;   
-            _encryptionService = e;
-            _appDbContext = b;
+            _userRepository = userRepository;
         }
 
         [HttpPost("[action]")]
         public async Task<IActionResult> CreateUser(CreateUserDto createUserDto)
         {
             var result = await _mediator.Send(new CreateUserCommand { CreateUserDto = createUserDto});
+            return Ok(result);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> LoginUser(LoginUserDto loginUserDto)
+        {
+            var result = await _userRepository.LoginUser(loginUserDto);
             return Ok(result);
         }
 

@@ -31,9 +31,9 @@ namespace Infrastructure.Services
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim("UserId",userId.ToString()),
-                    new Claim("Name",Name),
-                    new Claim("Email",Email),
+                    new Claim("userId",userId.ToString()),
+                    new Claim("userName",Name),
+                    new Claim("email",Email),
                     new Claim(ClaimTypes.Role,Role),
                 }),
                 Expires = tokenExpiryTimeStamp,

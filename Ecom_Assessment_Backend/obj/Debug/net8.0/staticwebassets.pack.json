@@ -1,20 +1,8 @@
 {
   "Files": [
     {
-      "Id": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_28_11_24\\Ecom_Assessment_Backend\\wwwroot\\Images\\2ad98581-ab0a-48f8-a305-702fe3b49f11.png",
-      "PackagePath": "staticwebassets\\Images\\2ad98581-ab0a-48f8-a305-702fe3b49f11.png"
-    },
-    {
-      "Id": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_28_11_24\\Ecom_Assessment_Backend\\wwwroot\\Images\\aa31c27e-25e8-4fbc-8ab3-9428e9a3f4cd.png",
-      "PackagePath": "staticwebassets\\Images\\aa31c27e-25e8-4fbc-8ab3-9428e9a3f4cd.png"
-    },
-    {
-      "Id": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_28_11_24\\Ecom_Assessment_Backend\\wwwroot\\Images\\b0619290-288e-4749-a4d6-0a94001444c8.png",
-      "PackagePath": "staticwebassets\\Images\\b0619290-288e-4749-a4d6-0a94001444c8.png"
-    },
-    {
-      "Id": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_28_11_24\\Ecom_Assessment_Backend\\wwwroot\\Images\\bf55c839-2660-4a80-9e48-c70f0f57b180.png",
-      "PackagePath": "staticwebassets\\Images\\bf55c839-2660-4a80-9e48-c70f0f57b180.png"
+      "Id": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_28_11_24\\Ecom_Assessment_Backend\\wwwroot\\Images\\1bf7f179-9795-4ae2-b7b9-58026679e999.png",
+      "PackagePath": "staticwebassets\\Images\\1bf7f179-9795-4ae2-b7b9-58026679e999.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Ecom_Assessment_Backend.Microsoft.AspNetCore.StaticWebAssets.props",

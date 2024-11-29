@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.CountryStateController",
+    "Method": "GetAllCountries",
+    "RelativePath": "api/CountryState/GetAllCountries",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.CountryStateController",
+    "Method": "GetAllStatesByCountryId",
+    "RelativePath": "api/CountryState/GetAllStatesByCountryId/{countryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "countryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ImageUpload.Controllers.ImageController",
     "Method": "UploadFile",
     "RelativePath": "api/Image/UploadFile",
@@ -26,6 +52,22 @@
       {
         "Name": "createUserDto",
         "Type": "App.Core.Models.Users.CreateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
+    "Method": "LoginUser",
+    "RelativePath": "api/User/LoginUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginUserDto",
+        "Type": "App.Core.Models.Users.LoginUserDto",
         "IsRequired": true
       }
     ],

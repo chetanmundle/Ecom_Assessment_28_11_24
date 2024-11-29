@@ -21,7 +21,7 @@ namespace Infrastructure.Services
         }
         public async Task<bool> SendEmailAsync(string toE,string name, string subject, string message)
         {
-            var apiKey = "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";
+            var apiKey = "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";
             //Console.WriteLine(apiKey);
 
             var client = new SendGridClient(apiKey);
@@ -33,7 +33,7 @@ namespace Infrastructure.Services
             var response =await client.SendEmailAsync(msg);
 
 
-            return true;
+            return response.IsSuccessStatusCode;
         }
     }
 }

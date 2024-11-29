@@ -24,11 +24,13 @@ namespace App.Core.App.User.Commond
     {
         private readonly IAppDbContext _appDbContext;
         private readonly IEncryptionService _encryptionService;
+        private readonly IEmailService _emailService;
 
-        public CreateUserCommandHandler(IAppDbContext appDbContext, IEncryptionService encryptionService)
+        public CreateUserCommandHandler(IAppDbContext appDbContext, IEncryptionService encryptionService, IEmailService emailService)
         {
             _appDbContext = appDbContext;
             _encryptionService = encryptionService;
+            _emailService = emailService;
         }
         public async Task<AppResponse<UserWithoutPassDto>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
@@ -45,10 +47,10 @@ namespace App.Core.App.User.Commond
             var user = createUserDto.Adapt<Domain.Entities.User>();
 
             // Creating UserName
-            var username = ("ES_" + user.LastName + user.FirstName[0] + user.DateOfBirth.Value.ToString("ddMMyy")).ToUpper();
+            user.UserName = ("EC_" + user.LastName + user.FirstName[0] + user.DateOfBirth.Value.ToString("ddMMyy")).ToUpper();
             var password = GeneratePassword();
-            user.UserName = _encryptionService.Hash(username);
-            user.Password = _encryptionService.Hash(password);
+            //user.UserName = _encryptionService.EncryptData(username);
+            user.Password = _encryptionService.EncryptData(password);
 
             // checking email exist or not
             var isEmailExist = await _appDbContext.Set<Domain.Entities.User>()
@@ -63,12 +65,22 @@ namespace App.Core.App.User.Commond
 
             // Checking username is already exist
             var coutUsernameStartsWith = await _appDbContext.Set<Domain.Entities.User>()
-                                              .CountAsync(u => u.UserName == user.UserName,cancellationToken);
-            if(coutUsernameStartsWith > 0) user.UserName = _encryptionService.Hash(username.ToUpper());
+                                              .CountAsync(u => u.UserName.StartsWith(user.UserName), cancellationToken);
+           
+            if(coutUsernameStartsWith > 0)
+            {
+                user.UserName = user.UserName.ToUpper() + coutUsernameStartsWith.ToString();
+            }
+         
 
             await _appDbContext.Set<Domain.Entities.User>().AddAsync(user, cancellationToken);
 
             await _appDbContext.SaveChangesAsync(cancellationToken);
+
+            await _emailService.SendEmailAsync(user.Email,
+                user.FirstName + user.LastName,
+                "Congratulation Mail", 
+                $"Congratulation Your Account is Created Successfully and your Email : {user.Email} Uername : {user.UserName} and Password : {password} ");
 
             return AppResponse.Success<UserWithoutPassDto>(
                     user.Adapt<UserWithoutPassDto>(),
@@ -87,7 +99,7 @@ namespace App.Core.App.User.Commond
             const string upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             const string lowerCase = "abcdefghijklmnopqrstuvwxyz";
             const string numbers = "0123456789";
-            const string specialCharacters = "!@#$%^&*()-_=+[]{}|;:',.<>?";
+            const string specialCharacters = "!@#$%^&*()-_=+;:.<>?";
 
             // Appending the At least one From the Above....
             var password = new StringBuilder();

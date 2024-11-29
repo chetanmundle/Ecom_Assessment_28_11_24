@@ -68,7 +68,8 @@ namespace Infrastructure.Migrations
                     SellingPrice = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PurchasePrice = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PurchaseDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Stock = table.Column<int>(type: "int", nullable: true)
+                    Stock = table.Column<int>(type: "int", nullable: true),
+                    CreatedBy = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -80,7 +81,7 @@ namespace Infrastructure.Migrations
                 columns: table => new
                 {
                     InvoiceId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    InvoiceDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    InvoiceDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     SubTotal = table.Column<float>(type: "real", nullable: false),
                     DeliveryAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeliveryZipCode = table.Column<int>(type: "int", nullable: true),

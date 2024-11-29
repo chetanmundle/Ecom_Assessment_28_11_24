@@ -21,6 +21,7 @@ namespace Domain.Entities
         public int? ZipCode { get; set; }
         public string ProfileImage {  get; set; }
         public int? StateId { get; set; }
-        public int? CountryId { get; set; }        
+        public int? CountryId { get; set; } 
+        
     }
 }

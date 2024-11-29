@@ -34,26 +34,26 @@ namespace Infrastructure.Services
         //}
 
         // for bycrypt
-        //public string EncryptData(string plainText)
-        //{
-        //    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(plainText);
-        //    return hashedPassword;
-        //}
+        public string EncryptData(string plainText)
+        {
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(plainText);
+            return hashedPassword;
+        }
 
-        //public bool VerifyPassword(string password, string hashedPassword)
-        //{
-        //    // Verify if the password matches the hashed password
-        //    return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
-        //}
+        public bool VerifyPassword(string plainText, string hashedPassword)
+        {
+            // Verify if the password matches the hashed password
+            return BCrypt.Net.BCrypt.Verify(plainText, hashedPassword);
+        }
 
         //for sha25f
-        public string Hash(string username)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(username));
-                return Convert.ToBase64String(bytes);
-            }
-        }
+        //public string Hash(string username)
+        //{
+        //    using (var sha256 = SHA256.Create())
+        //    {
+        //        var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(username));
+        //        return Convert.ToBase64String(bytes);
+        //    }
+        //}
     }
 }
