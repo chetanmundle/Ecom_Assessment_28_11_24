@@ -26,6 +26,9 @@ namespace Infrastructure
             // Encription/ Decription Service
             services.AddScoped<IEncryptionService, EncryptionService>();
 
+            //Register Email
+            services.AddScoped<IEmailService, EmailService>();
+
 
             services.AddDbContext<AppDbContext>((provider, options) =>
             {

@@ -69,3 +69,15 @@ D:\Visual Studio\Assessment_smartData\Ecom_Assessment_PawanSir\Ecom_Assessment_B
 D:\Visual Studio\Assessment_smartData\Ecom_Assessment_PawanSir\Ecom_Assessment_Backend\Domain\obj\Debug\net8.0\refint\Domain.dll
 D:\Visual Studio\Assessment_smartData\Ecom_Assessment_PawanSir\Ecom_Assessment_Backend\Domain\obj\Debug\net8.0\Domain.pdb
 D:\Visual Studio\Assessment_smartData\Ecom_Assessment_PawanSir\Ecom_Assessment_Backend\Domain\obj\Debug\net8.0\ref\Domain.dll
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\bin\Debug\net8.0\Domain.dll
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\bin\Debug\net8.0\Domain.pdb
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\Domain.dll
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\Domain.pdb
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\ref\Domain.dll
