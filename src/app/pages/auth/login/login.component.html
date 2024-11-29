@@ -15,7 +15,7 @@
             >
               Sign in to your account
             </h1>
-            <form>
+            <form [formGroup]="loginForm">
               <div class="row gy-2 overflow-hidden">
                 <div class="col-12">
                   <div class="form-floating mb-3">
@@ -57,8 +57,6 @@
                   </span>
                 </div>
 
-                
-
                 <div class="col-12">
                   <div class="d-flex gap-2 justify-content-between">
                     <div class="form-check"></div>
@@ -76,6 +74,7 @@
                       class="btn btn-primary btn-lg"
                       type="submit"
                       (click)="onClickLogIn()"
+                      [disabled]="loginForm.invalid"
                     >
                       Log in
                     </button>
@@ -99,7 +98,14 @@
     </div>
   </div>
 
-  <!-- @if (isLoader) {
-    <app-loader class="loader-backdrop"></app-loader>
-    } -->
+  @if (isOtpBoxOpen) {
+  <div class="loader-backdrop">
+    <app-otp
+      [email]="getEmail()"
+      (onCancelBtnClick)="onCancelBtnClick($event)"
+    ></app-otp>
+  </div>
+  } @if (isLoader) {
+  <app-loader class="loader-backdrop"></app-loader>
+  }
 </section>

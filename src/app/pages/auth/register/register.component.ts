@@ -93,6 +93,7 @@ export class RegisterComponent implements OnDestroy {
 
   // function will call only when the country will change
   onChangeCountry(event: Event) {
+    this.userForm.get('stateId')?.setValue('');
     const selectElement = event.target as HTMLSelectElement;
     const countryId = Number(selectElement.value);
 
@@ -143,6 +144,7 @@ export class RegisterComponent implements OnDestroy {
       this.subscriptions.add(sub);
     } else {
       this.RegisterUser();
+      this.isLoader = false;
     }
   }
 
@@ -164,8 +166,6 @@ export class RegisterComponent implements OnDestroy {
       countryId: Number(this.userForm.get('countryId')?.value),
     };
 
-    console.log('Pauyl : ', payload);
-
     const sub = this.userService.CreateUser(payload).subscribe({
       next: (res: AppResponse<UserWithoutPassDto>) => {
         if (res.isSuccess) {
@@ -178,11 +178,13 @@ export class RegisterComponent implements OnDestroy {
         this.tostrService.showError(res.message);
       },
       error: (err: Error) => {
-        this.isLoader = false
+        this.isLoader = false;
         console.log('Error to register : ', err);
 
         this.tostrService.showError(err.message);
       },
     });
+
+    this.subscriptions.add(sub);
   }
 }

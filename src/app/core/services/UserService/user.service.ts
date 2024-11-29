@@ -4,6 +4,9 @@ import { CreateUserDto } from '../../models/interface/User/CreateUserDto';
 import { Observable } from 'rxjs';
 import { UserWithoutPassDto } from '../../models/interface/User/UserWithoutPass';
 import { AppResponse } from '../../models/interface/AppResponse';
+import { LoginUserDto } from '../../models/interface/User/LoginUserDto';
+import { LoginUSerResponseDto } from '../../models/interface/User/LoginUserResponseDto';
+import { LoginUserValidateOtpDto } from '../../models/interface/User/LoginUserValidateOtpDto';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +24,24 @@ export class UserService {
     return this.http.post<AppResponse<UserWithoutPassDto>>(
       `${this.Url}/CreateUser`,
       userDto
+    );
+  }
+
+  // Api for login User
+  LoginUser(loginDto: LoginUserDto): Observable<AppResponse<string>> {
+    return this.http.post<AppResponse<string>>(
+      `${this.Url}/LoginUser`,
+      loginDto
+    );
+  }
+
+  // After sending the otp via login call this api you will get the jwt token
+  VerifyOtpAndGetJwtToken(
+    payload: LoginUserValidateOtpDto
+  ): Observable<AppResponse<LoginUSerResponseDto>> {
+    return this.http.post<AppResponse<LoginUSerResponseDto>>(
+      `${this.Url}/LoginUserValidateOtp`,
+      payload
     );
   }
 }
