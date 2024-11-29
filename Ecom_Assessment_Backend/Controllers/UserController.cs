@@ -39,6 +39,13 @@ namespace Ecom_Assessment_Backend.Controllers
             return Ok(result);
         }
 
+        [HttpPost("[action]")]
+        public async Task<IActionResult> LoginUserValidateOtp(LoginUserValidateOtpDto loginUserValidateOtpDto)
+        {
+            var result = await _mediator.Send(new LoginUserValidateOtpCommand { LoginUserValidateOtpDto = loginUserValidateOtpDto });
+            return Ok(result);
+        }
+
        
 
     }

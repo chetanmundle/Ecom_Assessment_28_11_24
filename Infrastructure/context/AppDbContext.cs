@@ -23,6 +23,7 @@ namespace Infrastructure.context
         public DbSet<SalesMaster> SalesMaster { get; set; }
         public DbSet<SalesDetails> SalesDetails { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
+        public DbSet<Otp> Otps { get; set; }
 
 
         // For Dapper

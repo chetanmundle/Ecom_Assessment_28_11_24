@@ -1,11 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\1bf7f179-9795-4ae2-b7b9-58026679e999.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\e4d98f48-cf92-4b57-8dc8-5afa59de9c99.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/1bf7f179-9795-4ae2-b7b9-58026679e999.png</RelativePath>
+      <RelativePath>Images/e4d98f48-cf92-4b57-8dc8-5afa59de9c99.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,7 +14,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\1bf7f179-9795-4ae2-b7b9-58026679e999.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\e4d98f48-cf92-4b57-8dc8-5afa59de9c99.jpg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

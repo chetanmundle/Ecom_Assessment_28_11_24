@@ -6,6 +6,7 @@ namespace App.Core.Interface
 {
     public interface IUserRepository
     {
-        Task<AppResponse<LoginResponseDto>> LoginUser(LoginUserDto loginUser);
+        Task<AppResponse<string>> LoginUser(LoginUserDto loginUser);
+        //Task<AppResponse<LoginResponseDto>> LoginUser(LoginUserDto loginUser);
     }
 }

@@ -72,5 +72,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
+    "Method": "LoginUserValidateOtp",
+    "RelativePath": "api/User/LoginUserValidateOtp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginUserValidateOtpDto",
+        "Type": "App.Core.Models.Users.LoginUserValidateOtpDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

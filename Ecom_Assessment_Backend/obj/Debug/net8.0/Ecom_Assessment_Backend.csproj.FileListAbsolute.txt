@@ -475,3 +475,6 @@ D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Ecom_Assessment_Backend\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Ecom_Assessment_Backend\bin\Debug\net8.0\SendGrid.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Ecom_Assessment_Backend\bin\Debug\net8.0\StarkbankEcdsa.dll
+D:\Visual Studio\Assessment_smartData\Ecom_Assessment_PawanSir\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Visual Studio\Assessment_smartData\Ecom_Assessment_PawanSir\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\SendGrid.dll
+D:\Visual Studio\Assessment_smartData\Ecom_Assessment_PawanSir\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\StarkbankEcdsa.dll

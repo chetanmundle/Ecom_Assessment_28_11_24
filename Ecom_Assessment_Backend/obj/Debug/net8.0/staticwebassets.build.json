@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "B36EGW7B3LrFoHgoCsRiIQ1/8F2SMvN23klLgOCUWyQ=",
+  "Hash": "/Yud/OyKbHg27T/Ba/d5uWk1GNQpCkoGZJTXYXxNNAI=",
   "Source": "Ecom_Assessment_Backend",
   "BasePath": "_content/Ecom_Assessment_Backend",
   "Mode": "Default",
@@ -10,19 +10,19 @@
     {
       "Name": "Ecom_Assessment_Backend\\wwwroot",
       "Source": "Ecom_Assessment_Backend",
-      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_28_11_24\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_28_11_24\\Ecom_Assessment_Backend\\wwwroot\\Images\\1bf7f179-9795-4ae2-b7b9-58026679e999.png",
+      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\e4d98f48-cf92-4b57-8dc8-5afa59de9c99.jpg",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_28_11_24\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
-      "RelativePath": "Images/1bf7f179-9795-4ae2-b7b9-58026679e999.png",
+      "RelativePath": "Images/e4d98f48-cf92-4b57-8dc8-5afa59de9c99.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,7 +33,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\1bf7f179-9795-4ae2-b7b9-58026679e999.png"
+      "OriginalItemSpec": "wwwroot\\Images\\e4d98f48-cf92-4b57-8dc8-5afa59de9c99.jpg"
     }
   ]
 }
