@@ -7,6 +7,7 @@ import { AppResponse } from '../../models/interface/AppResponse';
 import { LoginUserDto } from '../../models/interface/User/LoginUserDto';
 import { LoginUSerResponseDto } from '../../models/interface/User/LoginUserResponseDto';
 import { LoginUserValidateOtpDto } from '../../models/interface/User/LoginUserValidateOtpDto';
+import { ForgetPasswordDto } from '../../models/interface/User/ForgetPasswordDto';
 
 @Injectable({
   providedIn: 'root',
@@ -43,5 +44,10 @@ export class UserService {
       `${this.Url}/LoginUserValidateOtp`,
       payload
     );
+  }
+
+  // Forget Password 
+  ForgetPassword(payload : ForgetPasswordDto):Observable<AppResponse<null>>{
+    return this.http.post<AppResponse<null>>(`${this.Url}/ForgetPassword`,payload);
   }
 }

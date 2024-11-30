@@ -6,6 +6,7 @@ import { OrgComponent } from './pages/org/org/org.component';
 import { HomeComponent } from './pages/org/home/home.component';
 import { authGuard } from './core/Guards/auth.guard';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 
 export const routes: Routes = [
   {
@@ -24,6 +25,10 @@ export const routes: Routes = [
       {
         path: 'Register',
         component: RegisterComponent,
+      },
+      {
+        path: 'Forgot-Password',
+        component: ForgotPasswordComponent,
       },
     ],
   },

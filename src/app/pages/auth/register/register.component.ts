@@ -131,9 +131,9 @@ export class RegisterComponent implements OnDestroy {
             this.RegisterUser();
           } else {
             this.tostrService.showWarning(res.message);
+            this.isLoader = false;
             console.log('Unble to Save the Profile Image : ', res.message);
           }
-          this.isLoader = false;
         },
         error: (err: Error) => {
           this.isLoader = false;
