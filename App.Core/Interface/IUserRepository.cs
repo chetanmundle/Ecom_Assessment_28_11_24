@@ -8,5 +8,7 @@ namespace App.Core.Interface
     {
         Task<AppResponse<string>> LoginUser(LoginUserDto loginUser);
         //Task<AppResponse<LoginResponseDto>> LoginUser(LoginUserDto loginUser);
+
+        Task<AppResponse<UserWithoutPassDto>> GetUserByUserNameAsync(string userName);
     }
 }

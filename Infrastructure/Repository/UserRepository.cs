@@ -4,6 +4,7 @@ using App.Core.Interface;
 using App.Core.Interfaces;
 using App.Core.Models.Users;
 using Dapper;
+using Mapster;
 using System;
 using System.Threading.Tasks;
 
@@ -24,6 +25,8 @@ namespace Infrastructure.Repository
             _emailService = emailService;
             _emailSmtpService = emailSmtpService;
         }
+
+
 
         // Service for login
         public async Task<AppResponse<string>> LoginUser(LoginUserDto loginUser)
@@ -88,6 +91,24 @@ namespace Infrastructure.Repository
                  );
         }
 
+
+
+        //This  Service for get all userdata by username
+        public async Task<AppResponse<UserWithoutPassDto>> GetUserByUserNameAsync(string userName)
+        {
+            var query = @"Select * from Users where UserName = @UserName";
+            var conn = _appDbContext.GetConnection();
+            var user = await conn.QueryFirstOrDefaultAsync<Domain.Entities.User>(query, new { UserName = userName });
+
+            if (user is null) return AppResponse.Fail<UserWithoutPassDto>(null, "User not Found for this Username", HttpStatusCodes.BadRequest);
+
+            return AppResponse.Success<UserWithoutPassDto>(
+                    user.Adapt<UserWithoutPassDto>(),
+                    "User Fetch Successfully",
+                    HttpStatusCodes.OK
+                );
+
+        }
 
 
 

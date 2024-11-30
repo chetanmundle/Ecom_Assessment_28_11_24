@@ -91,6 +91,22 @@
   },
   {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
+    "Method": "GetUserByUserName",
+    "RelativePath": "api/User/GetUserByUserName/{userName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
     "Method": "LoginUser",
     "RelativePath": "api/User/LoginUser",
     "HttpMethod": "POST",

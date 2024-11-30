@@ -49,6 +49,14 @@ namespace Ecom_Assessment_Backend.Controllers
             return Ok(result);
         }
 
+        //Get user by username
+        [HttpGet("[action]/{userName}")]
+        public async Task<IActionResult> GetUserByUserName(string userName)
+        {
+            var result = await _userRepository.GetUserByUserNameAsync(userName);
+            return Ok(result);
+        }
+
 
 
     }

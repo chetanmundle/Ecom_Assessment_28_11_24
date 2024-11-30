@@ -5,6 +5,7 @@ using App.Core.Interface;
 using App.Core.Interfaces;
 using Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -30,6 +31,11 @@ namespace App.Core.App.Otp.Command
         public async Task<AppResponse> Handle(SendEmailCommond request, CancellationToken cancellationToken)
         {
             var email = request.Email;
+
+            var user = await _appDbContext.Set<Domain.Entities.User>()
+                             .FirstOrDefaultAsync( u =>  u.Email == email, cancellationToken);
+
+            if (user is null) return AppResponse.Response(false,"User Not Exist...!",HttpStatusCodes.NotFound);
 
             Random random = new Random();
             int otpValue = random.Next(10000000, 100000000);
