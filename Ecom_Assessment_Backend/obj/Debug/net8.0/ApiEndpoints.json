@@ -42,6 +42,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.OtpController",
+    "Method": "SendOtp",
+    "RelativePath": "api/Otp/SendOtp/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "api/User/CreateUser",
@@ -52,6 +68,22 @@
       {
         "Name": "createUserDto",
         "Type": "App.Core.Models.Users.CreateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
+    "Method": "ForgetPassword",
+    "RelativePath": "api/User/ForgetPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "forgetPasswordDto",
+        "Type": "App.Core.Models.Users.ForgetPasswordDto",
         "IsRequired": true
       }
     ],

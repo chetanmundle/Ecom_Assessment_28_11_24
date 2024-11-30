@@ -25,12 +25,15 @@ namespace App.Core.App.User.Commond
         private readonly IAppDbContext _appDbContext;
         private readonly IEncryptionService _encryptionService;
         private readonly IEmailService _emailService;
+        private readonly IEmailSmtpService _emailSmtpService;
 
-        public CreateUserCommandHandler(IAppDbContext appDbContext, IEncryptionService encryptionService, IEmailService emailService)
+        public CreateUserCommandHandler(IAppDbContext appDbContext, IEncryptionService encryptionService,
+            IEmailService emailService, IEmailSmtpService emailSmtpService)
         {
             _appDbContext = appDbContext;
             _encryptionService = encryptionService;
             _emailService = emailService;
+            _emailSmtpService = emailSmtpService;
         }
         public async Task<AppResponse<UserWithoutPassDto>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
@@ -77,10 +80,12 @@ namespace App.Core.App.User.Commond
 
             await _appDbContext.SaveChangesAsync(cancellationToken);
 
-            await _emailService.SendEmailAsync(user.Email,
-                user.FirstName + user.LastName,
-                "Congratulation Mail", 
-                $"Congratulation Your Account is Created Successfully and your Email : {user.Email} Uername : {user.UserName} and Password : {password} ");
+            //await _emailService.SendEmailAsync(user.Email,
+            //    user.FirstName + user.LastName,
+            //    "Congratulation Mail", 
+            //    $"Congratulation Your Account is Created Successfully and your Email : {user.Email} Uername : {user.UserName} and Password : {password} ");
+
+            _emailSmtpService.SendWlcomeEmail(user.Email, user.FirstName + user.LastName, "Account Opening  Mail", user.UserName, password);
 
             return AppResponse.Success<UserWithoutPassDto>(
                     user.Adapt<UserWithoutPassDto>(),

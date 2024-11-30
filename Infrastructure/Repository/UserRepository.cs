@@ -14,13 +14,15 @@ namespace Infrastructure.Repository
         private readonly IEncryptionService _encryptionService;
         private readonly IAppDbContext _appDbContext;
         private readonly IEmailService _emailService;
+        private readonly IEmailSmtpService _emailSmtpService;
 
         public UserRepository(IEncryptionService encryptionService,
-            IAppDbContext appDbContext, IEmailService emailService)
+            IAppDbContext appDbContext, IEmailService emailService, IEmailSmtpService emailSmtpService)
         {
             _encryptionService = encryptionService;
             _appDbContext = appDbContext;
             _emailService = emailService;
+            _emailSmtpService = emailSmtpService;
         }
 
         // Service for login
@@ -61,10 +63,12 @@ namespace Infrastructure.Repository
             };
             var rowsAffected = await conn.ExecuteAsync(query, otpData);
 
-            var isOtpSend = await _emailService.SendEmailAsync(loginUser.Email, user.FirstName, 
-                "Validate Otp for Login", $"Your Otp of Login Purpuse is {otp} and it is Validate till {DateTime.Now.AddMinutes(5)}");
+            //var isOtpSend = await _emailService.SendEmailAsync(loginUser.Email, user.FirstName, 
+            //    "Validate Otp for Login", $"Your Otp of Login Purpuse is {otp} and it is Validate till {DateTime.Now.AddMinutes(5)}");
 
-            if(!isOtpSend) return AppResponse.Fail<string>("Unable to Send Otp", "Unable to Send Otp", HttpStatusCodes.InternalServerError);
+            var isOtpSend = _emailSmtpService.SendEmailOtp(loginUser.Email, user.FirstName, "Otp for Validation", otp);
+
+            if (!isOtpSend) return AppResponse.Fail<string>("Unable to Send Otp", "Unable to Send Otp", HttpStatusCodes.InternalServerError);
 
 
             //query = @"Select UserTypeName from UserTypes where UserTypeId = @UserTypeId";

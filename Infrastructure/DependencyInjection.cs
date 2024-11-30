@@ -2,6 +2,7 @@
 using App.Core.Interfaces;
 using Infrastructure.context;
 using Infrastructure.Repository;
+using Infrastructure.service;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -30,6 +31,7 @@ namespace Infrastructure
 
             //Register Email
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IEmailSmtpService, EmailSmtpService>();
 
 
             services.AddDbContext<AppDbContext>((provider, options) =>

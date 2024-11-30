@@ -1,13 +1,8 @@
 ﻿using App.Core.App.User.Commond;
 using App.Core.Interface;
-using App.Core.Interfaces;
 using App.Core.Models.Users;
-using Mapster;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
 using System.Threading.Tasks;
 
 namespace Ecom_Assessment_Backend.Controllers
@@ -21,14 +16,14 @@ namespace Ecom_Assessment_Backend.Controllers
 
         public UserController(IMediator mediator, IUserRepository userRepository)
         {
-            _mediator = mediator;   
+            _mediator = mediator;
             _userRepository = userRepository;
         }
 
         [HttpPost("[action]")]
         public async Task<IActionResult> CreateUser(CreateUserDto createUserDto)
         {
-            var result = await _mediator.Send(new CreateUserCommand { CreateUserDto = createUserDto});
+            var result = await _mediator.Send(new CreateUserCommand { CreateUserDto = createUserDto });
             return Ok(result);
         }
 
@@ -46,7 +41,15 @@ namespace Ecom_Assessment_Backend.Controllers
             return Ok(result);
         }
 
-       
+        // Api for Change Password
+        [HttpPost("[action]")]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordDto forgetPasswordDto)
+        {
+            var result = await _mediator.Send(new ForgetPasswordCommond { ForgetPasswordDto = forgetPasswordDto });
+            return Ok(result);
+        }
+
+
 
     }
 }
