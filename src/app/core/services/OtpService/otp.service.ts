@@ -10,7 +10,7 @@ export class OtpService {
   private http = inject(HttpClient);
   private Url = 'https://localhost:7035/api/Otp';
 
-  sendOtpToEmail(email: string): Observable<AppResponse<any>> {
+  sendOtpToEmail$(email: string): Observable<AppResponse<any>> {
     return this.http.get<AppResponse<any>>(`${this.Url}/SendOtp/${email}`);
   }
 }

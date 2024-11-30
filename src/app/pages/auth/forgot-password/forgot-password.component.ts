@@ -57,7 +57,7 @@ export class ForgotPasswordComponent implements OnDestroy {
     }
 
     this.isLoader = true;
-    const sub = this.otpService.sendOtpToEmail(emailControl?.value).subscribe({
+    const sub = this.otpService.sendOtpToEmail$(emailControl?.value).subscribe({
       next: (res: AppResponse<object>) => {
         if (res.isSuccess) {
           emailControl?.disable();
@@ -103,7 +103,7 @@ export class ForgotPasswordComponent implements OnDestroy {
 
     this.isLoader = true;
 
-    this.userService.ForgetPassword(payload).subscribe({
+    this.userService.ForgetPassword$(payload).subscribe({
       next: (res: AppResponse<null>) => {
         if (res.isSuccess) {
           this.isLoader = false;

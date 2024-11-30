@@ -57,7 +57,7 @@ export class LoginComponent implements OnDestroy {
       password: this.loginForm.get('password')?.value,
     };
 
-    const sub = this.userService.LoginUser(payload).subscribe({
+    const sub = this.userService.LoginUser$(payload).subscribe({
       next: (res: AppResponse<string>) => {
         if (res.isSuccess) {
           this.isLoader = false;

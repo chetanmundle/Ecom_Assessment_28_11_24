@@ -14,14 +14,14 @@ export class CountryStateService {
   private http = inject(HttpClient);
 
   // Get All Countries
-  GetAllCountries(): Observable<AppResponse<CountryDto[]>> {
+  GetAllCountries$(): Observable<AppResponse<CountryDto[]>> {
     return this.http.get<AppResponse<CountryDto[]>>(
       `${this.Url}/GetAllCountries`
     );
   }
 
   // Get all State by using Country Id
-  GetAllStateByCountryId(
+  GetAllStateByCountryId$(
     countryId: number
   ): Observable<AppResponse<StateDto[]>> {
     return this.http.get<AppResponse<StateDto[]>>(

@@ -17,7 +17,7 @@ export class ImageService {
   private http = inject(HttpClient);
 
   // This service save the Image in Database
-  uploadImage(file: File): Observable<AppResponse<string>> {
+  uploadImage$(file: File): Observable<AppResponse<string>> {
     const formData: FormData = new FormData();
     formData.append('file', file);
 

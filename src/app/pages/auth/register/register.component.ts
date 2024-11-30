@@ -61,7 +61,7 @@ export class RegisterComponent implements OnDestroy {
       isChecked: [false, [Validators.requiredTrue]],
     });
     // subscribe for getting countries
-    const sub = this.countryStateService.GetAllCountries().subscribe({
+    const sub = this.countryStateService.GetAllCountries$().subscribe({
       next: (res: AppResponse<CountryDto[]>) => {
         if (res.isSuccess) {
           this.countryList = res.data;
@@ -98,7 +98,7 @@ export class RegisterComponent implements OnDestroy {
     const countryId = Number(selectElement.value);
 
     const sub = this.countryStateService
-      .GetAllStateByCountryId(countryId)
+      .GetAllStateByCountryId$(countryId)
       .subscribe({
         next: (res: AppResponse<StateDto[]>) => {
           if (res.isSuccess) {
@@ -124,7 +124,7 @@ export class RegisterComponent implements OnDestroy {
   onClickRegitster() {
     this.isLoader = true;
     if (this.selectedFile) {
-      const sub = this.imageService.uploadImage(this.selectedFile).subscribe({
+      const sub = this.imageService.uploadImage$(this.selectedFile).subscribe({
         next: (res: AppResponse<string>) => {
           if (res.isSuccess) {
             this.userForm.get('profileImage')?.setValue(res.data);
@@ -166,7 +166,7 @@ export class RegisterComponent implements OnDestroy {
       countryId: Number(this.userForm.get('countryId')?.value),
     };
 
-    const sub = this.userService.CreateUser(payload).subscribe({
+    const sub = this.userService.CreateUser$(payload).subscribe({
       next: (res: AppResponse<UserWithoutPassDto>) => {
         if (res.isSuccess) {
           this.tostrService.showSuccess(res.message);

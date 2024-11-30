@@ -71,10 +71,11 @@ export class OtpComponent implements OnDestroy {
       otpValue: Number(otpCode),
     };
 
-    const sub = this.userService.VerifyOtpAndGetJwtToken(payload).subscribe({
+    const sub = this.userService.VerifyOtpAndGetJwtToken$(payload).subscribe({
       next: (res: AppResponse<LoginUSerResponseDto>) => {
         if (res.isSuccess) {
           localStorage.setItem('accessToken', res.data.accessToken);
+          this.userService.resetLoggedUser();
           this.router.navigate(['/org/Home']);
           this.tostr.showSuccess(res.message);
         } else {
