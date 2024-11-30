@@ -63,7 +63,11 @@
             aria-label="Search"
           />
           <button class="btn btn-outline-success" type="submit">Search</button>
-          <div class="mx-3" popovertarget="profileclicktarget">
+          <div
+            class="mx-3"
+            popovertarget="profileclicktarget"
+            (click)="openModal()"
+          >
             <img
               *ngIf="loggedUser?.profileImage; else defaultImage"
               [src]="loggedUser?.profileImage"
@@ -87,5 +91,19 @@
   </nav>
 </div>
 
-
-<!--  -->
+<!-- Modal HTML -->
+<div class="modal" *ngIf="isModalOpen" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="close">
+      <span (click)="closeModal()">&times;</span>
+    </div>
+    <div class="row text-center">
+      <h5>{{loggedUser?.firstName }} {{ loggedUser?.lastName}}</h5>
+      <p>UserName : {{loggedUser?.userName}}</p>
+      <div>
+        <button class="btn btn-danger" (click)="onClickLogOut()">Logout</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
