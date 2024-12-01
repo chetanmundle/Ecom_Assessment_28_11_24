@@ -1,1 +1,5 @@
-<p>home works!</p>
+@if (loggedUser?.userTypeName === 'Admin') {
+<app-home-admin [loggedUser]="loggedUser" />
+} @if (loggedUser?.userTypeName === 'Customer') {
+<app-home-customer [loggedUser]="loggedUser" />
+}

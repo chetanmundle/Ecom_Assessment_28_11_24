@@ -17,6 +17,7 @@ export class MyToastServiceService {
     this.toastr.error(`${msg}`, '', {
       closeButton: true,
       timeOut: 2000,
+      
     });
   }
   showWarning(msg: string) {

@@ -209,6 +209,19 @@ button.toast-close-button {
   backdrop-filter: blur(0.2px); /* adds blur effect */
   z-index: 999999; /* ensure it's on top of other elements */
 }
+.Model-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5); 
+  /* backdrop-filter: blur(0.1px); adds blur effect */
+  z-index: 999999; /* ensure it's on top of other elements */
+}
 
 /* HTML: <div class="loader"></div> */
 .loader {

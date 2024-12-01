@@ -163,7 +163,7 @@
 
     <div class="col-md-5">
       <label for="validationDefault05" class="form-label">Profile Image</label>
-      <div class="input-group mb-3">
+      <div class="input-group">
         <!-- <label class="input-group-text" for="inputGroupFile01">Upload</label> -->
         <input
           type="file"
@@ -200,12 +200,16 @@
       </button>
     </div>
   </form>
+  <div>Already have an account? <a routerLink="/auth/Login">Log In</a></div>
 </div>
 
-
-
 @if (isLoader) {
-<app-loader class="loader-backdrop"></app-loader>
+<!-- <app-loader class="loader-backdrop"></app-loader> -->
+<div class="loader-backdrop">
+  <div class="loader"></div>
+</div>
 }
 
-
+<!-- @if (isLoader) {
+<app-loader class="loader-backdrop"></app-loader>
+} -->

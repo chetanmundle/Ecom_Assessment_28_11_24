@@ -9,6 +9,7 @@ import { LoginUSerResponseDto } from '../../models/interface/User/LoginUserRespo
 import { LoginUserValidateOtpDto } from '../../models/interface/User/LoginUserValidateOtpDto';
 import { ForgetPasswordDto } from '../../models/interface/User/ForgetPasswordDto';
 import { jwtDecode } from 'jwt-decode';
+import { UserDataDto } from '../../models/classes/User/UserDataDto';
 
 @Injectable({
   providedIn: 'root',
@@ -18,39 +19,38 @@ export class UserService {
   private http = inject(HttpClient);
 
   // bSubject for know the who logged in
-  loggedUser$: BehaviorSubject<UserWithoutPassDto> =
-    new BehaviorSubject<UserWithoutPassDto>(this.getLoggedUser());
+  loggedUser$: BehaviorSubject<UserDataDto> = new BehaviorSubject<UserDataDto>(
+    this.getLoggedUser()
+  );
 
   // this fuction decode the token and set in BehaviorSubject
-  private getLoggedUser(): UserWithoutPassDto {
+  private getLoggedUser(): UserDataDto {
     const accessToken = localStorage.getItem('accessToken');
 
     if (accessToken) {
       const decodedToken: any = jwtDecode(accessToken);
       const userName = decodedToken.userName;
-      let userWithoutPassDto = new UserWithoutPassDto();
+      let userDataDto = new UserDataDto();
       this.GetUserByUserName$(userName).subscribe({
-        next: (res: AppResponse<UserWithoutPassDto>) => {
+        next: (res: AppResponse<UserDataDto>) => {
           if (res.isSuccess) {
-            userWithoutPassDto.userId = res.data.userId;
-            userWithoutPassDto.firstName = res.data.firstName;
-            userWithoutPassDto.lastName = res.data.lastName;
-            userWithoutPassDto.userName = res.data.userName;
-            userWithoutPassDto.email = res.data.email;
-            userWithoutPassDto.userTypeId = res.data.userTypeId;
-            userWithoutPassDto.dateOfBirth = res.data.dateOfBirth;
-            userWithoutPassDto.mobile = res.data.mobile;
-            userWithoutPassDto.address = res.data.address;
-            userWithoutPassDto.zipCode = res.data.zipCode;
-            userWithoutPassDto.profileImage = res.data.profileImage;
-            userWithoutPassDto.stateId = res.data.stateId;
-            userWithoutPassDto.countryId = res.data.countryId;
+            userDataDto.userId = res.data.userId;
+            userDataDto.firstName = res.data.firstName;
+            userDataDto.lastName = res.data.lastName;
+            userDataDto.userName = res.data.userName;
+            userDataDto.email = res.data.email;
+            userDataDto.userTypeName = res.data.userTypeName;
+            userDataDto.dateOfBirth = res.data.dateOfBirth;
+            userDataDto.mobile = res.data.mobile;
+            userDataDto.address = res.data.address;
+            userDataDto.zipCode = res.data.zipCode;
+            userDataDto.profileImage = res.data.profileImage;
           }
         },
       });
-      return userWithoutPassDto;
+      return userDataDto;
     }
-    return new UserWithoutPassDto();
+    return new UserDataDto();
   }
 
   // This fuction is Used tp reset the Behaviour Subject whhen login is change at that senario or refresh token scenario
@@ -60,10 +60,8 @@ export class UserService {
   }
 
   //Get user by UserName
-  GetUserByUserName$(
-    userName: string
-  ): Observable<AppResponse<UserWithoutPassDto>> {
-    return this.http.get<AppResponse<UserWithoutPassDto>>(
+  GetUserByUserName$(userName: string): Observable<AppResponse<UserDataDto>> {
+    return this.http.get<AppResponse<UserDataDto>>(
       `${this.Url}/GetUserByUserName/${userName}`
     );
   }

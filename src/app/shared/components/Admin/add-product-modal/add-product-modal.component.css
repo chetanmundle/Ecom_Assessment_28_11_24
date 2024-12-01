@@ -1,0 +1,6 @@
+.form-labelStart::after {
+    content: "*";
+    color: red; /* Optional: Makes the asterisk red for better visibility */
+  
+  }
+  

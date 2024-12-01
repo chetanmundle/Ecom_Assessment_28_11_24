@@ -1,6 +1,5 @@
 import { Component, inject, OnDestroy } from '@angular/core';
 import { ImageService } from '../../../core/services/ImageService/image.service';
-import { HttpEventType } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 import { AppResponse } from '../../../core/models/interface/AppResponse';
@@ -18,13 +17,13 @@ import { CreateUserDto } from '../../../core/models/interface/User/CreateUserDto
 import { UserService } from '../../../core/services/UserService/user.service';
 import { UserWithoutPassDto } from '../../../core/models/interface/User/UserWithoutPass';
 import { MyToastServiceService } from '../../../core/services/MyToastService/my-toast-service.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LoaderComponent } from '../../../shared/components/loader/loader.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, LoaderComponent],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
@@ -144,7 +143,6 @@ export class RegisterComponent implements OnDestroy {
       this.subscriptions.add(sub);
     } else {
       this.RegisterUser();
-      this.isLoader = false;
     }
   }
 

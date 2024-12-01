@@ -4,6 +4,7 @@ import { UserService } from '../../../core/services/UserService/user.service';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { UserDataDto } from '../../../core/models/classes/User/UserDataDto';
 
 @Component({
   selector: 'app-nav-bar',
@@ -13,15 +14,16 @@ import { Router } from '@angular/router';
   styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent implements OnDestroy {
-  loggedUser?: UserWithoutPassDto;
+  loggedUser?: UserDataDto;
   subscriptions: Subscription = new Subscription();
 
   private userService = inject(UserService);
   private router = inject(Router);
 
   constructor() {
+    // subscribe for which user is currently logged in
     const sub = this.userService.loggedUser$.subscribe({
-      next: (user: UserWithoutPassDto) => {
+      next: (user: UserDataDto) => {
         this.loggedUser = user;
       },
     });

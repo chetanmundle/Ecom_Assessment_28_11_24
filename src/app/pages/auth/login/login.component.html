@@ -105,7 +105,12 @@
       (onCancelBtnClick)="onCancelBtnClick($event)"
     ></app-otp>
   </div>
-  } @if (isLoader) {
-  <app-loader class="loader-backdrop"></app-loader>
+  }
+  <!-- Loader -->
+  @if (isLoader) {
+  <!-- <app-loader class="loader-backdrop"></app-loader> -->
+  <div class="loader-backdrop">
+    <div class="loader"></div>
+  </div>
   }
 </section>

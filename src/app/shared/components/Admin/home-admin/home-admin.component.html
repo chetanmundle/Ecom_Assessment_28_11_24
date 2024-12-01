@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="d-flex justify-content-between px-2 mt-1">
+    <div>
+      <h5>Hello, {{ loggedUser?.firstName }} {{ loggedUser?.lastName }}</h5>
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="openAddProductModal()">
+        <strong>+ Add Product</strong>
+      </button>
+    </div>
+  </div>
+
+  <!-- Table of All Products -->
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">Product Code</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Selling Price</th>
+        <th scope="col">Stock</th>
+        <th scope="col">View</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of productList; let i = index">
+        <td>{{ prod.productCode }}</td>
+        <td>{{ prod.productName }}</td>
+        <td>{{ prod.category }}</td>
+        <td>{{ prod.brand }}</td>
+        <td>{{ prod.sellingPrice }}</td>
+        <td>{{ prod.stock }}</td>
+        <td>
+          <button class="btn btn-primary">View</button>
+        </td>
+        <td>
+          <button class="btn" style="background-color: yellow">Edit</button>
+        </td>
+        <td>
+          <button class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <!-- Modal -->
+    @if (isAddProduct) {
+    <div class="Model-backdrop">
+      <app-add-product-modal
+        [userId]="loggedUser?.userId"
+        (closeModal)="closeAddProductModal($event)"
+      />
+    </div>
+    }
+  </div>
+</div>
