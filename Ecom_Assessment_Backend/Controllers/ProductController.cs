@@ -48,5 +48,24 @@ namespace Ecom_Assessment_Backend.Controllers
             var result = await _mediator.Send(new DeleteProductByIdCommand { ProductId = productId });
             return Ok(result);
         }
+
+        // get one Product by Id
+        [HttpGet("[action]/{productId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetProductById(int productId)
+        {
+            var result = await _productRepository.GetProductByIdAsync(productId);
+            return Ok(result);
+        }
+
+
+        //Update the produc
+        [HttpPut("[action]")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> UpdateProduct(UpdateProductDto updateProductDto)
+        {
+            var result = await _mediator.Send(new  UpdateProductCommand { UpdateProductDto = updateProductDto });
+            return Ok(result);
+        }
     }
 }

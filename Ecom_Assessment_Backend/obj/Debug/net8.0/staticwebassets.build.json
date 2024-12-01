@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Wzbt1PUp3rwIAqzmH4ECkqqwZrfctVaHAABAXhzDq3g=",
+  "Hash": "tB8LWYozbJ66jGJZFnspiXvdlJsbC82N3CWOETXCJFs=",
   "Source": "Ecom_Assessment_Backend",
   "BasePath": "_content/Ecom_Assessment_Backend",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\0e3af569-9222-4fc8-b119-7e875a1b7f33.png"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\1c3b98f2-2ba5-43bb-9746-a305d048c8c4.png",
+      "SourceId": "Ecom_Assessment_Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "BasePath": "_content/Ecom_Assessment_Backend",
+      "RelativePath": "Images/1c3b98f2-2ba5-43bb-9746-a305d048c8c4.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\1c3b98f2-2ba5-43bb-9746-a305d048c8c4.png"
     },
     {
       "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\272fe8be-ee06-499a-8a91-bd30aed6f4bc.jpg",

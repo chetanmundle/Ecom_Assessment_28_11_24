@@ -36,5 +36,18 @@ namespace Infrastructure.Repository
                     HttpStatusCodes.OK
                  );
         }
+
+        // Get Product By ProductId
+        public async Task<AppResponse<ProductDto>> GetProductByIdAsync(int productId)
+        {
+            var query = @"Select * From Products where ProductId = @ProductId";
+            var conn = _appDbContext.GetConnection();
+             
+            var product = await conn.QueryFirstOrDefaultAsync<Domain.Entities.Product>(query, new { ProductId = productId });
+
+            if(product is null) return AppResponse.Fail<ProductDto>(null,"Not Record Found for this Id", HttpStatusCodes.NotFound);
+
+            return AppResponse.Fail<ProductDto>(product.Adapt<ProductDto>(), "Not Record Found for this Id", HttpStatusCodes.NotFound);
+        }
     }
 }
