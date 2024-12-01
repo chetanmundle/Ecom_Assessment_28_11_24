@@ -94,16 +94,24 @@ namespace Infrastructure.Repository
 
 
         //This  Service for get all userdata by username
-        public async Task<AppResponse<UserWithoutPassDto>> GetUserByUserNameAsync(string userName)
+        public async Task<AppResponse<UserDataDto>> GetUserByUserNameAsync(string userName)
         {
             var query = @"Select * from Users where UserName = @UserName";
             var conn = _appDbContext.GetConnection();
             var user = await conn.QueryFirstOrDefaultAsync<Domain.Entities.User>(query, new { UserName = userName });
 
-            if (user is null) return AppResponse.Fail<UserWithoutPassDto>(null, "User not Found for this Username", HttpStatusCodes.BadRequest);
+            if (user is null) return AppResponse.Fail<UserDataDto>(null, "User not Found for this Username", HttpStatusCodes.BadRequest);
 
-            return AppResponse.Success<UserWithoutPassDto>(
-                    user.Adapt<UserWithoutPassDto>(),
+            var userData = user.Adapt<UserDataDto>();
+            query = @"Select * from UserTypes where UserTypeId = @UserTypeId";
+            var role = await conn.QueryFirstAsync<Domain.Entities.UserType>(query, new { UserTypeId = user.UserTypeId });
+
+            if(role is null ) return AppResponse.Fail<UserDataDto>(null, "Internal Server Error", HttpStatusCodes.NotFound);
+
+            userData.UserTypeName = role.UserTypeName;
+
+            return AppResponse.Success<UserDataDto>(
+                     userData,
                     "User Fetch Successfully",
                     HttpStatusCodes.OK
                 );

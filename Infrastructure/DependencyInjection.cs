@@ -22,6 +22,7 @@ namespace Infrastructure
             // Register the Domain Service
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICountryStateRepository, CountryStateRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             //Register Jwt Service
             services.AddScoped<IJwtService, JwtService>();

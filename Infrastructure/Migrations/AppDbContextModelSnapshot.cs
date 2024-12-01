@@ -148,6 +148,9 @@ namespace Infrastructure.Migrations
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("ProductCode")
                         .HasColumnType("nvarchar(max)");
 
@@ -160,11 +163,11 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime?>("PurchaseDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PurchasePrice")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<float>("PurchasePrice")
+                        .HasColumnType("real");
 
-                    b.Property<string>("SellingPrice")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<float>("SellingPrice")
+                        .HasColumnType("real");
 
                     b.Property<int?>("Stock")
                         .HasColumnType("int");

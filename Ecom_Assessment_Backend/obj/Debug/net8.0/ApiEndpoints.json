@@ -58,6 +58,54 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.ProductController",
+    "Method": "CreateProduct",
+    "RelativePath": "api/Product/CreateProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createProductDto",
+        "Type": "App.Core.Models.Product.CreateProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.ProductController",
+    "Method": "DeleteProductById",
+    "RelativePath": "api/Product/DeleteProductById/{productId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.ProductController",
+    "Method": "GetProcutByUserId",
+    "RelativePath": "api/Product/GetProcutByUserId/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "api/User/CreateUser",

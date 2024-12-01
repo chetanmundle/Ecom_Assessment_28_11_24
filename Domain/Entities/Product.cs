@@ -18,11 +18,12 @@ namespace Domain.Entities
         public string  ProductImage { get; set; }
         public string Category { get; set; }
         public string Brand { get; set; }
-        public string SellingPrice { get; set; }
-        public string PurchasePrice { get; set; }
+        public float SellingPrice { get; set; }
+        public float PurchasePrice { get; set; }
         public DateTime? PurchaseDate { get; set; }
         public int? Stock {  get; set; }
         public int CreatedBy { get; set; }
+        public bool IsDeleted { get; set; } = false;
 
     }
 }
