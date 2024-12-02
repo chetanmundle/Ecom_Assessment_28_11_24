@@ -32,6 +32,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.CartController",
+    "Method": "GetAllCartItemWithDetailsByUserId",
+    "RelativePath": "api/Cart/GetAllCartItemWithDetailsByUserId/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.CountryStateController",
     "Method": "GetAllCountries",
     "RelativePath": "api/CountryState/GetAllCountries",

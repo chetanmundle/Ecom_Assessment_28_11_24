@@ -11,5 +11,6 @@ namespace App.Core.Interface
     public interface ICartRepository
     {
         Task<AppResponse<IEnumerable<CartItemUserDto>>> GetAllCartItemOfUserByUserIdAsync(int userId);
+        Task<AppResponse<IEnumerable<CartItemDetailsDto>>> GetAllCartItemDetailsByUserIdAsync(int userId);
     }
 }

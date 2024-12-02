@@ -42,5 +42,14 @@ namespace Ecom_Assessment_Backend.Controllers
             var result = await _cartRepository.GetAllCartItemOfUserByUserIdAsync(userId);
             return Ok(result);
         }
+
+        // GEt all cartItems with Details
+        [HttpGet("[action]/{userId}")]
+        [Authorize(Roles = "Customer")]
+        public async Task<IActionResult> GetAllCartItemWithDetailsByUserId(int userId)
+        {
+            var result = await _cartRepository.GetAllCartItemDetailsByUserIdAsync(userId);
+            return Ok(result);
+        }
     }
 }
