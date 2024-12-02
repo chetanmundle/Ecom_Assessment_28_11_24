@@ -5,6 +5,7 @@ import { AppResponse } from '../../models/interface/AppResponse';
 import {
   CreateProductDto,
   ProductDto,
+  UpdateProductDto,
 } from '../../models/interface/Product/Product';
 
 @Injectable({
@@ -26,6 +27,23 @@ export class ProductService {
     return this.http.post<AppResponse<null>>(
       `${this.Url}/CreateProduct`,
       createUser
+    );
+  }
+
+  // Delete the product by ProductId
+  DeleteProductById$(productId: number): Observable<AppResponse<null>> {
+    return this.http.delete<AppResponse<null>>(
+      `${this.Url}/DeleteProductById/${productId}`
+    );
+  }
+
+  //Update product
+  UpdateProduct$(
+    updateProduct: UpdateProductDto
+  ): Observable<AppResponse<null>> {
+    return this.http.put<AppResponse<null>>(
+      `${this.Url}/UpdateProduct`,
+      updateProduct
     );
   }
 }

@@ -34,13 +34,26 @@
         <td>{{ prod.sellingPrice }}</td>
         <td>{{ prod.stock }}</td>
         <td>
-          <button class="btn btn-primary">View</button>
+          <button class="btn btn-primary" (click)="onClickViewProductBtn(prod)">
+            View
+          </button>
         </td>
         <td>
-          <button class="btn" style="background-color: yellow">Edit</button>
+          <button
+            class="btn"
+            style="background-color: yellow"
+            (click)="onClickEdit(prod)"
+          >
+            Edit
+          </button>
         </td>
         <td>
-          <button class="btn btn-danger">Delete</button>
+          <button
+            class="btn btn-danger"
+            (click)="onClickDelete(prod.productId)"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
@@ -53,6 +66,20 @@
       <app-add-product-modal
         [userId]="loggedUser?.userId"
         (closeModal)="closeAddProductModal($event)"
+      />
+    </div>
+    } @if (isViewProduct) {
+    <div class="Model-backdrop">
+      <app-view-product-model
+        [product]="currentProduct"
+        (closeModal)="onCloseViewProduct()"
+      />
+    </div>
+    } @if (isEditProduct) {
+    <div class="Model-backdrop">
+      <app-edit-product-model
+        [product]="currentProduct"
+        (closeModal)="onCloseEdit($event)"
       />
     </div>
     }

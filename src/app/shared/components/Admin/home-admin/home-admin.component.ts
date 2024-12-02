@@ -7,11 +7,18 @@ import { AppResponse } from '../../../../core/models/interface/AppResponse';
 import { MyToastServiceService } from '../../../../core/services/MyToastService/my-toast-service.service';
 import { CommonModule } from '@angular/common';
 import { AddProductModalComponent } from '../add-product-modal/add-product-modal.component';
+import { ViewProductModelComponent } from '../view-product-model/view-product-model.component';
+import { EditProductModelComponent } from '../edit-product-model/edit-product-model.component';
 
 @Component({
   selector: 'app-home-admin',
   standalone: true,
-  imports: [CommonModule, AddProductModalComponent],
+  imports: [
+    CommonModule,
+    AddProductModalComponent,
+    ViewProductModelComponent,
+    EditProductModelComponent,
+  ],
   templateUrl: './home-admin.component.html',
   styleUrl: './home-admin.component.css',
 })
@@ -19,6 +26,7 @@ export class HomeAdminComponent implements OnInit, OnDestroy {
   @Input() loggedUser?: UserDataDto;
   subscriptions: Subscription = new Subscription();
   productList?: ProductDto[];
+  currentProduct?: ProductDto;
 
   isAddProduct: boolean = false;
   isEditProduct: boolean = false;
@@ -54,6 +62,7 @@ export class HomeAdminComponent implements OnInit, OnDestroy {
     }
   }
 
+  // for add product
   openAddProductModal() {
     this.isAddProduct = true;
   }
@@ -62,6 +71,50 @@ export class HomeAdminComponent implements OnInit, OnDestroy {
     if (value) {
       this.getAllProduct();
     }
+  }
+
+  // for view
+  onClickViewProductBtn(product: ProductDto) {
+    this.currentProduct = product;
+    this.isViewProduct = true;
+  }
+  onCloseViewProduct() {
+    this.isViewProduct = false;
+  }
+
+  // onClick Edit fuction
+  onClickEdit(product: ProductDto) {
+    this.currentProduct = product;
+    this.isEditProduct = true;
+  }
+
+  onCloseEdit(value: boolean) {
+    this.isEditProduct = false;
+    if (value) {
+      this.getAllProduct();
+    }
+  }
+
+  // Delete PRoduct by ProductID
+  onClickDelete(productId: number) {
+    if (!confirm('Do you Want to Delete this Product ?')) {
+      return;
+    }
+    this.productService.DeleteProductById$(productId).subscribe({
+      next: (res: AppResponse<any>) => {
+        if (res.isSuccess) {
+          this.tostR.showSuccess(res.message);
+          this.getAllProduct();
+        } else {
+          this.tostR.showError(res.message);
+        }
+      },
+      error: (err: Error) => {
+        console.log('Unable to delete : ', err);
+
+        this.tostR.showError(err.message);
+      },
+    });
   }
 
   ngOnDestroy(): void {

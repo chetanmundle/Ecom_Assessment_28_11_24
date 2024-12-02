@@ -24,3 +24,16 @@ export interface CreateProductDto {
   stock: number;
   createdBy: number;
 }
+
+// use for update
+export interface UpdateProductDto {
+  productId: number;
+  productName: string;
+  productImage: string;
+  category: string;
+  brand: string;
+  sellingPrice: number;
+  purchasePrice: number;
+  purchaseDate: string;
+  stock: number;
+}

@@ -18,7 +18,7 @@ export class UserService {
   private Url = 'https://localhost:7035/api/User';
   private http = inject(HttpClient);
 
-  // bSubject for know the who logged in
+  // Behaviour Subject for know the who logged in
   loggedUser$: BehaviorSubject<UserDataDto> = new BehaviorSubject<UserDataDto>(
     this.getLoggedUser()
   );
