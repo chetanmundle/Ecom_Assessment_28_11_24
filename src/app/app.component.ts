@@ -22,7 +22,8 @@ export class AppComponent implements OnDestroy {
         if (
           this.router.url === '/auth/Login' ||
           this.router.url === '/auth/Register' ||
-          this.router.url === '/auth/Forgot-Password'
+          this.router.url === '/auth/Forgot-Password' ||
+              this.router.url === '/test'
         ) {
           this.showNavbar = false;
         } else {

@@ -1,1 +1,69 @@
-<p>home-customer works!</p>
+<div class="container">
+  <div class="d-flex gap-3 flex-wrap justify-content-evenly my-3">
+    <div
+      class="card"
+      style="width: 13rem; height: auto"
+      *ngFor="let prod of productList"
+    >
+      <div class="p-3 d-flex justify-content-center">
+        <ng-container *ngIf="prod.productImage; else defaultimg">
+          <img
+            [src]="prod.productImage"
+            class="card-img-top"
+            alt="..."
+            style="height: 140px; width: 140px"
+          />
+        </ng-container>
+
+        <ng-template #defaultimg>
+          <img
+            src="images/defaultgrocery.png"
+            class="card-img-top"
+            alt="..."
+            style="height: 140px; width: 140px"
+          />
+        </ng-template>
+      </div>
+
+      <div class="card-body">
+        <h6 class="card-title">{{ prod.productName }}</h6>
+        <div class="mb-2">Brand : {{ prod.brand }}</div>
+        <div
+          class="d-flex justify-content-around align-items-center"
+          style="height: 30px"
+        >
+          <div>
+            <strong>₹ {{ prod.sellingPrice }}</strong>
+          </div>
+          <div>
+            <ng-container
+              *ngIf="!isExistItem(prod.productId); else ifAddedinCart"
+            >
+              <button
+                class="btn"
+                style="border: 1px solid green"
+                (click)="onClickAddToCart(prod.productId, 1)"
+              >
+                <img
+                  src="images/add.png"
+                  alt="All to cart"
+                  style="height: 22px; width: 22px"
+                />
+              </button>
+            </ng-container>
+
+            <ng-template #ifAddedinCart>
+              <button class="btn" style="border: 1px solid green">
+                <img
+                  src="images/remove.png"
+                  alt="All to cart"
+                  style="height: 22px; width: 22px"
+                />
+              </button>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

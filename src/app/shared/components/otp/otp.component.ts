@@ -14,6 +14,7 @@ import { AppResponse } from '../../../core/models/interface/AppResponse';
 import { LoginUSerResponseDto } from '../../../core/models/interface/User/LoginUserResponseDto';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { CartService } from '../../../core/services/CartService/cart.service';
 
 @Component({
   selector: 'app-otp',
@@ -31,6 +32,7 @@ export class OtpComponent implements OnDestroy {
   private tostr = inject(MyToastServiceService);
   private userService = inject(UserService);
   private router = inject(Router);
+  private cartService = inject(CartService);
 
   onClickCancel() {
     this.onCancelBtnClick.emit(false);
@@ -76,6 +78,7 @@ export class OtpComponent implements OnDestroy {
         if (res.isSuccess) {
           localStorage.setItem('accessToken', res.data.accessToken);
           this.userService.resetLoggedUser();
+          this.cartService.ResetCart();
           this.router.navigate(['/org/Home']);
           this.tostr.showSuccess(res.message);
         } else {

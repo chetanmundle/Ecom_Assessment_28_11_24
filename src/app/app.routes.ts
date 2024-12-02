@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/org/home/home.component';
 import { authGuard } from './core/Guards/auth.guard';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
+import { TestComponent } from './pages/test/test.component';
 
 export const routes: Routes = [
   {
@@ -44,6 +45,10 @@ export const routes: Routes = [
         data: { roles: ['Admin', 'Customer'] },
       },
     ],
+  },
+  {
+    path:"test",
+    component:TestComponent
   },
   {
     path: '**',

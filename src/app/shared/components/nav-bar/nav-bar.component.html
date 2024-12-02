@@ -24,10 +24,10 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
+          </li> -->
+          <!-- <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -44,16 +44,7 @@
               <li><hr class="dropdown-divider" /></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-              >Disabled</a
-            >
-          </li>
+          </li> -->
         </ul>
         <div class="d-flex">
           <input
@@ -63,6 +54,26 @@
             aria-label="Search"
           />
           <button class="btn btn-outline-success" type="submit">Search</button>
+
+          <!-- for cart icon -->
+          <div *ngIf="loggedUser?.userTypeName == 'Customer'">
+            <!-- <span class="fa-stack  has-badge" data-count="5">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+            </span> -->
+
+            <div class="mx-3 mt-1" style="cursor: pointer">
+              <div class="cart-icon">
+                <!-- <i class="fas fa-shopping-cart fa-2x"></i> -->
+                <img
+                  src="images/shoppingcart.png"
+                  alt=""
+                  style="width: 30px; height: 30px"
+                />
+                <span class="badge">{{ cartItemCount }}</span>
+              </div>
+            </div>
+          </div>
           <div
             class="mx-3"
             popovertarget="profileclicktarget"
@@ -73,7 +84,6 @@
               [src]="loggedUser?.profileImage"
               alt="images/profile.png"
               style="width: 40px; height: 40px; cursor: pointer"
-            
               class="rounded-circle img-border"
             />
 
@@ -82,7 +92,7 @@
                 src="images/profile.png"
                 alt="Default profile"
                 style="width: 40px; height: 40px; cursor: pointer"
-               class="rounded-circle img-border"
+                class="rounded-circle img-border"
               />
             </ng-template>
           </div>
@@ -99,13 +109,12 @@
       <span (click)="closeModal()">&times;</span>
     </div>
     <div class="row text-center">
-      <h5>{{loggedUser?.firstName }} {{ loggedUser?.lastName}}</h5>
-      <p>UserName : {{loggedUser?.userName}}</p>
-      <p>Email : {{loggedUser?.email}}</p>
+      <h5>{{ loggedUser?.firstName }} {{ loggedUser?.lastName }}</h5>
+      <p>UserName : {{ loggedUser?.userName }}</p>
+      <p>Email : {{ loggedUser?.email }}</p>
       <div>
         <button class="btn btn-danger" (click)="onClickLogOut()">Logout</button>
       </div>
     </div>
-    
   </div>
 </div>

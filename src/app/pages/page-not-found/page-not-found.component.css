@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
-/* Variables */
 :root {
   --background-color: #353b48;
   --font: "Fira Sans", sans-serif;
@@ -10,7 +9,7 @@
   --blue: #446182;
 }
 
-/* Main Layout Styles */
+
 * {
   box-sizing: border-box;
 }
