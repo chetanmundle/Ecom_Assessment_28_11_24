@@ -3,7 +3,7 @@ import { UserWithoutPassDto } from '../../../core/models/interface/User/UserWith
 import { UserService } from '../../../core/services/UserService/user.service';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UserDataDto } from '../../../core/models/classes/User/UserDataDto';
 import { CartService } from '../../../core/services/CartService/cart.service';
 import { CartItems } from '../../../core/models/classes/Cart/Cart.model';
@@ -11,7 +11,7 @@ import { CartItems } from '../../../core/models/classes/Cart/Cart.model';
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
 })
@@ -38,7 +38,7 @@ export class NavBarComponent implements OnDestroy, OnInit {
     // subscribe to cart Service
     const sub = this.cartService.cartItems$.subscribe({
       next: (cartItem: CartItems[]) => {
-        console.log('CartItem', cartItem);
+        // console.log('CartItem', cartItem);
 
         this.cartItemCount = cartItem.length;
       },

@@ -10,11 +10,12 @@ import { CartItems } from '../../../../core/models/classes/Cart/Cart.model';
 import { AddToCartDto } from '../../../../core/models/interface/Cart/CartDto.model';
 import { MyToastServiceService } from '../../../../core/services/MyToastService/my-toast-service.service';
 import { ToastrService } from 'ngx-toastr';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home-customer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './home-customer.component.html',
   styleUrl: './home-customer.component.css',
 })

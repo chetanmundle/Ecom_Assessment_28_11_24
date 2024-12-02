@@ -4,7 +4,10 @@ import { CartItems } from '../../models/classes/Cart/Cart.model';
 import { jwtDecode } from 'jwt-decode';
 import { AppResponse } from '../../models/interface/AppResponse';
 import { HttpClient } from '@angular/common/http';
-import { AddToCartDto } from '../../models/interface/Cart/CartDto.model';
+import {
+  AddToCartDto,
+  CartITemsWithDetails,
+} from '../../models/interface/Cart/CartDto.model';
 
 @Injectable({
   providedIn: 'root',
@@ -32,8 +35,8 @@ export class CartService {
         next: (res: AppResponse<CartItems[]>) => {
           if (res.isSuccess) {
             this.cartItems$.next(res.data);
-            console.log('Service res: ', res);
-            console.log('Service d : ', res.data);
+            // console.log('Service res: ', res);
+            // console.log('Service d : ', res.data);
           } else {
             this.cartItems$.next([]);
           }
@@ -62,5 +65,14 @@ export class CartService {
   // Add to Cart
   AddToCart$(data: AddToCartDto): Observable<AppResponse<null>> {
     return this.http.post<AppResponse<null>>(`${this.Url}/AddToCart`, data);
+  }
+
+  // Get all carItems with Details
+  GetAllCartItemsWithDetails(
+    userId: number
+  ): Observable<AppResponse<CartITemsWithDetails[]>> {
+    return this.http.get<AppResponse<CartITemsWithDetails[]>>(
+      `${this.Url}/GetAllCartItemWithDetailsByUserId/${userId}`
+    );
   }
 }

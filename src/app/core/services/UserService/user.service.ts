@@ -20,43 +20,41 @@ export class UserService {
 
   // Behaviour Subject for know the who logged in
   loggedUser$: BehaviorSubject<UserDataDto> = new BehaviorSubject<UserDataDto>(
-    this.getLoggedUser()
+    new UserDataDto()
   );
 
-  // this fuction decode the token and set in BehaviorSubject
-  private getLoggedUser(): UserDataDto {
+  constructor() {
+    this.getLoggedUser(); // Fetch the user data on service initialization
+  }
+
+  private getLoggedUser(): void {
     const accessToken = localStorage.getItem('accessToken');
 
     if (accessToken) {
       const decodedToken: any = jwtDecode(accessToken);
       const userName = decodedToken.userName;
-      let userDataDto = new UserDataDto();
+
+      // Fetch the user details from the API
       this.GetUserByUserName$(userName).subscribe({
         next: (res: AppResponse<UserDataDto>) => {
           if (res.isSuccess) {
-            userDataDto.userId = res.data.userId;
-            userDataDto.firstName = res.data.firstName;
-            userDataDto.lastName = res.data.lastName;
-            userDataDto.userName = res.data.userName;
-            userDataDto.email = res.data.email;
-            userDataDto.userTypeName = res.data.userTypeName;
-            userDataDto.dateOfBirth = res.data.dateOfBirth;
-            userDataDto.mobile = res.data.mobile;
-            userDataDto.address = res.data.address;
-            userDataDto.zipCode = res.data.zipCode;
-            userDataDto.profileImage = res.data.profileImage;
+            this.loggedUser$.next(res.data); // Update BehaviorSubject with user data
+          } else {
+            this.loggedUser$.next(new UserDataDto()); // Emit empty user data if the API fails
           }
         },
+        error: () => {
+          this.loggedUser$.next(new UserDataDto()); // Handle API errors gracefully
+        },
       });
-      return userDataDto;
+    } else {
+      this.loggedUser$.next(new UserDataDto()); // Emit empty user data if no token exists
     }
-    return new UserDataDto();
   }
 
   // This fuction is Used tp reset the Behaviour Subject whhen login is change at that senario or refresh token scenario
   public resetLoggedUser(): void {
-    const newLoggedUser = this.getLoggedUser();
-    this.loggedUser$.next(newLoggedUser);
+    this.getLoggedUser();
   }
 
   //Get user by UserName

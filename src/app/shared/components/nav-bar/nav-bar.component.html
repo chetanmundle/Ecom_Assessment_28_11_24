@@ -56,7 +56,10 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
 
           <!-- for cart icon -->
-          <div *ngIf="loggedUser?.userTypeName == 'Customer'">
+          <div
+            *ngIf="loggedUser?.userTypeName == 'Customer'"
+            routerLink="/org/Customer/Cart"
+          >
             <!-- <span class="fa-stack  has-badge" data-count="5">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
