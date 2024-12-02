@@ -109,3 +109,4 @@ D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\App.Core\obj\Debug\net8.0\refint\App.Core.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\App.Core\obj\Debug\net8.0\App.Core.pdb
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\App.Core\obj\Debug\net8.0\ref\App.Core.dll
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\App.Core\obj\Debug\net8.0\App.Core.sourcelink.json

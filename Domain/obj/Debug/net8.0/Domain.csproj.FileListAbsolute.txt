@@ -81,3 +81,4 @@ D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\refint\Domain.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\Domain.pdb
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Domain\obj\Debug\net8.0\ref\Domain.dll
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Domain\obj\Debug\net8.0\Domain.sourcelink.json

@@ -137,3 +137,4 @@ D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_28_11_24\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
