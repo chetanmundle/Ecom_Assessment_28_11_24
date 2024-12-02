@@ -59,12 +59,21 @@ namespace Ecom_Assessment_Backend.Controllers
         }
 
 
-        //Update the produc
+        //Update the product
         [HttpPut("[action]")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateProduct(UpdateProductDto updateProductDto)
         {
             var result = await _mediator.Send(new  UpdateProductCommand { UpdateProductDto = updateProductDto });
+            return Ok(result);
+        }
+
+        //Get all products
+        [HttpGet("[action]")]
+        [Authorize(Roles = "Customer")]
+        public async Task<IActionResult> GetAllProducts()
+        {
+            var result = await _productRepository.GetAllProduct();
             return Ok(result);
         }
     }

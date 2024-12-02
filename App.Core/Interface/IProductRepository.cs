@@ -12,5 +12,6 @@ namespace App.Core.Interface
     {
         Task<AppResponse<IEnumerable<ProductDto>>> GetAllProductByUserIdAsync(int userId);
         Task<AppResponse<ProductDto>> GetProductByIdAsync(int productId);
+        Task<AppResponse<IEnumerable<ProductDto>>> GetAllProduct();
     }
 }

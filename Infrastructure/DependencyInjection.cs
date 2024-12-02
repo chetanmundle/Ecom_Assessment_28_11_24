@@ -23,6 +23,7 @@ namespace Infrastructure
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICountryStateRepository, CountryStateRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICartRepository, CartRepository>();
 
             //Register Jwt Service
             services.AddScoped<IJwtService, JwtService>();
