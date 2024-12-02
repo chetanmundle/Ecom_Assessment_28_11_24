@@ -19,13 +19,7 @@ import { OtpComponent } from '../../../shared/components/otp/otp.component';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    ReactiveFormsModule,
-    LoaderComponent,
-    OtpComponent,
-  ],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule, OtpComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
