@@ -46,7 +46,7 @@ namespace App.Core.App.User.Commond
             }
 
             var user = await _appDbContext.Set<Domain.Entities.User>()
-                             .FirstOrDefaultAsync(u => u.Email == model.Email, cancellationToken);
+                             .FirstOrDefaultAsync(u => u.Email == model.Email || u.UserName ==  model.Email, cancellationToken);
 
             if (user is null )
             {

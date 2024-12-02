@@ -34,7 +34,8 @@ namespace Infrastructure.Repository
 
             var conn = _appDbContext.GetConnection();
 
-            var query = @"Select * from Users where Email = @Email";
+            //var query = @"Select * from Users where Email = @Email";
+            var query = @"Select * from Users where Email = @Email or  UserName = @Email";
 
             var data = new
             {
@@ -69,7 +70,8 @@ namespace Infrastructure.Repository
             //var isOtpSend = await _emailService.SendEmailAsync(loginUser.Email, user.FirstName, 
             //    "Validate Otp for Login", $"Your Otp of Login Purpuse is {otp} and it is Validate till {DateTime.Now.AddMinutes(5)}");
 
-            var isOtpSend = _emailSmtpService.SendEmailOtp(loginUser.Email, user.FirstName, "Otp for Validation", otp);
+            //var isOtpSend = _emailSmtpService.SendEmailOtp(loginUser.Email, user.FirstName, "Otp for Validation", otp);
+            var isOtpSend = _emailSmtpService.SendEmailOtp(user.Email, user.FirstName, "Otp for Validation", otp);
 
             if (!isOtpSend) return AppResponse.Fail<string>("Unable to Send Otp", "Unable to Send Otp", HttpStatusCodes.InternalServerError);
 
