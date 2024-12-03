@@ -51,5 +51,34 @@ namespace Ecom_Assessment_Backend.Controllers
             var result = await _cartRepository.GetAllCartItemDetailsByUserIdAsync(userId);
             return Ok(result);
         }
+
+        //Api for Increment Item to cart
+        [HttpPut("[action]")]
+        [Authorize(Roles = "Customer")]
+        public async Task<IActionResult> IncrementItemInCart(IncrementCartQuntityDto incrementDto)
+        {
+            var result = await _mediator.Send(new IncrementCartCommand { incrementCartDto = incrementDto });
+            return Ok(result);
+        } 
+        
+        
+        
+        //Api for Decrement Item to cart
+        [HttpPut("[action]")]
+        [Authorize(Roles = "Customer")]
+        public async Task<IActionResult> DecrementItemInCart(IncrementCartQuntityDto incrementtDto)
+        {
+            var result = await _mediator.Send(new DecrementCartCommand { decrementCartDto = incrementtDto });
+            return Ok(result);
+        }
+
+        //Api for Remove Item from cart
+        [HttpDelete("[action]/{cartDetailId}")]
+        [Authorize(Roles = "Customer")]
+        public async Task<IActionResult> RemoveItemFromCart(int cartDetailId)
+        {
+            var result = await _mediator.Send(new RemoveFromCartCommand { CartDetailsId = cartDetailId });
+            return Ok(result);
+        }
     }
 }

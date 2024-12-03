@@ -98,22 +98,30 @@ namespace Infrastructure.Repository
         //This  Service for get all userdata by username
         public async Task<AppResponse<UserDataDto>> GetUserByUserNameAsync(string userName)
         {
-            var query = @"Select * from Users where UserName = @UserName";
+            //var query = @"Select * from Users where UserName = @UserName";
+            //var conn = _appDbContext.GetConnection();
+            //var user = await conn.QueryFirstOrDefaultAsync<Domain.Entities.User>(query, new { UserName = userName });
+
+            //if (user is null) return AppResponse.Fail<UserDataDto>(null, "User not Found for this Username", HttpStatusCodes.BadRequest);
+
+            //var userData = user.Adapt<UserDataDto>();
+            //query = @"Select * from UserTypes where UserTypeId = @UserTypeId";
+            //var role = await conn.QueryFirstAsync<Domain.Entities.UserType>(query, new { UserTypeId = user.UserTypeId });
+
+            //if(role is null ) return AppResponse.Fail<UserDataDto>(null, "Internal Server Error", HttpStatusCodes.NotFound);
+
+            //userData.UserTypeName = role.UserTypeName;
+
+            var query = @"Select U.UserId, U.FirstName, U.LastName, U.UserName, U.Email, UT.UserTypeName, U.DateOfBirth,
+                                 U.Mobile, U.[Address], U.ZipCode, U.ProfileImage, C.CountryName, S.StateName
+                                 From Users U Inner Join UserTypes UT On U.UserTypeId = UT.UserTypeId Inner join Countries C 
+                                 On U.CountryId = C.CountryId Inner join States S On U.StateId = S.StateId
+                                  Where U.UserName =  @UserName";
             var conn = _appDbContext.GetConnection();
-            var user = await conn.QueryFirstOrDefaultAsync<Domain.Entities.User>(query, new { UserName = userName });
-
-            if (user is null) return AppResponse.Fail<UserDataDto>(null, "User not Found for this Username", HttpStatusCodes.BadRequest);
-
-            var userData = user.Adapt<UserDataDto>();
-            query = @"Select * from UserTypes where UserTypeId = @UserTypeId";
-            var role = await conn.QueryFirstAsync<Domain.Entities.UserType>(query, new { UserTypeId = user.UserTypeId });
-
-            if(role is null ) return AppResponse.Fail<UserDataDto>(null, "Internal Server Error", HttpStatusCodes.NotFound);
-
-            userData.UserTypeName = role.UserTypeName;
+            var user = await conn.QueryFirstOrDefaultAsync<UserDataDto>(query, new { UserName = userName });
 
             return AppResponse.Success<UserDataDto>(
-                     userData,
+                     user,
                     "User Fetch Successfully",
                     HttpStatusCodes.OK
                 );

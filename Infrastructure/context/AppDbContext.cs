@@ -26,12 +26,17 @@ namespace Infrastructure.context
         public DbSet<Otp> Otps { get; set; }
 
 
+
+        public DbContext DbContext => this;
+
+
         // For Dapper
         public IDbConnection GetConnection()
         {
             return this.Database.GetDbConnection();
         }
 
+  
 
     }
 }

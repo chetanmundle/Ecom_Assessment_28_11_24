@@ -19,5 +19,8 @@ namespace App.Core.Models.Users
         public string Address { get; set; }
         public int? ZipCode { get; set; }
         public string ProfileImage { get; set; }
+
+        public string CountryName { get; set; }
+        public string StateName { get; set; }
     }
 }

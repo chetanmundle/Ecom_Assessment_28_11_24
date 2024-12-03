@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.CartController",
+    "Method": "DecrementItemInCart",
+    "RelativePath": "api/Cart/DecrementItemInCart",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "incrementtDto",
+        "Type": "App.Core.Models.Cart.IncrementCartQuntityDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.CartController",
     "Method": "GetAllCartItemByUserId",
     "RelativePath": "api/Cart/GetAllCartItemByUserId/{userId}",
     "HttpMethod": "GET",
@@ -41,6 +57,38 @@
     "Parameters": [
       {
         "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.CartController",
+    "Method": "IncrementItemInCart",
+    "RelativePath": "api/Cart/IncrementItemInCart",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "incrementDto",
+        "Type": "App.Core.Models.Cart.IncrementCartQuntityDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.CartController",
+    "Method": "RemoveItemFromCart",
+    "RelativePath": "api/Cart/RemoveItemFromCart/{cartDetailId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartDetailId",
         "Type": "System.Int32",
         "IsRequired": true
       }

@@ -12,6 +12,8 @@ namespace App.Core.Interfaces
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 
+        DbContext DbContext { get; }
+
         public IDbConnection GetConnection();
     }
 }
