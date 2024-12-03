@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import {
   AddToCartDto,
   CartITemsWithDetails,
+  IncrementDecrementCart,
 } from '../../models/interface/Cart/CartDto.model';
 
 @Injectable({
@@ -68,11 +69,38 @@ export class CartService {
   }
 
   // Get all carItems with Details
-  GetAllCartItemsWithDetails(
+  GetAllCartItemsWithDetails$(
     userId: number
   ): Observable<AppResponse<CartITemsWithDetails[]>> {
     return this.http.get<AppResponse<CartITemsWithDetails[]>>(
       `${this.Url}/GetAllCartItemWithDetailsByUserId/${userId}`
+    );
+  }
+
+  // Increment Cart Service
+  IncrementCartQuntity$(
+    payload: IncrementDecrementCart
+  ): Observable<AppResponse<null>> {
+    return this.http.put<AppResponse<null>>(
+      `${this.Url}/IncrementItemInCart`,
+      payload
+    );
+  }
+
+  // Decrement Cart Service
+  DecrementCartQuntity$(
+    payload: IncrementDecrementCart
+  ): Observable<AppResponse<null>> {
+    return this.http.put<AppResponse<null>>(
+      `${this.Url}/DecrementItemInCart`,
+      payload
+    );
+  }
+
+  // Remove Item From Cart Service
+  RemoveItemFromCart$(cartDetailsId: number): Observable<AppResponse<null>> {
+    return this.http.delete<AppResponse<null>>(
+      `${this.Url}/RemoveItemFromCart/${cartDetailsId}`
     );
   }
 }

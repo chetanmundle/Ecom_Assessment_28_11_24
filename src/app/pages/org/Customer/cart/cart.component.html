@@ -1,11 +1,159 @@
-<div class="container">
+<div class="card mt-3">
+  <div class="row">
+    <div class="col-md-8 cart">
+      <div class="title">
+        <div class="row">
+          <div class="col">
+            <h4><b>Shopping Cart</b></h4>
+          </div>
+          <div class="col align-self-center text-right text-muted">
+            {{ cartItemsList?.length }} items
+          </div>
+        </div>
+      </div>
+      <div
+        class="row border-top border-bottom"
+        *ngFor="let cartItem of cartItemsList"
+      >
+        <div class="row main align-items-center">
+          <div class="col-2">
+            <ng-container *ngIf="cartItem.productImage; else defaultimg">
+              <img
+                class="img-fluid"
+                width="100px"
+                height="100px"
+                [src]="cartItem.productImage"
+              />
+            </ng-container>
+
+            <ng-template #defaultimg>
+              <img
+                class="img-fluid"
+                width="100px"
+                height="100px"
+                src="images/defaultgrocery.png"
+              />
+            </ng-template>
+          </div>
+          <div class="col">
+            <div class="row text-muted">{{ cartItem.productName }}</div>
+            <div class="row">{{ cartItem.category }}</div>
+          </div>
+          <div class="col row gap-2">
+            <span
+              class="decre border rounded-5 col-3 d-flex justify-content-center align-items-center"
+              (click)="onClickDecrement(cartItem)"
+              >-</span
+            >
+            <a
+              class="border col-4 d-flex justify-content-center align-items-center"
+              >{{ cartItem.quntity }}</a
+            >
+            <span
+              class="decre border rounded-5 col-3 d-flex justify-content-center align-items-center"
+              (click)="onClickIncrement(cartItem)"
+              >+</span
+            >
+          </div>
+          <div class="col">
+            ₹ {{ cartItem.sellingPrice * cartItem.quntity }} &nbsp;&nbsp;
+            <span
+              class="close"
+              style="cursor: pointer"
+              (click)="onClickRemoveFromCart(cartItem.cartDetailsId)"
+              ><strong>&#10005;</strong></span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="back-to-shop" routerLink="/org/Home" style="cursor: pointer">
+        <a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span>
+      </div>
+    </div>
+    <div class="col-md-4 summary">
+      <div>
+        <h5><b>Summary</b></h5>
+      </div>
+      <hr />
+      <div class="row">
+        <!-- <div class="col" style="padding-left: 0">
+          {{ cartItemsList?.length }} items
+        </div>
+        <div class="col text-right">₹ {{ getSubTotal() }}</div> -->
+      </div>
+      <form>
+        <h6>Delivery Address</h6>
+        <p> {{ loggedUser?.address }} {{ loggedUser?.stateName }}
+            {{ loggedUser?.countryName }} {{ loggedUser?.zipCode }}</p>
+        <div>
+          <div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Card Number</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="0000 0000 0000 0000"
+              />
+            </div>
+            <div class="row">
+              <div class="col-7">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Expiry Date</label
+                >
+                <input
+                  type="text"
+                  id="expiryDate"
+                  name="expiryDate"
+                  [(ngModel)]="expiryDate"
+                  placeholder="MM/YY"
+                  (input)="formatExpiryDate($event)"
+                  [pattern]="'^(0[1-9]|1[0-2])\/([0-9]{2})$'"
+                  required
+                  maxlength="5"
+                />
+              </div>
+              <div class="col-4">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >CVV</label
+                >
+                <input
+                  type="number"
+                  id="expiryDate"
+                  name="expiryDate"
+                  placeholder="CVV"
+                  maxlength="3"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div
+        class="row"
+        style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0"
+      >
+        <div class="col"><strong>SubTotal :-</strong></div>
+        <div class="col text-right">
+          <strong>₹ {{ getSubTotal() }}</strong>
+        </div>
+      </div>
+      <button class="btn">Pay</button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
   <div>
     <div class="card py-4 px-5 row gap-4">
-      <!-- <div class="card-body">This is some text within a card body.</div> -->
+    
       <div class="card" *ngFor="let cartItem of cartItemsList">
         <div class="card-body row">
           <div class="col-4 d-flex justify-content-center">
-            <div style="border: 1px solid black">
+            <div style="border: 1px solid black" class="rounded-2">
               <ng-container *ngIf="cartItem.productImage; else defaultimg">
                 <img
                   [src]="cartItem.productImage"
@@ -60,4 +208,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

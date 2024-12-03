@@ -18,3 +18,11 @@ export interface CartITemsWithDetails {
   brand: string;
   productCode: string;
 }
+
+// this is used for increment and Decrement CArt Quntity
+export interface IncrementDecrementCart {
+  userId: number;
+  productId: number;
+  quntity: number;
+  previousQuntity: number;
+}

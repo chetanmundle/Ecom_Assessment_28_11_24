@@ -8,6 +8,7 @@ import { authGuard } from './core/Guards/auth.guard';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 import { CartComponent } from './pages/org/Customer/cart/cart.component';
+import { ProfileComponent } from './pages/org/profile/profile.component';
 
 export const routes: Routes = [
   {
@@ -41,6 +42,13 @@ export const routes: Routes = [
         path: 'Home',
         component: HomeComponent,
         title: 'Home Page',
+        canActivate: [authGuard],
+        data: { roles: ['Admin', 'Customer'] },
+      },
+      {
+        path: 'Profile',
+        component: ProfileComponent,
+        title: 'Profile Page',
         canActivate: [authGuard],
         data: { roles: ['Admin', 'Customer'] },
       },

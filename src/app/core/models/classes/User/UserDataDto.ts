@@ -10,4 +10,6 @@ export class UserDataDto {
   address: string = '';
   zipCode: number = 0;
   profileImage: string = '';
+  countryName: string = '';
+  stateName: string = '';
 }
