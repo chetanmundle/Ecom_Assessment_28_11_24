@@ -245,6 +245,22 @@
   },
   {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/User/ChangePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changePasswordDto",
+        "Type": "App.Core.Models.Users.ChangePasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "api/User/CreateUser",
     "HttpMethod": "POST",

@@ -2,6 +2,7 @@
 using App.Core.Interface;
 using App.Core.Models.Users;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -41,7 +42,7 @@ namespace Ecom_Assessment_Backend.Controllers
             return Ok(result);
         }
 
-        // Api for Change Password
+        // Api for Forget Password
         [HttpPost("[action]")]
         public async Task<IActionResult> ForgetPassword(ForgetPasswordDto forgetPasswordDto)
         {
@@ -54,6 +55,15 @@ namespace Ecom_Assessment_Backend.Controllers
         public async Task<IActionResult> GetUserByUserName(string userName)
         {
             var result = await _userRepository.GetUserByUserNameAsync(userName);
+            return Ok(result);
+        }
+
+        //Change Password APi
+        [HttpPost("[action]")]
+        [Authorize(Roles = "Admin,Customer")]
+        public async Task<IActionResult> ChangePassword(ChangePasswordDto changePasswordDto)
+        {
+            var result = await _mediator.Send(new ChangePasswordCommand { ChangePassword =  changePasswordDto });
             return Ok(result);
         }
 
