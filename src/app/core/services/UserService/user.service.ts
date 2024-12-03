@@ -10,6 +10,7 @@ import { LoginUserValidateOtpDto } from '../../models/interface/User/LoginUserVa
 import { ForgetPasswordDto } from '../../models/interface/User/ForgetPasswordDto';
 import { jwtDecode } from 'jwt-decode';
 import { UserDataDto } from '../../models/classes/User/UserDataDto';
+import { ChangePasswordDto } from '../../models/interface/User/ChangePasswordDto.model';
 
 @Injectable({
   providedIn: 'root',
@@ -98,5 +99,10 @@ export class UserService {
       `${this.Url}/ForgetPassword`,
       payload
     );
+  }
+
+  //Change Password
+  ChangePassword$(payload: ChangePasswordDto) : Observable<AppResponse<null>>{
+    return this.http.post<AppResponse<null>>(`${this.Url}/ChangePassword`,payload)
   }
 }

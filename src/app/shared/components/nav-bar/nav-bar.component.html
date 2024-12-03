@@ -108,14 +108,46 @@
 <!-- Modal HTML -->
 <div class="modal" *ngIf="isModalOpen" (click)="closeModal()">
   <div class="modal-content" (click)="$event.stopPropagation()">
-    <div class="close">
-      <span (click)="closeModal()">&times;</span>
+    <div class="d-flex justify-content-end">
+      <span (click)="closeModal()" style="font-size: 25px; cursor: pointer"
+        >&times;</span
+      >
+    </div>
+    <div>
+      <div class="d-flex justify-content-center">
+        <img
+          *ngIf="loggedUser?.profileImage; else defaultImage"
+          [src]="loggedUser?.profileImage"
+          alt="images/profile.png"
+          style="width: 80px; height: 80px; cursor: pointer"
+          class="rounded-circle img-border"
+          routerLink="/org/Profile"
+          (click)="closeModal()"
+        />
+      </div>
+
+      <ng-template #defaultImage>
+        <img
+          src="images/profile.png"
+          alt="Default profile"
+          style="width: 40px; height: 40px; cursor: pointer"
+          class="rounded-circle img-border"
+          (click)="closeModal()"
+        />
+      </ng-template>
     </div>
     <div class="row text-center">
       <h5>{{ loggedUser?.firstName }} {{ loggedUser?.lastName }}</h5>
       <p>UserName : {{ loggedUser?.userName }}</p>
       <p>Email : {{ loggedUser?.email }}</p>
-      <div>
+      <div class="d-flex gap-2 justify-content-evenly">
+        <button
+          class="btn btn-primary"
+          routerLink="/org/Profile"
+          (click)="closeModal()"
+        >
+          Profile
+        </button>
         <button class="btn btn-danger" (click)="onClickLogOut()">Logout</button>
       </div>
     </div>
