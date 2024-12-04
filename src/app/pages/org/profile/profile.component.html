@@ -35,11 +35,7 @@
                   {{ loggedUser?.userName }}
                 </p>
                 <div>
-                  <button
-                    class="btn btn-primary col-7"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
+                  <button class="btn btn-primary col-7" (click)="openModal()">
                     Change Password
                   </button>
                   &nbsp;
@@ -122,12 +118,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Change Password</h1>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
       </div>
       <div class="modal-body">
         <div>
@@ -158,10 +149,15 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">
           Close
         </button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onClickChangePass()">
+        <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onClickChangePass()"> -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="onClickChangePass()"
+        >
           Change Password
         </button>
       </div>

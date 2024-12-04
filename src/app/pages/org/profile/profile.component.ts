@@ -1,6 +1,7 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { UserDataDto } from '../../../core/models/classes/User/UserDataDto';
 import { Subscription } from 'rxjs';
+import { Modal } from 'bootstrap'; // Import Bootstrap Modal
 import { UserService } from '../../../core/services/UserService/user.service';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +18,8 @@ import { AppResponse } from '../../../core/models/interface/AppResponse';
 })
 export class ProfileComponent implements OnInit, OnDestroy {
   loggedUser?: UserDataDto;
+
+  private modalInstance: Modal | null = null; // Hold the modal instance
 
   Password: string = '';
   ConfirmPassword: string = '';
@@ -37,14 +40,14 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.subscriptions.add(sub);
   }
   ngOnDestroy(): void {
+    this.modalInstance = null;
     this.subscriptions.unsubscribe();
   }
 
   onClickChangePass() {
-  
     if (this.Password === this.ConfirmPassword) {
-      if(this.Password.length < 8){
-        this.tostR.showWarning("Password Must be at least 8 characters");
+      if (this.Password.length < 8) {
+        this.tostR.showWarning('Password Must be at least 8 characters');
         return;
       }
       if (this.loggedUser) {
@@ -57,6 +60,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
         const sub = this.userService.ChangePassword$(payload).subscribe({
           next: (res: AppResponse<null>) => {
             if (res.isSuccess) {
+              this.closeModal();
               this.tostR.showSuccess('Password changed successfully');
             } else {
               this.tostR.showError(res.message);
@@ -71,6 +75,25 @@ export class ProfileComponent implements OnInit, OnDestroy {
       }
     } else {
       this.tostR.showWarning('Passwords do not match');
+    }
+  }
+
+  // Function to open the modal
+  openModal() {
+    const modalElement = document.getElementById('exampleModal');
+    if (modalElement) {
+      this.modalInstance = new Modal(modalElement); // Initialize the modal
+      this.modalInstance.show(); // Show the modal
+    }
+  }
+
+  // Function to close the modal
+  closeModal() {
+    if (this.modalInstance) {
+      this.Password = '';
+      this.ConfirmPassword = '';
+      this.modalInstance.hide(); // Hide the modal
+      this.modalInstance = null; // Reset the modal instance
     }
   }
 }
