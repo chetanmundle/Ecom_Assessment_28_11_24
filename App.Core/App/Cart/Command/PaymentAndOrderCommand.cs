@@ -65,6 +65,9 @@ namespace App.Core.App.Cart.Command
                                              ProductId = cartDetail.ProductId,
                                          }).ToListAsync(cancellationToken: cancellationToken);
 
+
+            if(!cartDetailsList.Any())
+                return AppResponse.Fail<SalesMasterDto>(null, $"No Item in Cart", HttpStatusCodes.NotFound);
             //var cartProducntList = new List<Domain.Entities.Product>();
             float subTotal = 0;
             foreach (var item in cartDetailsList)
