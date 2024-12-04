@@ -28,6 +28,7 @@ export class LoginComponent implements OnDestroy {
   isLoader: boolean = false;
   loginForm: FormGroup;
   isOtpBoxOpen: boolean = false;
+  isSubmitClick: boolean = false;
   private subscriptions: Subscription = new Subscription();
 
   private userService = inject(UserService);
@@ -44,7 +45,12 @@ export class LoginComponent implements OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
+  // fuction will call when form is submitted
   onClickLogIn() {
+    this.isSubmitClick = true;
+    if (this.loginForm.invalid) {
+      return;// form is invalid
+    }
     this.isLoader = true;
     const payload: LoginUserDto = {
       email: this.loginForm.get('email')?.value,

@@ -36,6 +36,8 @@ export class EditProductModelComponent implements OnInit, OnDestroy {
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter<boolean>();
   selectedFile: File | null = null;
 
+  isSubmitClick: boolean = false;
+
   productForm: FormGroup;
   subscriptions: Subscription = new Subscription();
 
@@ -83,7 +85,13 @@ export class EditProductModelComponent implements OnInit, OnDestroy {
     this.selectedFile = event.target.files[0];
   }
 
+  //this fuction will call when form is submitted
   onClickUpdateProduct() {
+    if (this.productForm.invalid) {
+      this.isSubmitClick = true;
+      return;
+    }
+
     this.isLoader = true;
 
     if (this.productForm.invalid) {

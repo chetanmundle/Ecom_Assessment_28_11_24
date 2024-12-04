@@ -13,22 +13,24 @@ import { AppResponse } from '../../../../core/models/interface/AppResponse';
 import { CommonModule } from '@angular/common';
 import { MyToastServiceService } from '../../../../core/services/MyToastService/my-toast-service.service';
 import { Router, RouterLink } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
 export class CartComponent implements OnInit, OnDestroy {
   cartItemsList?: CartITemsWithDetails[];
   loggedUser?: UserDataDto;
-
-  cardNumber: string = '';
-  expiryDate: string = '';
-  cvv: string = '';
+  cardDetailsForm: FormGroup;
 
   isLoader: boolean = false;
 
@@ -39,7 +41,13 @@ export class CartComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription = new Subscription();
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {
+    this.cardDetailsForm = this.formBuilder.group({
+      cardNumber: [''],
+      expiryDate: [''],
+      cvv: [''],
+    });
+  }
 
   ngOnInit(): void {
     // subscribe for which user is currently logged in
@@ -97,7 +105,6 @@ export class CartComponent implements OnInit, OnDestroy {
         previousQuntity: cartItem.quntity,
         quntity: 1,
       };
-      console.log('Pauy : ', payload);
 
       const sub = this.cartService.DecrementCartQuntity$(payload).subscribe({
         next: (res: AppResponse<null>) => {
@@ -168,7 +175,31 @@ export class CartComponent implements OnInit, OnDestroy {
     if (!this.loggedUser) {
       return;
     }
-    const [year, month] = this.expiryDate.split('-');
+
+    if(this.cartItemsList?.length === 0) {
+      this.tostR.showWarning('Your cart is empty');
+      return;
+    }
+    if (
+      this.cardDetailsForm.get('cardNumber')?.value.toString().length !== 16
+    ) {
+      this.tostR.showWarning('CartNumber Must be 16 Number');
+      return;
+    }
+
+    if (!this.cardDetailsForm.get('expiryDate')?.value.length) {
+      this.tostR.showWarning('Expiry Date is Required');
+      return;
+    }
+
+    if (this.cardDetailsForm.get('cvv')?.value.toString().length != 3) {
+      this.tostR.showWarning('CVV Must be 3 Number');
+      return;
+    }
+
+    const [year, month] = this.cardDetailsForm
+      .get('expiryDate')
+      ?.value.split('-');
     const formatedExpiryDate = new Date(
       Number(year),
       Number(month) - 1,
@@ -184,30 +215,15 @@ export class CartComponent implements OnInit, OnDestroy {
     console.log(isoString);
 
     const payload: PaymentAndOrderDto = {
-      cardNumber: this.cardNumber.toString(),
+      cardNumber: this.cardDetailsForm.get('cardNumber')?.value.toString(),
       userId: this.loggedUser?.userId,
-      cvv: Number(this.cvv),
+      cvv: Number(this.cardDetailsForm.get('cvv')?.value),
       expiryDate: isoString,
       address: this.loggedUser.address,
       stateName: this.loggedUser.stateName,
       countryName: this.loggedUser.countryName,
       zipCode: this.loggedUser.zipCode,
     };
-
-    if (payload.cardNumber.length !== 16) {
-      this.tostR.showWarning('CartNumber Must be 16 Number');
-      return;
-    }
-
-    if (!payload.expiryDate) {
-      this.tostR.showWarning('Expiry Date is Required');
-      return;
-    }
-
-    if (payload.cvv.toString().length !== 3) {
-      this.tostR.showWarning('CVV Must be 3 Number');
-      return;
-    }
 
     this.isLoader = true;
     console.log('Card : ', payload);
@@ -217,6 +233,7 @@ export class CartComponent implements OnInit, OnDestroy {
         if (res.isSuccess) {
           this.isLoader = false;
           this.tostR.showSuccess(res.message);
+          this.cartService.ResetCart();
           this.router.navigate(['org/Customer/Invoice', res.data.id]);
         } else {
           this.isLoader = false;

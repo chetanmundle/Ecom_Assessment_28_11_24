@@ -41,7 +41,12 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   onClickChangePass() {
+  
     if (this.Password === this.ConfirmPassword) {
+      if(this.Password.length < 8){
+        this.tostR.showWarning("Password Must be at least 8 characters");
+        return;
+      }
       if (this.loggedUser) {
         const payload: ChangePasswordDto = {
           userName: this.loggedUser.userName,

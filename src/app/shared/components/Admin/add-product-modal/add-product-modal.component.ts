@@ -35,6 +35,7 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
   subscriptions: Subscription = new Subscription();
   selectedFile: File | null = null;
   isLoader: boolean = false;
+  isSubmitClick: boolean = false;
 
   private productService = inject(ProductService);
   private imageService = inject(ImageService);
@@ -68,6 +69,11 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
 
   // fuction for create new Product
   onClickCreateProduct() {
+    if (this.productForm.invalid) {
+      this.isSubmitClick = true;
+      this.tostR.showWarning('Please fill all the required fields');
+      return;
+    }
     this.isLoader = true;
     if (this.selectedFile) {
       const sub = this.imageService.uploadImage$(this.selectedFile).subscribe({
@@ -93,49 +99,48 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
     }
   }
 
+  //Fuction for save product
   saveProduct() {
     this.isLoader = true;
-    if (!this.productForm.invalid) {
-      const payload: CreateProductDto = {
-        productName: this.productForm.get('productName')?.value,
-        productImage: this.productForm.get('productImage')?.value,
-        category: this.productForm.get('category')?.value,
-        brand: this.productForm.get('brand')?.value,
-        sellingPrice: Number(this.productForm.get('sellingPrice')?.value),
-        purchasePrice: Number(this.productForm.get('purchasePrice')?.value),
-        purchaseDate: this.productForm.get('purchaseDate')?.value,
-        stock: Number(this.productForm.get('stock')?.value),
-        createdBy: this.userId || 0,
-      };
+    const payload: CreateProductDto = {
+      productName: this.productForm.get('productName')?.value,
+      productImage: this.productForm.get('productImage')?.value,
+      category: this.productForm.get('category')?.value,
+      brand: this.productForm.get('brand')?.value,
+      sellingPrice: Number(this.productForm.get('sellingPrice')?.value),
+      purchasePrice: Number(this.productForm.get('purchasePrice')?.value),
+      purchaseDate: this.productForm.get('purchaseDate')?.value,
+      stock: Number(this.productForm.get('stock')?.value),
+      createdBy: this.userId || 0,
+    };
 
-      if (payload.sellingPrice < payload.purchasePrice) {
-        this.tostR.showWarning(
-          'Selling Price should be greater than Purchase Price'
-        );
-        this.isLoader = false
-        return;
-      }
-
-      const sub = this.productService.CreateProduct$(payload).subscribe({
-        next: (res: AppResponse<null>) => {
-          if (res.isSuccess) {
-            this.isLoader = false;
-            this.onClickCloseBtn(true);
-            this.tostR.showSuccess('Product Created Successfully');
-          } else {
-            this.isLoader = false;
-            this.tostR.showError(res.message);
-          }
-        },
-        error: (err: Error) => {
-          this.isLoader = false;
-          this.tostR.showError(err.message);
-          console.log('eer', err);
-        },
-      });
-
-      this.subscriptions.add(sub);
+    if (payload.sellingPrice < payload.purchasePrice) {
+      this.tostR.showWarning(
+        'Selling Price should be greater than Purchase Price'
+      );
+      this.isLoader = false;
+      return;
     }
+
+    const sub = this.productService.CreateProduct$(payload).subscribe({
+      next: (res: AppResponse<null>) => {
+        if (res.isSuccess) {
+          this.isLoader = false;
+          this.onClickCloseBtn(true);
+          this.tostR.showSuccess('Product Created Successfully');
+        } else {
+          this.isLoader = false;
+          this.tostR.showError(res.message);
+        }
+      },
+      error: (err: Error) => {
+        this.isLoader = false;
+        this.tostR.showError(err.message);
+        console.log('eer', err);
+      },
+    });
+
+    this.subscriptions.add(sub);
   }
 
   ngOnDestroy(): void {

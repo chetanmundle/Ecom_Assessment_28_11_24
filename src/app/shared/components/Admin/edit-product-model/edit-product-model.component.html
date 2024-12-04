@@ -23,6 +23,12 @@
               placeholder="Product Name"
               formControlName="productName"
             />
+            <div style="font-size: 13px">
+              @if ( isSubmitClick &&
+              productForm.controls['productName'].errors?.['required']) {
+              <div class="text-danger">*required</div>
+              }
+            </div>
           </div>
         </div>
         <div class="col-6">
@@ -37,6 +43,12 @@
               placeholder="Category"
               formControlName="category"
             />
+            <div style="font-size: 13px">
+              @if ( isSubmitClick &&
+              productForm.controls['category'].errors?.['required']) {
+              <div class="text-danger">*required</div>
+              }
+            </div>
           </div>
         </div>
       </div>
@@ -54,6 +66,12 @@
               placeholder="Brand"
               formControlName="brand"
             />
+            <div style="font-size: 13px">
+              @if ( isSubmitClick &&
+              productForm.controls['brand'].errors?.['required']) {
+              <div class="text-danger">*required</div>
+              }
+            </div>
           </div>
         </div>
         <div class="col-6">
@@ -68,6 +86,12 @@
               placeholder="SellingPrice"
               formControlName="sellingPrice"
             />
+            <div style="font-size: 13px">
+              @if ( isSubmitClick &&
+              productForm.controls['sellingPrice'].errors?.['required']) {
+              <div class="text-danger">*required</div>
+              }
+            </div>
           </div>
         </div>
       </div>
@@ -84,6 +108,12 @@
               placeholder="PurchasePrice"
               formControlName="purchasePrice"
             />
+            <div style="font-size: 13px">
+              @if ( isSubmitClick &&
+              productForm.controls['purchasePrice'].errors?.['required']) {
+              <div class="text-danger">*required</div>
+              }
+            </div>
           </div>
         </div>
         <div class="col-6">
@@ -97,6 +127,12 @@
               id="PurchaseDate"
               formControlName="purchaseDate"
             />
+            <div style="font-size: 13px">
+              @if ( isSubmitClick &&
+              productForm.controls['purchaseDate'].errors?.['required']) {
+              <div class="text-danger">*required</div>
+              }
+            </div>
           </div>
         </div>
       </div>
@@ -113,6 +149,12 @@
               placeholder="Stock"
               formControlName="stock"
             />
+            <div style="font-size: 13px">
+              @if ( isSubmitClick &&
+              productForm.controls['stock'].errors?.['required']) {
+              <div class="text-danger">*required</div>
+              }
+            </div>
           </div>
         </div>
         <div class="col-6">

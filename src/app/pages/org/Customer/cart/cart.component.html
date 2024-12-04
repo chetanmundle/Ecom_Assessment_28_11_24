@@ -13,9 +13,15 @@
       </div>
 
       <div class="text-center" *ngIf="cartItemsList?.length == 0">
-        <h4 >There is no product in your cart</h4>
+        <h4>There is no product in your cart</h4>
         <div>
-            <button class="btn btn-secondary mt-3" style="font-size: 15px;" routerLink="/org/Home">Add Items In cart</button>
+          <button
+            class="btn btn-secondary mt-3"
+            style="font-size: 15px"
+            routerLink="/org/Home"
+          >
+            Add Items In cart
+          </button>
         </div>
       </div>
       <div
@@ -89,7 +95,7 @@
         </div>
         <div class="col text-right">₹ {{ getSubTotal() }}</div> -->
       </div>
-      <form>
+      <form [formGroup]="cardDetailsForm">
         <h6>Delivery Address</h6>
         <p>
           {{ loggedUser?.address }} {{ loggedUser?.stateName }}
@@ -101,14 +107,16 @@
               <label for="exampleFormControlInput1" class="form-label"
                 >Card Number</label
               >
-              <input
-                type="number"
-                class="form-control"
-                name="email"
-                id="exampleFormControlInput1"
-                placeholder="0000 0000 0000 0000"
-                [(ngModel)]="cardNumber"
-              />
+              <div>
+                <input
+                  type="number"
+                  class=""
+                  name="email"
+                  id="exampleFormControlInput1"
+                  placeholder="0000 0000 0000 0000"
+                  formControlName="cardNumber"
+                />
+              </div>
             </div>
             <div class="row">
               <div class="col-7">
@@ -121,7 +129,7 @@
                   name="expiryDate"
                   required
                   maxlength="5"
-                  [(ngModel)]="expiryDate"
+                  formControlName="expiryDate"
                 />
               </div>
               <div class="col-4">
@@ -134,7 +142,7 @@
                   name="expiryDate"
                   placeholder="CVV"
                   maxlength="3"
-                  [(ngModel)]="cvv"
+                  formControlName="cvv"
                 />
               </div>
             </div>
