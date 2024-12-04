@@ -263,7 +263,7 @@
     "ContainingType": "Ecom_Assessment_Backend.Controllers.SalesController",
     "Method": "GetInvoice",
     "RelativePath": "api/Sales/GetInvoice/{invoId}",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
