@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 import { CartComponent } from './pages/org/Customer/cart/cart.component';
 import { ProfileComponent } from './pages/org/profile/profile.component';
+import { InvoiceComponent } from './pages/org/Customer/invoice/invoice.component';
 
 export const routes: Routes = [
   {
@@ -56,6 +57,13 @@ export const routes: Routes = [
         path: 'Customer/Cart',
         component: CartComponent,
         title: 'Cart Page',
+        canActivate: [authGuard],
+        data: { roles: ['Customer'] },
+      },
+      {
+        path: 'Customer/Invoice/:id',
+        component: InvoiceComponent,
+        title: 'Invoice Page',
         canActivate: [authGuard],
         data: { roles: ['Customer'] },
       },

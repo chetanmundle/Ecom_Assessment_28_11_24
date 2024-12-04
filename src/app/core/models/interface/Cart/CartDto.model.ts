@@ -26,3 +26,26 @@ export interface IncrementDecrementCart {
   quntity: number;
   previousQuntity: number;
 }
+
+export interface PaymentAndOrderDto {
+  userId: number;
+  cardNumber: string;
+  expiryDate: string;
+  cvv: number;
+  address: string;
+  stateName: string;
+  countryName: string;
+  zipCode: number;
+}
+
+export interface PaymentAndOrderResponseDto {
+  id: number;
+  invoiceId: string;
+  invoiceDate: string;
+  subTotal: number;
+  userId: number;
+  deliveryAddress: string;
+  deliveryZipCode: number;
+  deliveryState: string;
+  deliveryCountry: string;
+}

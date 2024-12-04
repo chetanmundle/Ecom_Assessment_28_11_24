@@ -84,8 +84,10 @@
       </div>
       <form>
         <h6>Delivery Address</h6>
-        <p> {{ loggedUser?.address }} {{ loggedUser?.stateName }}
-            {{ loggedUser?.countryName }} {{ loggedUser?.zipCode }}</p>
+        <p>
+          {{ loggedUser?.address }} {{ loggedUser?.stateName }}
+          {{ loggedUser?.countryName }} {{ loggedUser?.zipCode }}
+        </p>
         <div>
           <div>
             <div class="mb-3">
@@ -93,10 +95,12 @@
                 >Card Number</label
               >
               <input
-                type="email"
+                type="number"
                 class="form-control"
+                name="email"
                 id="exampleFormControlInput1"
                 placeholder="0000 0000 0000 0000"
+                [(ngModel)]="cardNumber"
               />
             </div>
             <div class="row">
@@ -105,15 +109,12 @@
                   >Expiry Date</label
                 >
                 <input
-                  type="text"
+                  type="month"
                   id="expiryDate"
                   name="expiryDate"
-                  [(ngModel)]="expiryDate"
-                  placeholder="MM/YY"
-                  (input)="formatExpiryDate($event)"
-                  [pattern]="'^(0[1-9]|1[0-2])\/([0-9]{2})$'"
                   required
                   maxlength="5"
+                  [(ngModel)]="expiryDate"
                 />
               </div>
               <div class="col-4">
@@ -126,6 +127,7 @@
                   name="expiryDate"
                   placeholder="CVV"
                   maxlength="3"
+                  [(ngModel)]="cvv"
                 />
               </div>
             </div>
@@ -141,10 +143,18 @@
           <strong>₹ {{ getSubTotal() }}</strong>
         </div>
       </div>
-      <button class="btn">Pay</button>
+      <button class="btn" (click)="onClickPayBtn()">Pay</button>
     </div>
   </div>
 </div>
+
+<!-- Loader -->
+@if (isLoader) {
+
+<div class="loader-backdrop">
+  <div class="loader"></div>
+</div>
+}
 
 <!-- <div class="container">
   <div>

@@ -79,6 +79,7 @@ export class OtpComponent implements OnDestroy {
           localStorage.setItem('accessToken', res.data.accessToken);
           this.userService.resetLoggedUser();
           this.cartService.ResetCart();
+
           this.router.navigate(['/org/Home']);
           this.tostr.showSuccess(res.message);
         } else {

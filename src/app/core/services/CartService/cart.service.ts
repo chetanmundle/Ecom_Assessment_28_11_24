@@ -8,6 +8,8 @@ import {
   AddToCartDto,
   CartITemsWithDetails,
   IncrementDecrementCart,
+  PaymentAndOrderDto,
+  PaymentAndOrderResponseDto,
 } from '../../models/interface/Cart/CartDto.model';
 
 @Injectable({
@@ -101,6 +103,16 @@ export class CartService {
   RemoveItemFromCart$(cartDetailsId: number): Observable<AppResponse<null>> {
     return this.http.delete<AppResponse<null>>(
       `${this.Url}/RemoveItemFromCart/${cartDetailsId}`
+    );
+  }
+
+  // Validate Card and Place order
+  PaymentAndOrder$(
+    payload: PaymentAndOrderDto
+  ): Observable<AppResponse<PaymentAndOrderResponseDto>> {
+    return this.http.post<AppResponse<PaymentAndOrderResponseDto>>(
+      `${this.Url}/PaymentAndPlaceOrder`,
+      payload
     );
   }
 }

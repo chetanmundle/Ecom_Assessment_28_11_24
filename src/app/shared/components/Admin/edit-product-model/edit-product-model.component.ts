@@ -65,7 +65,9 @@ export class EditProductModelComponent implements OnInit, OnDestroy {
     this.productForm
       .get('purchasePrice')
       ?.setValue(this.product?.purchasePrice);
-    this.productForm.get('purchaseDate')?.setValue(this.product?.purchaseDate);
+    this.productForm
+      .get('purchaseDate')
+      ?.setValue(this.product?.purchaseDate.toString().split('T')[0]);
     this.productForm.get('stock')?.setValue(this.product?.stock);
   }
   ngOnDestroy(): void {
