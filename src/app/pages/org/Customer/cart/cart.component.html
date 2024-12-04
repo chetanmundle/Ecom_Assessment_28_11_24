@@ -11,6 +11,13 @@
           </div>
         </div>
       </div>
+
+      <div class="text-center" *ngIf="cartItemsList?.length == 0">
+        <h4 >There is no product in your cart</h4>
+        <div>
+            <button class="btn btn-secondary mt-3" style="font-size: 15px;" routerLink="/org/Home">Add Items In cart</button>
+        </div>
+      </div>
       <div
         class="row border-top border-bottom"
         *ngFor="let cartItem of cartItemsList"
@@ -143,7 +150,7 @@
           <strong>₹ {{ getSubTotal() }}</strong>
         </div>
       </div>
-      <button class="btn" (click)="onClickPayBtn()">Pay</button>
+      <button class="btnPay btn" (click)="onClickPayBtn()">Pay</button>
     </div>
   </div>
 </div>

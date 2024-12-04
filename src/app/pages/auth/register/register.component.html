@@ -4,9 +4,8 @@
   </div>
   <form class="row g-3" [formGroup]="userForm">
     <div class="col-md-4">
-      <label for="validationDefault01" class="form-label">
+      <label for="validationDefault01 " class="form-label form-labelStart">
         First name
-        <span class="text-danger"> * </span>
       </label>
       <input
         type="text"
@@ -15,11 +14,19 @@
         formControlName="firstName"
         required
       />
+      <div style="font-size: 13px">
+        @if ( isSubmitClick &&
+        userForm.controls['firstName'].errors?.['required']) {
+        <div class="text-danger">*required</div>
+        }
+      </div>
     </div>
     <div class="col-md-4">
-      <label for="validationDefault02" class="form-label">
+      <label
+        for="validationDefault02"
+        class="form-label form-labelStart form-labelStart"
+      >
         Last name
-        <span class="text-danger"> * </span>
       </label>
       <input
         type="text"
@@ -28,12 +35,17 @@
         formControlName="lastName"
         required
       />
+      <div style="font-size: 13px">
+        @if ( isSubmitClick &&
+        userForm.controls['lastName'].errors?.['required']) {
+        <div class="text-danger">*required</div>
+        }
+      </div>
     </div>
 
     <div class="col-md-4">
-      <label for="validationDefaultUsername" class="form-label">
+      <label for="validationDefaultUsername" class="form-label form-labelStart">
         Email
-        <span class="text-danger"> * </span>
       </label>
       <div class="input-group">
         <span class="input-group-text" id="inputGroupPrepend2">{{ "@" }}</span>
@@ -46,12 +58,20 @@
           required
         />
       </div>
+      <div style="font-size: 13px">
+        @if ( isSubmitClick && userForm.controls['email'].errors?.['required'])
+        {
+        <div class="text-danger">*required</div>
+        }@else if (isSubmitClick &&
+        userForm.controls['email'].errors?.['email']) {
+        <div class="text-danger">* Email Format</div>
+        }
+      </div>
     </div>
 
     <div class="col-md-4">
-      <label for="validationDefault04" class="form-label">
+      <label for="validationDefault04" class="form-label form-labelStart">
         UserType
-        <span class="text-danger"> * </span>
       </label>
       <select
         class="form-select"
@@ -63,12 +83,17 @@
         <option value="1">Admin</option>
         <option value="2">Customer</option>
       </select>
+      <div style="font-size: 13px">
+        @if ( isSubmitClick &&
+        userForm.controls['userTypeId'].errors?.['required']) {
+        <div class="text-danger">*required</div>
+        }
+      </div>
     </div>
 
     <div class="col-md-4">
-      <label for="validationDefault02" class="form-label">
+      <label for="validationDefault02" class="form-label form-labelStart">
         Date Of Birth
-        <span class="text-danger"> * </span>
       </label>
       <input
         type="date"
@@ -79,12 +104,17 @@
         [max]="todaysDate()"
         required
       />
+      <div style="font-size: 13px">
+        @if ( isSubmitClick &&
+        userForm.controls['dateOfBirth'].errors?.['required']) {
+        <div class="text-danger">*required</div>
+        }
+      </div>
     </div>
 
     <div class="col-md-4">
-      <label for="validationDefault02" class="form-label">
+      <label for="validationDefault02" class="form-label form-labelStart">
         Mobile
-        <span class="text-danger"> * </span>
       </label>
       <input
         type="number"
@@ -94,12 +124,17 @@
         required
         formControlName="mobile"
       />
+      <div style="font-size: 13px">
+        @if ( isSubmitClick && userForm.controls['mobile'].errors?.['required'])
+        {
+        <div class="text-danger">*required</div>
+        }
+      </div>
     </div>
 
     <div class="col-md-4">
-      <label for="validationDefault03" class="form-label">
+      <label for="validationDefault03" class="form-label form-labelStart">
         Address
-        <span class="text-danger"> * </span>
       </label>
       <input
         type="text"
@@ -108,12 +143,17 @@
         required
         formControlName="address"
       />
+      <div style="font-size: 13px">
+        @if ( isSubmitClick &&
+        userForm.controls['address'].errors?.['required']) {
+        <div class="text-danger">*required</div>
+        }
+      </div>
     </div>
 
     <div class="col-md-4">
-      <label for="validationDefault04" class="form-label">
+      <label for="validationDefault04" class="form-label form-labelStart">
         Country
-        <span class="text-danger"> * </span>
       </label>
       <select
         class="form-select"
@@ -127,12 +167,17 @@
           {{ con.countryName }}
         </option>
       </select>
+      <div style="font-size: 13px">
+        @if ( isSubmitClick &&
+        userForm.controls['countryId'].errors?.['required']) {
+        <div class="text-danger">*required</div>
+        }
+      </div>
     </div>
 
     <div class="col-md-4">
-      <label for="validationDefault04" class="form-label">
+      <label for="validationDefault04" class="form-label form-labelStart">
         State
-        <span class="text-danger"> * </span>
       </label>
       <select
         class="form-select"
@@ -145,12 +190,17 @@
           {{ con.stateName }}
         </option>
       </select>
+      <div style="font-size: 13px">
+        @if ( isSubmitClick &&
+        userForm.controls['stateId'].errors?.['required']) {
+        <div class="text-danger">*required</div>
+        }
+      </div>
     </div>
 
     <div class="col-md-3">
-      <label for="validationDefault05" class="form-label">
+      <label for="validationDefault05" class="form-label form-labelStart">
         ZipCode
-        <span class="text-danger"> * </span>
       </label>
       <input
         type="text"
@@ -159,6 +209,12 @@
         required
         formControlName="zipCode"
       />
+      <div style="font-size: 13px">
+        @if ( isSubmitClick &&
+        userForm.controls['zipCode'].errors?.['required']) {
+        <div class="text-danger">*required</div>
+        }
+      </div>
     </div>
 
     <div class="col-md-5">
@@ -187,6 +243,13 @@
         <label class="form-check-label" for="invalidCheck2">
           Agree to terms and conditions
         </label>
+
+        <div style="font-size: 13px">
+          @if ( isSubmitClick &&
+          userForm.controls['isChecked'].errors?.['required']) {
+          <div class="text-danger">*required</div>
+          }
+        </div>
       </div>
     </div>
     <div class="col-12">
@@ -194,7 +257,6 @@
         class="btn btn-primary"
         type="submit"
         (click)="onClickRegitster()"
-        [disabled]="userForm.invalid"
       >
         Register
       </button>

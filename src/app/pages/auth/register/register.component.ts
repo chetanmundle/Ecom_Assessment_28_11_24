@@ -35,6 +35,7 @@ export class RegisterComponent implements OnDestroy {
   private subscriptions: Subscription = new Subscription();
   userForm: FormGroup;
   isLoader: boolean = false;
+  isSubmitClick: boolean = false;
 
   private countryStateService = inject(CountryStateService);
   private userService = inject(UserService);
@@ -57,7 +58,7 @@ export class RegisterComponent implements OnDestroy {
       profileImage: [''],
       stateId: ['', Validators.required],
       countryId: ['', Validators.required],
-      isChecked: [false, [Validators.requiredTrue]],
+      isChecked: [true, [Validators.requiredTrue]],
     });
     // subscribe for getting countries
     const sub = this.countryStateService.GetAllCountries$().subscribe({
@@ -121,6 +122,11 @@ export class RegisterComponent implements OnDestroy {
 
   // this fuction call whern user click on Register btn
   onClickRegitster() {
+    this.isSubmitClick = true;
+
+    if (this.userForm.invalid) {
+      return;
+    }
     this.isLoader = true;
     if (this.selectedFile) {
       const sub = this.imageService.uploadImage$(this.selectedFile).subscribe({
