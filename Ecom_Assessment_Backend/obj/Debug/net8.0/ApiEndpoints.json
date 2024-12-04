@@ -81,6 +81,22 @@
   },
   {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.CartController",
+    "Method": "PaymentAndPlaceOrder",
+    "RelativePath": "api/Cart/PaymentAndPlaceOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paymentAndOrderDto",
+        "Type": "App.Core.Models.Card.PaymentAndOrderDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.CartController",
     "Method": "RemoveItemFromCart",
     "RelativePath": "api/Cart/RemoveItemFromCart/{cartDetailId}",
     "HttpMethod": "DELETE",
@@ -238,6 +254,22 @@
       {
         "Name": "updateProductDto",
         "Type": "App.Core.Models.Product.UpdateProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.SalesController",
+    "Method": "GetInvoice",
+    "RelativePath": "api/Sales/GetInvoice/{invoId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

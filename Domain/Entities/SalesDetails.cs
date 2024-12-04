@@ -11,7 +11,7 @@ namespace Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SalesDetailsId { get; set; }
         [ForeignKey("SalesMaster")]
-        public string InvoiceId { get; set; }
+        public int InvoiceId { get; set; }
         public int ProductId { get; set; }
         public string ProductCode { get; set; }
         public int  SaleQuntity { get; set; }

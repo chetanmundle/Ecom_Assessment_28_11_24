@@ -1,6 +1,7 @@
 ﻿using App.Core.App.Cart.Command;
 using App.Core.Interface;
 using App.Core.Interfaces;
+using App.Core.Models.Card;
 using App.Core.Models.Cart;
 using Infrastructure.Repository;
 using MediatR;
@@ -78,6 +79,15 @@ namespace Ecom_Assessment_Backend.Controllers
         public async Task<IActionResult> RemoveItemFromCart(int cartDetailId)
         {
             var result = await _mediator.Send(new RemoveFromCartCommand { CartDetailsId = cartDetailId });
+            return Ok(result);
+        }
+
+        // Payment and Place Order
+        [HttpPost("[action]")]
+        [Authorize(Roles = "Customer")]
+        public async Task<IActionResult> PaymentAndPlaceOrder(PaymentAndOrderDto paymentAndOrderDto)
+        {
+            var result = await _mediator.Send(new PaymentAndOrderCommand { PaymentAndOrderDto = paymentAndOrderDto });
             return Ok(result);
         }
     }

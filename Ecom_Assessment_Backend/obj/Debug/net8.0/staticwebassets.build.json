@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g401EcBmOIHmnL/d9OAEb60UsSlrVA9eL7A/X/GFnHA=",
+  "Hash": "s/gNIwMGRUdc3kKfczi0H/SDXeB7mfd0NlJEdtwLDw8=",
   "Source": "Ecom_Assessment_Backend",
   "BasePath": "_content/Ecom_Assessment_Backend",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Ecom_Assessment_Backend\\wwwroot",
       "Source": "Ecom_Assessment_Backend",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\0e3af569-9222-4fc8-b119-7e875a1b7f33.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\0e3af569-9222-4fc8-b119-7e875a1b7f33.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/0e3af569-9222-4fc8-b119-7e875a1b7f33.png",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\0e3af569-9222-4fc8-b119-7e875a1b7f33.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\1c3b98f2-2ba5-43bb-9746-a305d048c8c4.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\1c3b98f2-2ba5-43bb-9746-a305d048c8c4.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/1c3b98f2-2ba5-43bb-9746-a305d048c8c4.png",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\1c3b98f2-2ba5-43bb-9746-a305d048c8c4.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\272fe8be-ee06-499a-8a91-bd30aed6f4bc.jpg",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\272fe8be-ee06-499a-8a91-bd30aed6f4bc.jpg",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/272fe8be-ee06-499a-8a91-bd30aed6f4bc.jpg",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\272fe8be-ee06-499a-8a91-bd30aed6f4bc.jpg"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\27a6c123-f5fa-47d5-8617-6eb5baa176b9.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\27a6c123-f5fa-47d5-8617-6eb5baa176b9.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/27a6c123-f5fa-47d5-8617-6eb5baa176b9.png",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\27a6c123-f5fa-47d5-8617-6eb5baa176b9.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\322428a7-7504-4b1a-aff8-a88e4838364c.jpg",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\322428a7-7504-4b1a-aff8-a88e4838364c.jpg",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/322428a7-7504-4b1a-aff8-a88e4838364c.jpg",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\322428a7-7504-4b1a-aff8-a88e4838364c.jpg"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\33d0575c-a3e6-4150-ac77-f1beb2e7e0e7.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\33d0575c-a3e6-4150-ac77-f1beb2e7e0e7.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/33d0575c-a3e6-4150-ac77-f1beb2e7e0e7.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\33d0575c-a3e6-4150-ac77-f1beb2e7e0e7.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\33d2b505-d7be-4bf9-a576-a4f03d56e5cc.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\33d2b505-d7be-4bf9-a576-a4f03d56e5cc.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/33d2b505-d7be-4bf9-a576-a4f03d56e5cc.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\33d2b505-d7be-4bf9-a576-a4f03d56e5cc.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\371bfe80-9871-45b3-b73e-ec304363c428.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\371bfe80-9871-45b3-b73e-ec304363c428.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/371bfe80-9871-45b3-b73e-ec304363c428.png",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\371bfe80-9871-45b3-b73e-ec304363c428.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\4231c235-682a-45b0-a304-dc87fb716c15.jpg",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\4231c235-682a-45b0-a304-dc87fb716c15.jpg",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/4231c235-682a-45b0-a304-dc87fb716c15.jpg",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\4231c235-682a-45b0-a304-dc87fb716c15.jpg"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\456d49a8-b8d4-4098-a7c0-912a2f8ef6fe.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\456d49a8-b8d4-4098-a7c0-912a2f8ef6fe.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/456d49a8-b8d4-4098-a7c0-912a2f8ef6fe.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\456d49a8-b8d4-4098-a7c0-912a2f8ef6fe.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\473f857b-6d58-4646-96b8-9c7626bd5123.jpg",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\473f857b-6d58-4646-96b8-9c7626bd5123.jpg",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/473f857b-6d58-4646-96b8-9c7626bd5123.jpg",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\473f857b-6d58-4646-96b8-9c7626bd5123.jpg"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\4bf6a25a-6799-42e7-8a1c-259c2d4a3c54.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\4bf6a25a-6799-42e7-8a1c-259c2d4a3c54.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/4bf6a25a-6799-42e7-8a1c-259c2d4a3c54.png",
       "AssetKind": "All",
@@ -245,10 +245,29 @@
       "OriginalItemSpec": "wwwroot\\Images\\4bf6a25a-6799-42e7-8a1c-259c2d4a3c54.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\533ae571-609e-42cd-abf2-7852a9cb0354.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\4dfccecd-fef1-49d7-9f99-e4c66231ffc9.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "BasePath": "_content/Ecom_Assessment_Backend",
+      "RelativePath": "Images/4dfccecd-fef1-49d7-9f99-e4c66231ffc9.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\4dfccecd-fef1-49d7-9f99-e4c66231ffc9.png"
+    },
+    {
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\533ae571-609e-42cd-abf2-7852a9cb0354.png",
+      "SourceId": "Ecom_Assessment_Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/533ae571-609e-42cd-abf2-7852a9cb0354.png",
       "AssetKind": "All",
@@ -264,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\533ae571-609e-42cd-abf2-7852a9cb0354.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\5b6fab44-cf9f-4508-842f-00f2988fce6c.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\5b6fab44-cf9f-4508-842f-00f2988fce6c.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/5b6fab44-cf9f-4508-842f-00f2988fce6c.png",
       "AssetKind": "All",
@@ -283,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\5b6fab44-cf9f-4508-842f-00f2988fce6c.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\5baf8ccc-3377-4854-9c6d-637b671426ad.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\5baf8ccc-3377-4854-9c6d-637b671426ad.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/5baf8ccc-3377-4854-9c6d-637b671426ad.png",
       "AssetKind": "All",
@@ -302,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\5baf8ccc-3377-4854-9c6d-637b671426ad.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\729c1a4b-1520-4d93-8884-d5c917ac160a.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\729c1a4b-1520-4d93-8884-d5c917ac160a.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/729c1a4b-1520-4d93-8884-d5c917ac160a.png",
       "AssetKind": "All",
@@ -321,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\729c1a4b-1520-4d93-8884-d5c917ac160a.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\772d9f28-8aa5-46e1-a644-a4db985be0e0.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\772d9f28-8aa5-46e1-a644-a4db985be0e0.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/772d9f28-8aa5-46e1-a644-a4db985be0e0.png",
       "AssetKind": "All",
@@ -340,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\772d9f28-8aa5-46e1-a644-a4db985be0e0.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\832ed257-8821-4037-b438-4f74f6f6fa5c.jpg",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\832ed257-8821-4037-b438-4f74f6f6fa5c.jpg",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/832ed257-8821-4037-b438-4f74f6f6fa5c.jpg",
       "AssetKind": "All",
@@ -359,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\832ed257-8821-4037-b438-4f74f6f6fa5c.jpg"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\878e9fd2-026d-4520-8e04-f7b557d7258a.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\878e9fd2-026d-4520-8e04-f7b557d7258a.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/878e9fd2-026d-4520-8e04-f7b557d7258a.png",
       "AssetKind": "All",
@@ -378,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\878e9fd2-026d-4520-8e04-f7b557d7258a.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\93bc8f73-6b32-4db1-ab71-0d299654b738.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\93bc8f73-6b32-4db1-ab71-0d299654b738.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/93bc8f73-6b32-4db1-ab71-0d299654b738.png",
       "AssetKind": "All",
@@ -397,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\93bc8f73-6b32-4db1-ab71-0d299654b738.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\9a4e8cda-5180-48f2-9ae2-5f49ad75fb4e.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\9a4e8cda-5180-48f2-9ae2-5f49ad75fb4e.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/9a4e8cda-5180-48f2-9ae2-5f49ad75fb4e.png",
       "AssetKind": "All",
@@ -416,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\9a4e8cda-5180-48f2-9ae2-5f49ad75fb4e.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\a205b292-3546-4ac7-aab8-b00f30bed723.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\a205b292-3546-4ac7-aab8-b00f30bed723.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/a205b292-3546-4ac7-aab8-b00f30bed723.png",
       "AssetKind": "All",
@@ -435,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\a205b292-3546-4ac7-aab8-b00f30bed723.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\b45f40b9-5548-4a4a-855d-5b6f56657b5c.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\b45f40b9-5548-4a4a-855d-5b6f56657b5c.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/b45f40b9-5548-4a4a-855d-5b6f56657b5c.png",
       "AssetKind": "All",
@@ -454,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\b45f40b9-5548-4a4a-855d-5b6f56657b5c.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\ba4107bd-63a4-465d-af71-af639a7ae490.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\ba4107bd-63a4-465d-af71-af639a7ae490.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/ba4107bd-63a4-465d-af71-af639a7ae490.png",
       "AssetKind": "All",
@@ -473,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\ba4107bd-63a4-465d-af71-af639a7ae490.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\ba96740a-82b5-45b1-a11b-2cffac095c31.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\ba96740a-82b5-45b1-a11b-2cffac095c31.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/ba96740a-82b5-45b1-a11b-2cffac095c31.png",
       "AssetKind": "All",
@@ -492,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\ba96740a-82b5-45b1-a11b-2cffac095c31.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\c2fa61b6-56db-4e74-baaf-0781dd6ef87d.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\c2fa61b6-56db-4e74-baaf-0781dd6ef87d.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/c2fa61b6-56db-4e74-baaf-0781dd6ef87d.png",
       "AssetKind": "All",
@@ -511,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\c2fa61b6-56db-4e74-baaf-0781dd6ef87d.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\d88b1b64-6832-493d-88c8-13f4edf4fc9c.jpg",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\d88b1b64-6832-493d-88c8-13f4edf4fc9c.jpg",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/d88b1b64-6832-493d-88c8-13f4edf4fc9c.jpg",
       "AssetKind": "All",
@@ -530,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\d88b1b64-6832-493d-88c8-13f4edf4fc9c.jpg"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\dbe5e9b1-3b11-45e5-a593-5bd72aa0fa60.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\dbe5e9b1-3b11-45e5-a593-5bd72aa0fa60.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/dbe5e9b1-3b11-45e5-a593-5bd72aa0fa60.png",
       "AssetKind": "All",
@@ -549,10 +568,29 @@
       "OriginalItemSpec": "wwwroot\\Images\\dbe5e9b1-3b11-45e5-a593-5bd72aa0fa60.png"
     },
     {
-      "Identity": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\e9b84646-7251-49b5-a781-76812eab24c4.png",
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\deff6594-73e1-4d3b-b1ed-151dd7acb27d.png",
       "SourceId": "Ecom_Assessment_Backend",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "BasePath": "_content/Ecom_Assessment_Backend",
+      "RelativePath": "Images/deff6594-73e1-4d3b-b1ed-151dd7acb27d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\deff6594-73e1-4d3b-b1ed-151dd7acb27d.png"
+    },
+    {
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\e9b84646-7251-49b5-a781-76812eab24c4.png",
+      "SourceId": "Ecom_Assessment_Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
       "BasePath": "_content/Ecom_Assessment_Backend",
       "RelativePath": "Images/e9b84646-7251-49b5-a781-76812eab24c4.png",
       "AssetKind": "All",

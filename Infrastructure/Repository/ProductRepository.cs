@@ -51,7 +51,7 @@ namespace Infrastructure.Repository
         //Get All Products
         public async Task<AppResponse<IEnumerable<ProductDto>>> GetAllProduct()
         {
-            var query = @"Select * from Products where IsDeleted = 0";
+            var query = @"Select * from Products where IsDeleted = 0 and Stock > 0";
             var conn = _appDbContext.GetConnection();
 
             var productList = await conn.QueryAsync(query);

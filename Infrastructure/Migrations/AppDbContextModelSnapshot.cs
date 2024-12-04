@@ -185,8 +185,8 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SalesDetailsId"));
 
-                    b.Property<string>("InvoiceId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("InvoiceId")
+                        .HasColumnType("int");
 
                     b.Property<string>("ProductCode")
                         .HasColumnType("nvarchar(max)");
@@ -209,8 +209,11 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.SalesMaster", b =>
                 {
-                    b.Property<string>("InvoiceId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("DeliveryAddress")
                         .HasColumnType("nvarchar(max)");
@@ -227,10 +230,16 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime?>("InvoiceDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("InvoiceId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<float>("SubTotal")
                         .HasColumnType("real");
 
-                    b.HasKey("InvoiceId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.ToTable("SalesMaster");
                 });
@@ -343,7 +352,9 @@ namespace Infrastructure.Migrations
                 {
                     b.HasOne("Domain.Entities.SalesMaster", "SalesMaster")
                         .WithMany()
-                        .HasForeignKey("InvoiceId");
+                        .HasForeignKey("InvoiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("SalesMaster");
                 });
