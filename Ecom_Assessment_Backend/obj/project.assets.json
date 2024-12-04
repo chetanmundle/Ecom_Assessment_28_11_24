@@ -4937,19 +4937,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chetanmundle\\.nuget\\packages\\": {}
+    "C:\\Users\\cheta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend.csproj",
+      "projectUniqueName": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend.csproj",
       "projectName": "Ecom_Assessment_Backend",
-      "projectPath": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend.csproj",
-      "packagesPath": "C:\\Users\\chetanmundle\\.nuget\\packages\\",
-      "outputPath": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\obj\\",
+      "projectPath": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend.csproj",
+      "packagesPath": "C:\\Users\\cheta\\.nuget\\packages\\",
+      "outputPath": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\chetanmundle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cheta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4964,11 +4964,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\App.Core\\App.Core.csproj": {
-              "projectPath": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\App.Core\\App.Core.csproj"
+            "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\App.Core\\App.Core.csproj": {
+              "projectPath": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\App.Core\\App.Core.csproj"
             },
-            "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Infrastructure\\Infrastructure.csproj"
+            "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "D:\\Visual Studio\\Assessment_smartData\\Ecom_Assessment_PawanSir\\Ecom_Assessment_Backend\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -5026,7 +5026,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
