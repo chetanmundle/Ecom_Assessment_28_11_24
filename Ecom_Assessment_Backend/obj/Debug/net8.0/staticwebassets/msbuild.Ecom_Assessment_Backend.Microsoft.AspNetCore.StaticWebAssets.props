@@ -1,11 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\0e3af569-9222-4fc8-b119-7e875a1b7f33.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\02f76abb-9514-4da3-9883-b3ecb4d385f1.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/0e3af569-9222-4fc8-b119-7e875a1b7f33.png</RelativePath>
+      <RelativePath>Images/02f76abb-9514-4da3-9883-b3ecb4d385f1.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,14 +14,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\0e3af569-9222-4fc8-b119-7e875a1b7f33.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\02f76abb-9514-4da3-9883-b3ecb4d385f1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\1c3b98f2-2ba5-43bb-9746-a305d048c8c4.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\285b0bd9-5f9d-4abb-ae34-ae9255b52dc9.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/1c3b98f2-2ba5-43bb-9746-a305d048c8c4.png</RelativePath>
+      <RelativePath>Images/285b0bd9-5f9d-4abb-ae34-ae9255b52dc9.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -30,14 +30,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\1c3b98f2-2ba5-43bb-9746-a305d048c8c4.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\285b0bd9-5f9d-4abb-ae34-ae9255b52dc9.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\272fe8be-ee06-499a-8a91-bd30aed6f4bc.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\2abaf377-8c93-4615-879f-70d83f9a2e66.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/272fe8be-ee06-499a-8a91-bd30aed6f4bc.jpg</RelativePath>
+      <RelativePath>Images/2abaf377-8c93-4615-879f-70d83f9a2e66.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -46,14 +46,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\272fe8be-ee06-499a-8a91-bd30aed6f4bc.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\2abaf377-8c93-4615-879f-70d83f9a2e66.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\27a6c123-f5fa-47d5-8617-6eb5baa176b9.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\2ae61f56-f72c-45f9-87c9-2892e31725f8.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/27a6c123-f5fa-47d5-8617-6eb5baa176b9.png</RelativePath>
+      <RelativePath>Images/2ae61f56-f72c-45f9-87c9-2892e31725f8.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -62,14 +62,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\27a6c123-f5fa-47d5-8617-6eb5baa176b9.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\2ae61f56-f72c-45f9-87c9-2892e31725f8.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\322428a7-7504-4b1a-aff8-a88e4838364c.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\2df790ac-c02f-442c-bff6-bbc528f9194a.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/322428a7-7504-4b1a-aff8-a88e4838364c.jpg</RelativePath>
+      <RelativePath>Images/2df790ac-c02f-442c-bff6-bbc528f9194a.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -78,14 +78,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\322428a7-7504-4b1a-aff8-a88e4838364c.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\2df790ac-c02f-442c-bff6-bbc528f9194a.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\33d0575c-a3e6-4150-ac77-f1beb2e7e0e7.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\30c710fd-0d1c-4c7b-9f1d-623f25cb37c5.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/33d0575c-a3e6-4150-ac77-f1beb2e7e0e7.png</RelativePath>
+      <RelativePath>Images/30c710fd-0d1c-4c7b-9f1d-623f25cb37c5.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -94,14 +94,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\33d0575c-a3e6-4150-ac77-f1beb2e7e0e7.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\30c710fd-0d1c-4c7b-9f1d-623f25cb37c5.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\33d2b505-d7be-4bf9-a576-a4f03d56e5cc.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\5979e6c8-a3e7-4391-acbb-533263a64f8c.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/33d2b505-d7be-4bf9-a576-a4f03d56e5cc.png</RelativePath>
+      <RelativePath>Images/5979e6c8-a3e7-4391-acbb-533263a64f8c.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -110,14 +110,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\33d2b505-d7be-4bf9-a576-a4f03d56e5cc.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\5979e6c8-a3e7-4391-acbb-533263a64f8c.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\371bfe80-9871-45b3-b73e-ec304363c428.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\a67bdead-599d-444a-802a-188f49ac4047.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/371bfe80-9871-45b3-b73e-ec304363c428.png</RelativePath>
+      <RelativePath>Images/a67bdead-599d-444a-802a-188f49ac4047.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -126,14 +126,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\371bfe80-9871-45b3-b73e-ec304363c428.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\a67bdead-599d-444a-802a-188f49ac4047.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\4231c235-682a-45b0-a304-dc87fb716c15.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\a80bda5e-b901-4dc1-88e5-aa25b6353d93.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/4231c235-682a-45b0-a304-dc87fb716c15.jpg</RelativePath>
+      <RelativePath>Images/a80bda5e-b901-4dc1-88e5-aa25b6353d93.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -142,14 +142,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\4231c235-682a-45b0-a304-dc87fb716c15.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\a80bda5e-b901-4dc1-88e5-aa25b6353d93.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\456d49a8-b8d4-4098-a7c0-912a2f8ef6fe.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\c8c2f4d2-245e-4f57-b671-bbf18586c657.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/456d49a8-b8d4-4098-a7c0-912a2f8ef6fe.png</RelativePath>
+      <RelativePath>Images/c8c2f4d2-245e-4f57-b671-bbf18586c657.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -158,14 +158,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\456d49a8-b8d4-4098-a7c0-912a2f8ef6fe.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\c8c2f4d2-245e-4f57-b671-bbf18586c657.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\473f857b-6d58-4646-96b8-9c7626bd5123.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\dc377523-9d2b-4fcb-8c59-7a2817477921.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/473f857b-6d58-4646-96b8-9c7626bd5123.jpg</RelativePath>
+      <RelativePath>Images/dc377523-9d2b-4fcb-8c59-7a2817477921.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -174,14 +174,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\473f857b-6d58-4646-96b8-9c7626bd5123.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\dc377523-9d2b-4fcb-8c59-7a2817477921.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\4bf6a25a-6799-42e7-8a1c-259c2d4a3c54.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\dffb5022-ef41-4e78-90c7-5c833919ab68.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/4bf6a25a-6799-42e7-8a1c-259c2d4a3c54.png</RelativePath>
+      <RelativePath>Images/dffb5022-ef41-4e78-90c7-5c833919ab68.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -190,14 +190,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\4bf6a25a-6799-42e7-8a1c-259c2d4a3c54.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\dffb5022-ef41-4e78-90c7-5c833919ab68.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\4dfccecd-fef1-49d7-9f99-e4c66231ffc9.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\ef4abde1-f21f-4bec-b21b-22a07d61c4e5.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/4dfccecd-fef1-49d7-9f99-e4c66231ffc9.png</RelativePath>
+      <RelativePath>Images/ef4abde1-f21f-4bec-b21b-22a07d61c4e5.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -206,14 +206,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\4dfccecd-fef1-49d7-9f99-e4c66231ffc9.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\ef4abde1-f21f-4bec-b21b-22a07d61c4e5.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\533ae571-609e-42cd-abf2-7852a9cb0354.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\fdefbc84-6651-48b5-a22f-263c6c060226.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/533ae571-609e-42cd-abf2-7852a9cb0354.png</RelativePath>
+      <RelativePath>Images/fdefbc84-6651-48b5-a22f-263c6c060226.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -222,14 +222,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\533ae571-609e-42cd-abf2-7852a9cb0354.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\fdefbc84-6651-48b5-a22f-263c6c060226.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\5b6fab44-cf9f-4508-842f-00f2988fce6c.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\fed27fa5-ec1f-4de9-9523-286566c2c655.png))">
       <SourceType>Package</SourceType>
       <SourceId>Ecom_Assessment_Backend</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/5b6fab44-cf9f-4508-842f-00f2988fce6c.png</RelativePath>
+      <RelativePath>Images/fed27fa5-ec1f-4de9-9523-286566c2c655.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -238,263 +238,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\5b6fab44-cf9f-4508-842f-00f2988fce6c.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\5baf8ccc-3377-4854-9c6d-637b671426ad.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/5baf8ccc-3377-4854-9c6d-637b671426ad.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\5baf8ccc-3377-4854-9c6d-637b671426ad.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\729c1a4b-1520-4d93-8884-d5c917ac160a.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/729c1a4b-1520-4d93-8884-d5c917ac160a.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\729c1a4b-1520-4d93-8884-d5c917ac160a.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\772d9f28-8aa5-46e1-a644-a4db985be0e0.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/772d9f28-8aa5-46e1-a644-a4db985be0e0.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\772d9f28-8aa5-46e1-a644-a4db985be0e0.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\832ed257-8821-4037-b438-4f74f6f6fa5c.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/832ed257-8821-4037-b438-4f74f6f6fa5c.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\832ed257-8821-4037-b438-4f74f6f6fa5c.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\878e9fd2-026d-4520-8e04-f7b557d7258a.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/878e9fd2-026d-4520-8e04-f7b557d7258a.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\878e9fd2-026d-4520-8e04-f7b557d7258a.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\93bc8f73-6b32-4db1-ab71-0d299654b738.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/93bc8f73-6b32-4db1-ab71-0d299654b738.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\93bc8f73-6b32-4db1-ab71-0d299654b738.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\9a4e8cda-5180-48f2-9ae2-5f49ad75fb4e.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/9a4e8cda-5180-48f2-9ae2-5f49ad75fb4e.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\9a4e8cda-5180-48f2-9ae2-5f49ad75fb4e.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\a205b292-3546-4ac7-aab8-b00f30bed723.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/a205b292-3546-4ac7-aab8-b00f30bed723.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\a205b292-3546-4ac7-aab8-b00f30bed723.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\b45f40b9-5548-4a4a-855d-5b6f56657b5c.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/b45f40b9-5548-4a4a-855d-5b6f56657b5c.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\b45f40b9-5548-4a4a-855d-5b6f56657b5c.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\ba4107bd-63a4-465d-af71-af639a7ae490.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/ba4107bd-63a4-465d-af71-af639a7ae490.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\ba4107bd-63a4-465d-af71-af639a7ae490.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\ba96740a-82b5-45b1-a11b-2cffac095c31.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/ba96740a-82b5-45b1-a11b-2cffac095c31.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\ba96740a-82b5-45b1-a11b-2cffac095c31.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\c2fa61b6-56db-4e74-baaf-0781dd6ef87d.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/c2fa61b6-56db-4e74-baaf-0781dd6ef87d.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\c2fa61b6-56db-4e74-baaf-0781dd6ef87d.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\d88b1b64-6832-493d-88c8-13f4edf4fc9c.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/d88b1b64-6832-493d-88c8-13f4edf4fc9c.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\d88b1b64-6832-493d-88c8-13f4edf4fc9c.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\dbe5e9b1-3b11-45e5-a593-5bd72aa0fa60.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/dbe5e9b1-3b11-45e5-a593-5bd72aa0fa60.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\dbe5e9b1-3b11-45e5-a593-5bd72aa0fa60.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\deff6594-73e1-4d3b-b1ed-151dd7acb27d.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/deff6594-73e1-4d3b-b1ed-151dd7acb27d.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\deff6594-73e1-4d3b-b1ed-151dd7acb27d.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\e9b84646-7251-49b5-a781-76812eab24c4.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ecom_Assessment_Backend</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ecom_Assessment_Backend</BasePath>
-      <RelativePath>Images/e9b84646-7251-49b5-a781-76812eab24c4.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\e9b84646-7251-49b5-a781-76812eab24c4.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\fed27fa5-ec1f-4de9-9523-286566c2c655.png))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

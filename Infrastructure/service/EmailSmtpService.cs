@@ -64,6 +64,8 @@ namespace Infrastructure.service
 
         }
 
+       
+
         public bool SendWlcomeEmail(string emailSendTo, string name, string subject, string username, string password)
         {
             //// Hardcoded SMTP configuration
@@ -92,6 +94,57 @@ namespace Infrastructure.service
     </div>
     <p style=""font-size: 1.1em; text-align: left;"">Hi,</p>
     <p style=""text-align: left;"">Thank you for choosing Ecom Application. Use the following credentials to log in:</p>
+    <div style=""margin: 20px auto; text-align: center;"">
+      <h5 style=""background: #00466a; margin: 5px auto; padding: 5px; color: #fff; border-radius: 4px; max-width: 80%; word-wrap: break-word;"">
+        Email: <span style=""color: #fff;"">{emailSendTo}</span>
+      </h5>
+      <h5 style=""background: #00466a; margin: 5px auto; padding: 5px; color: #fff; border-radius: 4px; max-width: 80%; word-wrap: break-word;"">
+        Username: <span style=""color: #fff;"">{username}</span>
+      </h5>
+      <h5 style=""background: #00466a; margin: 5px auto; padding: 5px; color: #fff; border-radius: 4px; max-width: 80%; word-wrap: break-word;"">
+        Password: <span style=""color: #fff;"">{password}</span>
+      </h5>
+    </div>
+    <p style=""font-size: 0.9em; text-align: left;"">Regards,<br />Ecom Application</p>
+    <hr style=""border: none; border-top: 1px solid #eee;"" />
+    <div style=""text-align: right; padding: 8px 0; color: #aaa; font-size: 0.8em; line-height: 1.2; font-weight: 300;"">
+      <p>Ecom_Application</p>
+      <p>1600 Amphitheatre Parkway</p>
+      <p>California</p>
+    </div>
+  </div>
+</div>
+
+",
+                IsBodyHtml = isHtml
+            };
+
+            mailMessage.To.Add(emailSendTo);
+
+            client.Send(mailMessage);
+            return true;
+        }
+
+        public bool SendForgotedPassword(string emailSendTo, string name, string subject, string username, string password)
+        {
+            using var client = new SmtpClient(smtpHost, smtpPort)
+            {
+                Credentials = new NetworkCredential(smtpUsername, smtpPassword),
+                EnableSsl = enableSsl
+            };
+
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress(smtpUsername, "ECom_Application"),
+                Subject = subject,
+                Body = $@"
+<div style=""font-family: Helvetica, Arial, sans-serif; min-width: 320px; max-width: 600px; margin: 0 auto; padding: 20px; box-sizing: border-box; overflow: auto; line-height: 1.5;"">
+  <div style=""padding: 5px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);"">
+    <div style=""border-bottom: 1px solid #eee; text-align: center;"">
+      <a href=""#"" style=""font-size: 1.4em; color: #00466a; text-decoration: none; font-weight: 600;"">Ecom_Application</a>
+    </div>
+    <p style=""font-size: 1.1em; text-align: left;"">Hi,</p>
+    <p style=""text-align: left;"">Thank you for choosing Ecom Application. Use the following credentials to Forget Password:</p>
     <div style=""margin: 20px auto; text-align: center;"">
       <h5 style=""background: #00466a; margin: 5px auto; padding: 5px; color: #fff; border-radius: 4px; max-width: 80%; word-wrap: break-word;"">
         Email: <span style=""color: #fff;"">{emailSendTo}</span>

@@ -325,6 +325,22 @@
   },
   {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
+    "Method": "ForgotPasswordWithRandomString",
+    "RelativePath": "api/User/ForgotPasswordWithRandomString/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
     "Method": "GetUserByUserName",
     "RelativePath": "api/User/GetUserByUserName/{userName}",
     "HttpMethod": "GET",
@@ -366,6 +382,22 @@
       {
         "Name": "loginUserValidateOtpDto",
         "Type": "App.Core.Models.Users.LoginUserValidateOtpDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/User/UpdateUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateUserDto",
+        "Type": "App.Core.Models.Users.UpdateUserDto",
         "IsRequired": true
       }
     ],

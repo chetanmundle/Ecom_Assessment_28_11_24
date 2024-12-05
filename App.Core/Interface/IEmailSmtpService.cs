@@ -11,5 +11,7 @@ namespace App.Core.Interface
     {
         bool SendEmailOtp(string emailSendTo, string name,string subject, int otp);
         bool SendWlcomeEmail(string emailSendTo, string name,string subject, string username, string password);
+
+        bool SendForgotedPassword(string emailSendTo, string name, string subject, string username, string password);
     }
 }

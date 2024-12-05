@@ -67,7 +67,22 @@ namespace Ecom_Assessment_Backend.Controllers
             return Ok(result);
         }
 
+        // Forgot Email Api (send random string to User)
+        [HttpGet("[action]/{email}")]
+        public async Task<IActionResult> ForgotPasswordWithRandomString(string email)
+        {
+            var result = await _mediator.Send(new SendRandomPasswordOnMailCommand { Email = email });
+            return Ok(result);
+        }
 
+
+        [HttpPost("[action]")]
+        [Authorize(Roles = "Admin,Customer")]
+        public async Task<IActionResult> UpdateUser(UpdateUserDto updateUserDto)
+        {
+            var result = await _mediator.Send(new UpdateUserCommand { UpdateUserDto = updateUserDto });
+            return Ok(result);
+        }
 
     }
 }
