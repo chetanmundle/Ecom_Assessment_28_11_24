@@ -92,6 +92,17 @@ export class EditProductModelComponent implements OnInit, OnDestroy {
       return;
     }
 
+    //Checking Values
+    if (
+      Number(this.productForm.get('sellingPrice')?.value) <
+      Number(this.productForm.get('purchasePrice')?.value)
+    ) {
+      this.tostR.showWarning(
+        'SellingPrice Should Be Greater than Purchase Price'
+      );
+      return;
+    }
+
     this.isLoader = true;
 
     if (this.productForm.invalid) {
@@ -105,8 +116,9 @@ export class EditProductModelComponent implements OnInit, OnDestroy {
             this.productForm.get('productImage')?.setValue(res.data);
             this.updateProduct();
           } else {
-            this.tostR.showWarning(res.message);
             this.isLoader = false;
+            this.tostR.showWarning(res.message);
+
             console.log('Unble to Save the Profile Image : ', res.message);
           }
         },
@@ -152,7 +164,7 @@ export class EditProductModelComponent implements OnInit, OnDestroy {
         error: (err: Error) => {
           this.isLoader = false;
           console.log('erro to update : ', err);
-          this.tostR.showError(err.message);
+          this.tostR.showError('Server Error...!');
         },
       });
     }

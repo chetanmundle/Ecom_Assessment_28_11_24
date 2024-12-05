@@ -126,6 +126,7 @@
               class="form-control"
               id="PurchaseDate"
               formControlName="purchaseDate"
+              [attr.max]="todaysDate"
             />
             <div style="font-size: 13px">
               @if ( isSubmitClick &&

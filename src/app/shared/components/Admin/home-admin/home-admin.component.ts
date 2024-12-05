@@ -112,7 +112,7 @@ export class HomeAdminComponent implements OnInit, OnDestroy {
       error: (err: Error) => {
         console.log('Unable to delete : ', err);
 
-        this.tostR.showError(err.message);
+        this.tostR.showError('Server Error...!');
       },
     });
   }

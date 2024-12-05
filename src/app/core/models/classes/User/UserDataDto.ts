@@ -13,3 +13,14 @@ export class UserDataDto {
   countryName: string = '';
   stateName: string = '';
 }
+
+export interface UpdateUserDto {
+  userId: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  dateOfBirth: string;
+  mobile: string;
+  address: string;
+  profileImage: string;
+}

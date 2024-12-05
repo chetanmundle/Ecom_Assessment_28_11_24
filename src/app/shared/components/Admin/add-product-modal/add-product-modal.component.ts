@@ -31,6 +31,7 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
   @Input() userId?: number;
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  todaysDate: string ="";
   productForm: FormGroup;
   subscriptions: Subscription = new Subscription();
   selectedFile: File | null = null;
@@ -59,7 +60,8 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
     this.closeModal.emit(value);
   }
   ngOnInit(): void {
-    console.log('On Init', this.userId);
+    const today = new Date();
+    this.todaysDate = today.toISOString().split('T')[0];
   }
 
   // on select file
@@ -135,7 +137,7 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
       },
       error: (err: Error) => {
         this.isLoader = false;
-        this.tostR.showError(err.message);
+        this.tostR.showError("Server Error...!");
         console.log('eer', err);
       },
     });

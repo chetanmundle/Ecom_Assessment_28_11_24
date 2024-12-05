@@ -2,6 +2,7 @@ import { Component, inject, OnDestroy } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -12,12 +13,12 @@ import { Subscription } from 'rxjs';
 import { ForgetPasswordDto } from '../../../core/models/interface/User/ForgetPasswordDto';
 import { LoaderComponent } from '../../../shared/components/loader/loader.component';
 import { UserService } from '../../../core/services/UserService/user.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
   standalone: true,
-  imports: [ReactiveFormsModule, LoaderComponent],
+  imports: [ReactiveFormsModule, RouterLink, FormsModule],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.css',
 })
@@ -28,6 +29,7 @@ export class ForgotPasswordComponent implements OnDestroy {
   passwordResetForm: FormGroup;
   subscriptions: Subscription = new Subscription();
   isLoader: boolean = false;
+  isSendRandomPassword: boolean = true;
 
   private otpService = inject(OtpService);
   private tostr = inject(MyToastServiceService);
@@ -103,7 +105,7 @@ export class ForgotPasswordComponent implements OnDestroy {
 
     this.isLoader = true;
 
-    this.userService.ForgetPassword$(payload).subscribe({
+    const sub = this.userService.ForgetPassword$(payload).subscribe({
       next: (res: AppResponse<null>) => {
         if (res.isSuccess) {
           this.isLoader = false;
@@ -119,5 +121,35 @@ export class ForgotPasswordComponent implements OnDestroy {
         this.tostr.showError('Unable to Validate otp');
       },
     });
+
+    this.subscriptions.add(sub);
+  }
+
+  // Send Random Password in Email
+  SendRandomPasswordinEmail() {
+    const email = this.passwordResetForm.get('email')?.value;
+
+    if (email) {
+      this.isLoader = true;
+      this.userService.SendRandomPasswordOnEmail$(email).subscribe({
+        next: (res: AppResponse<null>) => {
+          if (res.isSuccess) {
+            this.isLoader = false;
+            this.router.navigateByUrl('/auth/Login');
+            this.tostr.showSuccess(res.message);
+          } else {
+            this.isLoader = false;
+            this.tostr.showError(res.message);
+          }
+        },
+        error: (err: Error) => {
+          this.isLoader = false;
+          console.log('Error to forget Password : ', err);
+          this.tostr.showError("Server Error...!");
+        },
+      });
+    } else {
+      this.tostr.showError('Enter The Email...!');
+    }
   }
 }

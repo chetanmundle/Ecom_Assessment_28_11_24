@@ -69,7 +69,7 @@
             >
           </div>
           <div class="col">
-            ₹ {{ cartItem.sellingPrice * cartItem.quntity }} &nbsp;&nbsp;
+            $ {{ cartItem.sellingPrice * cartItem.quntity }} &nbsp;&nbsp;
             <span
               class="close"
               style="cursor: pointer"
@@ -93,9 +93,14 @@
         <!-- <div class="col" style="padding-left: 0">
           {{ cartItemsList?.length }} items
         </div>
-        <div class="col text-right">₹ {{ getSubTotal() }}</div> -->
+        <div class="col text-right">$ {{ getSubTotal() }}</div> -->
       </div>
-      <form [formGroup]="cardDetailsForm">
+      <h6>Delivery Address</h6>
+      <p>
+        {{ loggedUser?.address }} {{ loggedUser?.stateName }}
+        {{ loggedUser?.countryName }} {{ loggedUser?.zipCode }}
+      </p>
+      <!-- <form [formGroup]="cardDetailsForm">
         <h6>Delivery Address</h6>
         <p>
           {{ loggedUser?.address }} {{ loggedUser?.stateName }}
@@ -148,17 +153,17 @@
             </div>
           </div>
         </div>
-      </form>
+      </form> -->
       <div
         class="row"
         style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0"
       >
         <div class="col"><strong>SubTotal :-</strong></div>
         <div class="col text-right">
-          <strong>₹ {{ getSubTotal() }}</strong>
+          <strong>$ {{ getSubTotal() }}</strong>
         </div>
       </div>
-      <button class="btnPay btn" (click)="onClickPayBtn()">Pay</button>
+      <button class="btnPay btn" (click)="openModal()">Checkout</button>
     </div>
   </div>
 </div>
@@ -170,67 +175,81 @@
   <div class="loader"></div>
 </div>
 }
+<!-- Button trigger modal -->
 
-<!-- <div class="container">
-  <div>
-    <div class="card py-4 px-5 row gap-4">
-    
-      <div class="card" *ngFor="let cartItem of cartItemsList">
-        <div class="card-body row">
-          <div class="col-4 d-flex justify-content-center">
-            <div style="border: 1px solid black" class="rounded-2">
-              <ng-container *ngIf="cartItem.productImage; else defaultimg">
-                <img
-                  [src]="cartItem.productImage"
-                  alt=""
-                  style="width: 150px; height: 150px"
-                />
-              </ng-container>
-
-              <ng-template #defaultimg>
-                <img
-                  src="images/defaultgrocery.png"
-                  alt=""
-                  width="200px"
-                  height="200px"
-                />
-              </ng-template>
-            </div>
-          </div>
-          <div class="col-8">
-            <div style="font-size: 20px">
-              <strong>{{ cartItem.productName }}</strong>
-            </div>
-            <div class="mt-2">
-              {{ cartItem.brand }}
-            </div>
-            <div class="mt-2" style="font-size: 18px; font-weight: bold">
-              ₹ {{ cartItem.sellingPrice * cartItem.quntity }}
-            </div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <form [formGroup]="cardDetailsForm">
             <div>
-              <div
-                class="row gap-2 mt-3"
-                style="width: 180px; height: 45px; font-size: 25px"
+              <label for="exampleFormControlInput1" class="form-label"
+                >Cart Number</label
               >
-                <div
-                  class="col-3 rounded-5 d-flex justify-content-center hover-gray"
-                  style="border: 1px solid black; cursor: pointer"
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="0000 0000 0000 0000"
+                formControlName="cardNumber" 
+              />
+            </div>
+            <div class="row gap-3">
+              <div class="col-6">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Expiry Date</label
                 >
-                  -
-                </div>
-                <div class="col-3">{{ cartItem.quntity }}</div>
-                <div
-                  class="col-3 rounded-5 d-flex justify-content-center hover-gray"
-                  style="border: 1px solid black; cursor: pointer"
+                <input
+                  type="month"
+                  id="expiryDate"
+                  name="expiryDate"
+                  required
+                  maxlength="5"
+                  formControlName="expiryDate"
+                />
+              </div>
+              <div class="col-5">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >CVV</label
                 >
-                  +
-                </div>
+                <input
+                  type="number"
+                  id="expiryDate"
+                  name="expiryDate"
+                  placeholder="CVV"
+                  maxlength="3"
+                  formControlName="cvv"
+                />
               </div>
             </div>
-            <div></div>
-          </div>
+          </form>
         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="onClickPayBtn()">
+          Pay
+        </button>
       </div>
     </div>
   </div>
-</div> -->
+</div>

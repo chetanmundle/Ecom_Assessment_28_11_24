@@ -185,7 +185,7 @@ export class RegisterComponent implements OnDestroy {
         this.isLoader = false;
         console.log('Error to register : ', err);
 
-        this.tostrService.showError(err.message);
+        this.tostrService.showError('Server Error...!');
       },
     });
 

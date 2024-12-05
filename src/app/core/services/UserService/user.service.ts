@@ -9,7 +9,10 @@ import { LoginUSerResponseDto } from '../../models/interface/User/LoginUserRespo
 import { LoginUserValidateOtpDto } from '../../models/interface/User/LoginUserValidateOtpDto';
 import { ForgetPasswordDto } from '../../models/interface/User/ForgetPasswordDto';
 import { jwtDecode } from 'jwt-decode';
-import { UserDataDto } from '../../models/classes/User/UserDataDto';
+import {
+  UpdateUserDto,
+  UserDataDto,
+} from '../../models/classes/User/UserDataDto';
 import { ChangePasswordDto } from '../../models/interface/User/ChangePasswordDto.model';
 
 @Injectable({
@@ -102,7 +105,22 @@ export class UserService {
   }
 
   //Change Password
-  ChangePassword$(payload: ChangePasswordDto) : Observable<AppResponse<null>>{
-    return this.http.post<AppResponse<null>>(`${this.Url}/ChangePassword`,payload)
+  ChangePassword$(payload: ChangePasswordDto): Observable<AppResponse<null>> {
+    return this.http.post<AppResponse<null>>(
+      `${this.Url}/ChangePassword`,
+      payload
+    );
+  }
+
+  // forgot Pass (send Random PAssword in Email)
+  SendRandomPasswordOnEmail$(email: string): Observable<AppResponse<null>> {
+    return this.http.get<AppResponse<null>>(
+      `${this.Url}/ForgotPasswordWithRandomString/${email}`
+    );
+  }
+
+  //UpdateUser service
+  UpdateUser$(payload: UpdateUserDto): Observable<AppResponse<null>> {
+    return this.http.post<AppResponse<null>>(`${this.Url}/UpdateUser`, payload);
   }
 }

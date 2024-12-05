@@ -87,7 +87,7 @@ export class OtpComponent implements OnDestroy {
         }
       },
       error: (err: Error) => {
-        this.tostr.showError(err.message);
+        this.tostr.showError('Server Error...!');
         console.log('Error to varify otp : ', err);
       },
     });

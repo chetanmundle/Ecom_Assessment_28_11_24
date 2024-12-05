@@ -19,6 +19,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Modal } from 'bootstrap';
 
 @Component({
   selector: 'app-cart',
@@ -38,6 +39,7 @@ export class CartComponent implements OnInit, OnDestroy {
   private userService = inject(UserService);
   private tostR = inject(MyToastServiceService);
   private router = inject(Router);
+  private modalInstance: Modal | null = null; // Hold the modal instance
 
   subscriptions: Subscription = new Subscription();
 
@@ -176,7 +178,7 @@ export class CartComponent implements OnInit, OnDestroy {
       return;
     }
 
-    if(this.cartItemsList?.length === 0) {
+    if (this.cartItemsList?.length === 0) {
       this.tostR.showWarning('Your cart is empty');
       return;
     }
@@ -226,12 +228,12 @@ export class CartComponent implements OnInit, OnDestroy {
     };
 
     this.isLoader = true;
-    console.log('Card : ', payload);
 
     const sub = this.cartService.PaymentAndOrder$(payload).subscribe({
       next: (res: AppResponse<PaymentAndOrderResponseDto>) => {
         if (res.isSuccess) {
           this.isLoader = false;
+          this.closeModal();
           this.tostR.showSuccess(res.message);
           this.cartService.ResetCart();
           this.router.navigate(['org/Customer/Invoice', res.data.id]);
@@ -243,8 +245,29 @@ export class CartComponent implements OnInit, OnDestroy {
       error: (err: Error) => {
         console.log('Error to Order : ', err);
         this.isLoader = false;
-        this.tostR.showError(err.message);
+        this.tostR.showError('Server Error...!');
       },
     });
+  }
+
+  // Function to open the modal
+  openModal() {
+    if (this.cartItemsList?.length === 0) {
+      this.tostR.showWarning('Your cart is empty');
+      return;
+    }
+    const modalElement = document.getElementById('exampleModal');
+    if (modalElement) {
+      this.modalInstance = new Modal(modalElement); // Initialize the modal
+      this.modalInstance.show(); // Show the modal
+    }
+  }
+
+  // Function to close the modal
+  closeModal() {
+    if (this.modalInstance) {
+      this.modalInstance.hide(); // Hide the modal
+      this.modalInstance = null; // Reset the modal instance
+    }
   }
 }

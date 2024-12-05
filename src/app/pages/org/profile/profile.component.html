@@ -47,60 +47,174 @@
         </div>
       </div>
       <div class="col-md-8">
-        <div class="card mb-3">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Full Name</h6>
+        <form [formGroup]="userForm">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">First Name</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <div *ngIf="!isEditMode">
+                    {{ loggedUser?.firstName }}
+                  </div>
+                  <div class="" *ngIf="isEditMode">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="firstName"
+                      formControlName="firstName"
+                    />
+                  </div>
+                </div>
               </div>
-              <div class="col-sm-9 text-secondary">
-                {{ loggedUser?.firstName }} {{ loggedUser?.lastName }}
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Last Name</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <div *ngIf="!isEditMode">
+                    {{ loggedUser?.lastName }}
+                  </div>
+                  <div class="" *ngIf="isEditMode">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="lastname"
+                      formControlName="lastName"
+                    />
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <div *ngIf="!isEditMode">
+                    {{ loggedUser?.email }}
+                  </div>
+                  <div class="" *ngIf="isEditMode">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="email"
+                      formControlName="email"
+                    />
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Date of Birth</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <div *ngIf="!isEditMode">
+                    {{ loggedUser?.dateOfBirth | date }}
+                  </div>
+                  <div class="" *ngIf="isEditMode">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="lastname"
+                      formControlName="dateOfBirth"
+                      [max]="todaysDate()"
+                    />
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Mobile</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <div *ngIf="!isEditMode">
+                    {{ loggedUser?.mobile }}
+                  </div>
+                  <div class="" *ngIf="isEditMode">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="mobile"
+                      formControlName="mobile"
+                    />
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Address</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <div *ngIf="!isEditMode">
+                    {{ loggedUser?.address }}, {{ loggedUser?.stateName }},
+                    {{ loggedUser?.countryName }},
+                    {{ loggedUser?.zipCode }}
+                  </div>
+                  <div class="" *ngIf="isEditMode">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="address"
+                      formControlName="address"
+                    />
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="row" *ngIf="isEditMode">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Profile</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <div class="">
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="address"
+                      (change)="onFileSelected($event)"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <hr />
+              <div class="row">
+                <div class="col-sm-6">
+                  <button
+                    class="btn btn-info"
+                    (click)="
+                      isEditMode ? onClickCancelEditMode() : onClickEdit()
+                    "
+                  >
+                    {{ isEditMode ? "Cancel" : "Edit" }}
+                  </button>
+                </div>
+                <div class="col-sm-6" *ngIf="isEditMode">
+                  <button
+                    class="btn btn-success"
+                    (click)="onClickUpdate()"
+                    [disabled]="userForm.invalid"
+                  >
+                    Update
+                  </button>
+                </div>
               </div>
             </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Email</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">{{ loggedUser?.email }}</div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Date of Birth</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                {{ loggedUser?.dateOfBirth | date }}
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Mobile</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                {{ loggedUser?.mobile }}
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Address</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                {{ loggedUser?.address }}, {{ loggedUser?.stateName }},
-                {{ loggedUser?.countryName }},
-                {{ loggedUser?.zipCode }}
-              </div>
-            </div>
-            <hr />
-            <!-- <div class="row">
-              <div class="col-sm-12">
-                <a class="btn btn-info" target="__blank">Edit</a>
-              </div>
-            </div> -->
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

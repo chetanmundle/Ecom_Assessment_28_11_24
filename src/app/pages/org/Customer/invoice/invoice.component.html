@@ -89,10 +89,10 @@
                             </p>
                           </div>
                         </td>
-                        <td>₹ {{ prod.sellingPrice }}</td>
+                        <td>$ {{ prod.sellingPrice }}</td>
                         <td>{{ prod.saleQuntity }}</td>
                         <td class="text-end">
-                          ₹ {{ prod.sellingPrice * prod.saleQuntity }}
+                          $ {{ prod.sellingPrice * prod.saleQuntity }}
                         </td>
                       </tr>
 
@@ -100,7 +100,7 @@
                         <th scope="row" colspan="4" class="text-end">
                           Sub Total
                         </th>
-                        <td class="text-end">₹ {{ invoiceData?.subTotal }}</td>
+                        <td class="text-end">$ {{ invoiceData?.subTotal }}</td>
                       </tr>
 
                       <!-- <tr>
@@ -130,7 +130,7 @@
                         </th>
                         <td class="border-0 text-end">
                           <h4 class="m-0 fw-semibold">
-                            ₹ {{ invoiceData?.subTotal }}
+                            $ {{ invoiceData?.subTotal }}
                           </h4>
                         </td>
                       </tr>
@@ -147,7 +147,7 @@
                       class="btn btn-success me-1"
                       ><i class="fa fa-print"></i
                     ></a>
-                    <a href="#" class="btn btn-primary w-md">Send</a>
+                    <a href="#" class="btn btn-primary w-md">Home</a>
                   </div>
                 </div>
               </div>
