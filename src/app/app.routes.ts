@@ -10,6 +10,7 @@ import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-pas
 import { CartComponent } from './pages/org/Customer/cart/cart.component';
 import { ProfileComponent } from './pages/org/profile/profile.component';
 import { InvoiceComponent } from './pages/org/Customer/invoice/invoice.component';
+import { OrdersComponent } from './pages/org/Customer/orders/orders.component';
 
 export const routes: Routes = [
   {
@@ -64,6 +65,13 @@ export const routes: Routes = [
         path: 'Customer/Invoice/:id',
         component: InvoiceComponent,
         title: 'Invoice Page',
+        canActivate: [authGuard],
+        data: { roles: ['Customer'] },
+      },
+      {
+        path: 'Customer/Orders',
+        component: OrdersComponent,
+        title: 'Order Page',
         canActivate: [authGuard],
         data: { roles: ['Customer'] },
       },

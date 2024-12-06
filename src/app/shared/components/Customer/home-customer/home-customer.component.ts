@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-home-customer',
   standalone: true,
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home-customer.component.html',
   styleUrl: './home-customer.component.css',
 })
@@ -60,10 +60,7 @@ export class HomeCustomerComponent implements OnInit, OnDestroy {
 
   //   find the item is added in cart or not
   isExistItem(productId: number): boolean {
-    const d = this.cartItemsList.some((item) => item.productId === productId);
-    console.log('User id , vale', productId, d);
-
-    return d;
+    return this.cartItemsList.some((item) => item.productId === productId);
   }
 
   onClickAddToCart(productId: number, quntity: number) {

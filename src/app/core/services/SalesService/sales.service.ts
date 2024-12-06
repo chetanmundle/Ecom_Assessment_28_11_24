@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { InvoiceDto } from '../../models/interface/Sales/sales.model';
+import {
+  InvoiceDto,
+  SalesMasterDto,
+} from '../../models/interface/Sales/sales.model';
 import { AppResponse } from '../../models/interface/AppResponse';
 
 @Injectable({
@@ -16,6 +19,15 @@ export class SalesService {
   GetInvoiceByInvoiceId$(invoId: number): Observable<AppResponse<InvoiceDto>> {
     return this.http.get<AppResponse<InvoiceDto>>(
       `${this.Url}/GetInvoice/${invoId}`
+    );
+  }
+
+  // Get all orders by UserId
+  GetAllOrdersByUserId$(
+    userId: number
+  ): Observable<AppResponse<SalesMasterDto[]>> {
+    return this.http.get<AppResponse<SalesMasterDto[]>>(
+      `${this.Url}/GetAllOrdersByUserId/${userId}`
     );
   }
 }

@@ -20,6 +20,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Modal } from 'bootstrap';
+import { DeliveryAddress } from '../../../../core/models/interface/User/Addres.model';
 
 @Component({
   selector: 'app-cart',
@@ -33,6 +34,10 @@ export class CartComponent implements OnInit, OnDestroy {
   loggedUser?: UserDataDto;
   cardDetailsForm: FormGroup;
 
+  deliveryAddressForm: FormGroup;
+  address?: string;
+  zipCode?: number;
+
   isLoader: boolean = false;
 
   private cartService = inject(CartService);
@@ -40,6 +45,7 @@ export class CartComponent implements OnInit, OnDestroy {
   private tostR = inject(MyToastServiceService);
   private router = inject(Router);
   private modalInstance: Modal | null = null; // Hold the modal instance
+  private addressmodalInstance: Modal | null = null; // Hold the Address modal instance
 
   subscriptions: Subscription = new Subscription();
 
@@ -49,18 +55,32 @@ export class CartComponent implements OnInit, OnDestroy {
       expiryDate: [''],
       cvv: [''],
     });
+
+    // Assign the delivery address form
+    this.deliveryAddressForm = formBuilder.group({
+      address: ['', [Validators.required]],
+      zipCode: ['', [Validators.required]],
+    });
   }
 
   ngOnInit(): void {
     // subscribe for which user is currently logged in
 
     // this.cartService.ResetCart();
-
     const sub = this.userService.loggedUser$.subscribe({
       next: (user: UserDataDto) => {
         this.loggedUser = user;
-        // console.log('logged user', this.loggedUser);
+        this.deliveryAddressForm
+          .get('address')
+          ?.setValue(this.loggedUser.address);
+        this.deliveryAddressForm
+          .get('zipCode')
+          ?.setValue(this.loggedUser.zipCode);
         this.GetCartDataWithDetails();
+
+        //for variable
+        this.address = this.loggedUser.address;
+        this.zipCode = Number(this.loggedUser.zipCode);
       },
     });
 
@@ -221,10 +241,10 @@ export class CartComponent implements OnInit, OnDestroy {
       userId: this.loggedUser?.userId,
       cvv: Number(this.cardDetailsForm.get('cvv')?.value),
       expiryDate: isoString,
-      address: this.loggedUser.address,
+      address: this.address || this.loggedUser.address,
       stateName: this.loggedUser.stateName,
       countryName: this.loggedUser.countryName,
-      zipCode: this.loggedUser.zipCode,
+      zipCode: Number(this.zipCode) || this.loggedUser.zipCode,
     };
 
     this.isLoader = true;
@@ -250,7 +270,7 @@ export class CartComponent implements OnInit, OnDestroy {
     });
   }
 
-  // Function to open the modal
+  // Function to open the modal CArdModal
   openModal() {
     if (this.cartItemsList?.length === 0) {
       this.tostR.showWarning('Your cart is empty');
@@ -263,11 +283,33 @@ export class CartComponent implements OnInit, OnDestroy {
     }
   }
 
-  // Function to close the modal
+  // Function to close the modal Card Modal
   closeModal() {
     if (this.modalInstance) {
       this.modalInstance.hide(); // Hide the modal
       this.modalInstance = null; // Reset the modal instance
     }
+  }
+
+  openAddressModal() {
+    const modalElement = document.getElementById('addressModal');
+    if (modalElement) {
+      this.addressmodalInstance = new Modal(modalElement); // Initialize the modal
+      this.addressmodalInstance.show(); // Show the modal
+    }
+  }
+
+  // Function to close the modal Card Modal
+  closeAddressModal() {
+    if (this.addressmodalInstance) {
+      this.addressmodalInstance.hide(); // Hide the modal
+      this.addressmodalInstance = null; // Reset the modal instance
+    }
+  }
+
+  onClickSaveAddress() {
+    this.address = this.deliveryAddressForm.get('address')?.value;
+    this.zipCode = Number(this.deliveryAddressForm.get('zipCode')?.value);
+    this.closeAddressModal();
   }
 }

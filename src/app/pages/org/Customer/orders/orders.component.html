@@ -1,0 +1,24 @@
+<div class="container pb-5">
+  <div *ngFor="let order of orderList; let i = index" class="mt-4">
+    <div
+      class="card mx-5"
+      [routerLink]="'/org/Customer/Invoice/' + order.id"
+      style="cursor: pointer"
+    >
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3">
+            <strong> Order : {{ i + 1 }}</strong>
+            <div>Invoice Id : {{ order.invoiceId }}</div>
+          </div>
+          <div class="col-2">Amount : {{ order.subTotal }}</div>
+          <div class="col-5">
+            {{ order.deliveryAddress }}, {{ order.deliveryState }},
+            {{ order.deliveryCountry }}, {{ order.deliveryZipCode }}
+          </div>
+          <div class="col-2">{{ order.invoiceDate | date : "dd-MM-yyyy" }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

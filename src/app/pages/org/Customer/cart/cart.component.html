@@ -95,65 +95,22 @@
         </div>
         <div class="col text-right">$ {{ getSubTotal() }}</div> -->
       </div>
-      <h6>Delivery Address</h6>
-      <p>
-        {{ loggedUser?.address }} {{ loggedUser?.stateName }}
-        {{ loggedUser?.countryName }} {{ loggedUser?.zipCode }}
-      </p>
-      <!-- <form [formGroup]="cardDetailsForm">
+      <div class="d-flex justify-content-between">
         <h6>Delivery Address</h6>
-        <p>
-          {{ loggedUser?.address }} {{ loggedUser?.stateName }}
-          {{ loggedUser?.countryName }} {{ loggedUser?.zipCode }}
+        <p
+          class="text-primary"
+          style="cursor: pointer"
+          (click)="openAddressModal()"
+        >
+          Edit
         </p>
-        <div>
-          <div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Card Number</label
-              >
-              <div>
-                <input
-                  type="number"
-                  class=""
-                  name="email"
-                  id="exampleFormControlInput1"
-                  placeholder="0000 0000 0000 0000"
-                  formControlName="cardNumber"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-7">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Expiry Date</label
-                >
-                <input
-                  type="month"
-                  id="expiryDate"
-                  name="expiryDate"
-                  required
-                  maxlength="5"
-                  formControlName="expiryDate"
-                />
-              </div>
-              <div class="col-4">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >CVV</label
-                >
-                <input
-                  type="number"
-                  id="expiryDate"
-                  name="expiryDate"
-                  placeholder="CVV"
-                  maxlength="3"
-                  formControlName="cvv"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </form> -->
+      </div>
+      <p>
+        {{ address }}, {{ loggedUser?.stateName }},
+        {{ loggedUser?.countryName }},
+        {{ zipCode }}
+      </p>
+
       <div
         class="row"
         style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0"
@@ -177,7 +134,7 @@
 }
 <!-- Button trigger modal -->
 
-<!-- Modal -->
+<!-- Modal for Card -->
 <div
   class="modal fade"
   id="exampleModal"
@@ -208,7 +165,7 @@
                 class="form-control"
                 id="exampleFormControlInput1"
                 placeholder="0000 0000 0000 0000"
-                formControlName="cardNumber" 
+                formControlName="cardNumber"
               />
             </div>
             <div class="row gap-3">
@@ -248,6 +205,77 @@
         </button>
         <button type="button" class="btn btn-primary" (click)="onClickPayBtn()">
           Pay
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Address -->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="addressModal"
+  tabindex="-1"
+  aria-labelledby="addressModal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addressModal">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          (click)="closeAddressModal()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="deliveryAddressForm">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Address</label
+            >
+            <input
+              type="address"
+              class="form-control mb-0"
+              id="exampleFormControlInput1"
+              placeholder="Address"
+              formControlName="address"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Zip Code</label
+            >
+            <input
+              type="number"
+              class="form-control mb-0"
+              id="exampleFormControlInput1"
+              placeholder="XXXXXX"
+              formControlName="zipCode"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeAddressModal()"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          [disabled]="deliveryAddressForm.invalid"
+          (click)="onClickSaveAddress()"
+        >
+          Save
         </button>
       </div>
     </div>

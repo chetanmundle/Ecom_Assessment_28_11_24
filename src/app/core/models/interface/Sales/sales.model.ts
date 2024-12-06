@@ -21,3 +21,15 @@ export interface SalesDetailofInvoce {
   saleQuntity: number;
   sellingPrice: number;
 }
+
+export interface SalesMasterDto {
+  id: number;
+  invoiceId: string;
+  invoiceDate: string;
+  subTotal: number;
+  userId: number;
+  deliveryAddress: string;
+  deliveryZipCode: number;
+  deliveryState: string;
+  deliveryCountry: string;
+}
