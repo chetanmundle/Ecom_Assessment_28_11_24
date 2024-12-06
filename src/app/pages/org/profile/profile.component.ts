@@ -32,6 +32,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   userForm: FormGroup;
   selectedFile: File | null = null;
   isLoader: boolean = false;
+  isMobileNumberValid: boolean = false;
 
   private modalInstance: Modal | null = null; // Hold the modal instance
 
@@ -220,5 +221,22 @@ export class ProfileComponent implements OnInit, OnDestroy {
     const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
     const year = today.getFullYear();
     return `${year}-${month}-${day}`; // Returns the date in YYYY-MM-DD format
+  }
+
+  onNumberType(event: any): void {
+    let value = event.target.value;
+    value = value.replace(/\D/g, '');
+    if (value.length > 10) {
+      value = value.slice(0, 10);
+    }
+    event.target.value = value;
+
+    if (value.length == 10) {
+      this.isMobileNumberValid = true;
+    } else {
+      this.isMobileNumberValid = false;
+    }
+
+    this.userForm.controls['mobile'].setValue(value);
   }
 }

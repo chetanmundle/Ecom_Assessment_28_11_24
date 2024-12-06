@@ -19,11 +19,12 @@ import { CreateProductDto } from '../../../../core/models/interface/Product/Prod
 import { ImageService } from '../../../../core/services/ImageService/image.service';
 import { AppResponse } from '../../../../core/models/interface/AppResponse';
 import { MyToastServiceService } from '../../../../core/services/MyToastService/my-toast-service.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-product-modal',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './add-product-modal.component.html',
   styleUrl: './add-product-modal.component.css',
 })
@@ -31,7 +32,7 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
   @Input() userId?: number;
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  todaysDate: string ="";
+  todaysDate: string = '';
   productForm: FormGroup;
   subscriptions: Subscription = new Subscription();
   selectedFile: File | null = null;
@@ -137,7 +138,7 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
       },
       error: (err: Error) => {
         this.isLoader = false;
-        this.tostR.showError("Server Error...!");
+        this.tostR.showError('Server Error...!');
         console.log('eer', err);
       },
     });
@@ -147,5 +148,52 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     console.log('Call Destroy');
+  }
+
+  onClickReset() {
+    this.productForm = this.formBuilder.group({
+      productName: ['', [Validators.required]],
+      productImage: [''],
+      category: ['', [Validators.required]],
+      brand: ['', [Validators.required]],
+      sellingPrice: ['', [Validators.required]],
+      purchasePrice: ['', [Validators.required]],
+      purchaseDate: ['', [Validators.required]],
+      stock: ['', [Validators.required]],
+      //   createdBy: number;
+    });
+
+    this.selectedFile = null;
+  }
+
+  onSellingPriceChange(event: any): void {
+    let value = event.target.value;
+    value = value.replace(/\D/g, '');
+    if (value.length > 7) {
+      value = value.slice(0, 7);
+    }
+    event.target.value = value;
+
+    this.productForm.controls['sellingPrice'].setValue(value);
+  }
+  onPurchasegPriceChange(event: any): void {
+    let value = event.target.value;
+    value = value.replace(/\D/g, '');
+    if (value.length > 7) {
+      value = value.slice(0, 7);
+    }
+    event.target.value = value;
+
+    this.productForm.controls['purchasePrice'].setValue(value);
+  }
+  onStockChange(event: any): void {
+    let value = event.target.value;
+    value = value.replace(/\D/g, '');
+    if (value.length > 5) {
+      value = value.slice(0, 5);
+    }
+    event.target.value = value;
+
+    this.productForm.controls['stock'].setValue(value);
   }
 }

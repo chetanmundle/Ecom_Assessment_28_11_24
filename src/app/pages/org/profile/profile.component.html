@@ -66,6 +66,21 @@
                       placeholder="firstName"
                       formControlName="firstName"
                     />
+                    <div
+                      style="font-size: 13px"
+                      *ngIf="
+                        userForm.controls['firstName'].touched ||
+                        userForm.controls['firstName'].dirty
+                      "
+                    >
+                      <div
+                        *ngIf="
+                          userForm.controls['firstName'].hasError('required')
+                        "
+                      >
+                        <div class="text-danger">*required</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -86,6 +101,21 @@
                       placeholder="lastname"
                       formControlName="lastName"
                     />
+                    <div
+                      style="font-size: 13px"
+                      *ngIf="
+                        userForm.controls['lastName'].touched ||
+                        userForm.controls['lastName'].dirty
+                      "
+                    >
+                      <div
+                        *ngIf="
+                          userForm.controls['lastName'].hasError('required')
+                        "
+                      >
+                        <div class="text-danger">*required</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -106,6 +136,19 @@
                       placeholder="email"
                       formControlName="email"
                     />
+                    <div
+                      style="font-size: 13px"
+                      *ngIf="
+                        userForm.controls['email'].touched ||
+                        userForm.controls['email'].dirty
+                      "
+                    >
+                      <div
+                        *ngIf="userForm.controls['email'].hasError('required')"
+                      >
+                        <div class="text-danger">*required</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -127,6 +170,21 @@
                       formControlName="dateOfBirth"
                       [max]="todaysDate()"
                     />
+                    <div
+                      style="font-size: 13px"
+                      *ngIf="
+                        userForm.controls['dateOfBirth'].touched ||
+                        userForm.controls['dateOfBirth'].dirty
+                      "
+                    >
+                      <div
+                        *ngIf="
+                          userForm.controls['dateOfBirth'].hasError('required')
+                        "
+                      >
+                        <div class="text-danger">*required</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -146,7 +204,30 @@
                       id="exampleFormControlInput1"
                       placeholder="mobile"
                       formControlName="mobile"
+                      [maxlength]="10"
+                      (input)="onNumberType($event)"
                     />
+                    <div
+                      style="font-size: 13px"
+                      *ngIf="
+                        userForm.controls['mobile'].touched ||
+                        userForm.controls['mobile'].dirty
+                      "
+                    >
+                      <div
+                        *ngIf="userForm.controls['mobile'].hasError('required')"
+                      >
+                        <div class="text-danger">*required</div>
+                      </div>
+                      <div
+                        *ngIf="
+                          !userForm.controls['mobile'].hasError('required') &&
+                          !isMobileNumberValid
+                        "
+                      >
+                        <div class="text-danger">*Must be 10 digit</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -169,6 +250,21 @@
                       placeholder="address"
                       formControlName="address"
                     />
+                    <div
+                      style="font-size: 13px"
+                      *ngIf="
+                        userForm.controls['address'].touched ||
+                        userForm.controls['address'].dirty
+                      "
+                    >
+                      <div
+                        *ngIf="
+                          userForm.controls['address'].hasError('required')
+                        "
+                      >
+                        <div class="text-danger">*required</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -238,25 +334,25 @@
         <div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label"
-              >Password</label
+              >New Password</label
             >
             <input
               type="password"
-              class="form-control"
+              class="form-control mb-0"
               id="exampleFormControlInput1"
-              placeholder="Password"
+              placeholder="New Password"
               [(ngModel)]="Password"
             />
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label"
-              >Confirm Password</label
+              >Confirm New Password</label
             >
             <input
               type="password"
               class="form-control"
               id="exampleFormControlInput1"
-              placeholder="Confirm Password"
+              placeholder="Confirm New Password"
               [(ngModel)]="ConfirmPassword"
             />
           </div>

@@ -312,4 +312,25 @@ export class CartComponent implements OnInit, OnDestroy {
     this.zipCode = Number(this.deliveryAddressForm.get('zipCode')?.value);
     this.closeAddressModal();
   }
+
+  onCardNumberInput(event: any): void {
+    let value = event.target.value;
+    value = value.replace(/\D/g, '');
+    if (value.length > 16) {
+      value = value.slice(0, 16);
+    }
+    event.target.value = value;
+    this.cardDetailsForm.controls['cardNumber'].setValue(value);
+  }
+
+  onCardCvvInput(event: any): void {
+    let value = event.target.value;
+    value = value.replace(/\D/g, '');
+
+    if (value.length > 3) {
+      value = value.slice(0, 3);
+    }
+    event.target.value = value;
+    this.cardDetailsForm.controls['cvv'].setValue(value);
+  }
 }

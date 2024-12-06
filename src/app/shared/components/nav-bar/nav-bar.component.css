@@ -56,3 +56,11 @@
     border-radius: 50%;
     padding: 5px 10px;
 }
+
+
+.navunderline {
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+  }
+  

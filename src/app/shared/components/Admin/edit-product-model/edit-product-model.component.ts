@@ -22,11 +22,12 @@ import { AppResponse } from '../../../../core/models/interface/AppResponse';
 import { ImageService } from '../../../../core/services/ImageService/image.service';
 import { MyToastServiceService } from '../../../../core/services/MyToastService/my-toast-service.service';
 import { ProductService } from '../../../../core/services/ProductService/product.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-edit-product-model',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './edit-product-model.component.html',
   styleUrl: './edit-product-model.component.css',
 })
@@ -168,5 +169,13 @@ export class EditProductModelComponent implements OnInit, OnDestroy {
         },
       });
     }
+  }
+
+  todaysDate(): string {
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const year = today.getFullYear();
+    return `${year}-${month}-${day}`; // Returns the date in YYYY-MM-DD format
   }
 }

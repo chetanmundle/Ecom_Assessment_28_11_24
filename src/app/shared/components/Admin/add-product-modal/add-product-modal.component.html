@@ -23,11 +23,19 @@
               placeholder="Product Name"
               formControlName="productName"
             />
-            <div style="font-size: 13px">
-              @if ( isSubmitClick &&
-              productForm.controls['productName'].errors?.['required']) {
-              <div class="text-danger">*required</div>
-              }
+            <div
+              style="font-size: 13px"
+              *ngIf="
+                isSubmitClick ||
+                productForm.controls['productName'].touched ||
+                productForm.controls['productName'].dirty
+              "
+            >
+              <div
+                *ngIf="productForm.controls['productName'].hasError('required')"
+              >
+                <div class="text-danger">*required</div>
+              </div>
             </div>
           </div>
         </div>
@@ -43,11 +51,19 @@
               placeholder="Category"
               formControlName="category"
             />
-            <div style="font-size: 13px">
-              @if ( isSubmitClick &&
-              productForm.controls['category'].errors?.['required']) {
-              <div class="text-danger">*required</div>
-              }
+            <div
+              style="font-size: 13px"
+              *ngIf="
+                isSubmitClick ||
+                productForm.controls['category'].touched ||
+                productForm.controls['category'].dirty
+              "
+            >
+              <div
+                *ngIf="productForm.controls['category'].hasError('required')"
+              >
+                <div class="text-danger">*required</div>
+              </div>
             </div>
           </div>
         </div>
@@ -66,11 +82,17 @@
               placeholder="Brand"
               formControlName="brand"
             />
-            <div style="font-size: 13px">
-              @if ( isSubmitClick &&
-              productForm.controls['brand'].errors?.['required']) {
-              <div class="text-danger">*required</div>
-              }
+            <div
+              style="font-size: 13px"
+              *ngIf="
+                isSubmitClick ||
+                productForm.controls['brand'].touched ||
+                productForm.controls['brand'].dirty
+              "
+            >
+              <div *ngIf="productForm.controls['brand'].hasError('required')">
+                <div class="text-danger">*required</div>
+              </div>
             </div>
           </div>
         </div>
@@ -85,12 +107,20 @@
               id="SellingPrice"
               placeholder="SellingPrice"
               formControlName="sellingPrice"
+              [maxlength]="7"
+              (input)="onSellingPriceChange($event)"
             />
-            <div style="font-size: 13px">
-              @if ( isSubmitClick &&
-              productForm.controls['sellingPrice'].errors?.['required']) {
-              <div class="text-danger">*required</div>
-              }
+            <div
+              style="font-size: 13px"
+              *ngIf="
+                isSubmitClick ||
+                productForm.controls['sellingPrice'].touched ||
+                productForm.controls['sellingPrice'].dirty
+              "
+            >
+              <div *ngIf="productForm.controls['sellingPrice'].hasError('required')">
+                <div class="text-danger">*required</div>
+              </div>
             </div>
           </div>
         </div>
@@ -107,13 +137,21 @@
               id="PurchasePrice"
               placeholder="PurchasePrice"
               formControlName="purchasePrice"
+              [maxlength]="7"
+              (input)="onPurchasegPriceChange($event)"
             />
-            <div style="font-size: 13px">
-              @if ( isSubmitClick &&
-              productForm.controls['purchasePrice'].errors?.['required']) {
+            <div
+            style="font-size: 13px"
+            *ngIf="
+              isSubmitClick ||
+              productForm.controls['purchasePrice'].touched ||
+              productForm.controls['purchasePrice'].dirty
+            "
+          >
+            <div *ngIf="productForm.controls['purchasePrice'].hasError('required')">
               <div class="text-danger">*required</div>
-              }
             </div>
+          </div>
           </div>
         </div>
         <div class="col-6">
@@ -128,12 +166,18 @@
               formControlName="purchaseDate"
               [attr.max]="todaysDate"
             />
-            <div style="font-size: 13px">
-              @if ( isSubmitClick &&
-              productForm.controls['purchaseDate'].errors?.['required']) {
+            <div
+            style="font-size: 13px"
+            *ngIf="
+              isSubmitClick ||
+              productForm.controls['purchaseDate'].touched ||
+              productForm.controls['purchaseDate'].dirty
+            "
+          >
+            <div *ngIf="productForm.controls['purchaseDate'].hasError('required')">
               <div class="text-danger">*required</div>
-              }
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -149,12 +193,20 @@
               id="Stock"
               placeholder="Stock"
               formControlName="stock"
+              [maxlength]="5"
+              (input)="onStockChange($event)"
             />
-            <div style="font-size: 13px">
-              @if ( isSubmitClick &&
-              productForm.controls['stock'].errors?.['required']) {
-              <div class="text-danger">*required</div>
-              }
+            <div
+              style="font-size: 13px"
+              *ngIf="
+                isSubmitClick ||
+                productForm.controls['stock'].touched ||
+                productForm.controls['stock'].dirty
+              "
+            >
+              <div *ngIf="productForm.controls['stock'].hasError('required')">
+                <div class="text-danger">*required</div>
+              </div>
             </div>
           </div>
         </div>
@@ -175,6 +227,7 @@
       </div>
     </form>
     <div class="d-flex justify-content-end gap-4">
+      <button class="btn btn-danger" (click)="onClickReset()">Reset</button>
       <button class="btn btn-danger" (click)="onClickCloseBtn(false)">
         Close
       </button>

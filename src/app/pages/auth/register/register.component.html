@@ -14,11 +14,17 @@
         formControlName="firstName"
         required
       />
-      <div style="font-size: 13px">
-        @if ( isSubmitClick &&
-        userForm.controls['firstName'].errors?.['required']) {
-        <div class="text-danger">*required</div>
-        }
+      <div
+        style="font-size: 13px"
+        *ngIf="
+          isSubmitClick ||
+          userForm.controls['firstName'].touched ||
+          userForm.controls['firstName'].dirty
+        "
+      >
+        <div *ngIf="userForm.controls['firstName'].hasError('required')">
+          <div class="text-danger">*required</div>
+        </div>
       </div>
     </div>
     <div class="col-md-4">
@@ -35,11 +41,17 @@
         formControlName="lastName"
         required
       />
-      <div style="font-size: 13px">
-        @if ( isSubmitClick &&
-        userForm.controls['lastName'].errors?.['required']) {
-        <div class="text-danger">*required</div>
-        }
+      <div
+        style="font-size: 13px"
+        *ngIf="
+          isSubmitClick ||
+          userForm.controls['lastName'].touched ||
+          userForm.controls['lastName'].dirty
+        "
+      >
+        <div *ngIf="userForm.controls['lastName'].hasError('required')">
+          <div class="text-danger">*required</div>
+        </div>
       </div>
     </div>
 
@@ -59,13 +71,20 @@
         />
       </div>
       <div style="font-size: 13px">
-        @if ( isSubmitClick && userForm.controls['email'].errors?.['required'])
-        {
-        <div class="text-danger">*required</div>
-        }@else if (isSubmitClick &&
-        userForm.controls['email'].errors?.['email']) {
-        <div class="text-danger">* Email Format</div>
-        }
+        <div
+          *ngIf="
+            isSubmitClick ||
+            userForm.controls['email'].touched ||
+            userForm.controls['email'].dirty
+          "
+        >
+          <div *ngIf="userForm.controls['email'].hasError('required')">
+            <div class="text-danger">*required</div>
+          </div>
+          <div *ngIf="userForm.controls['email'].hasError('email')">
+            <div class="text-danger">* Email Format</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -83,11 +102,17 @@
         <option value="1">Admin</option>
         <option value="2">Customer</option>
       </select>
-      <div style="font-size: 13px">
-        @if ( isSubmitClick &&
-        userForm.controls['userTypeId'].errors?.['required']) {
-        <div class="text-danger">*required</div>
-        }
+      <div
+        style="font-size: 13px"
+        *ngIf="
+          isSubmitClick ||
+          userForm.controls['userTypeId'].touched ||
+          userForm.controls['userTypeId'].dirty
+        "
+      >
+        <div *ngIf="userForm.controls['userTypeId'].hasError('required')">
+          <div class="text-danger">*required</div>
+        </div>
       </div>
     </div>
 
@@ -104,11 +129,17 @@
         [max]="todaysDate()"
         required
       />
-      <div style="font-size: 13px">
-        @if ( isSubmitClick &&
-        userForm.controls['dateOfBirth'].errors?.['required']) {
-        <div class="text-danger">*required</div>
-        }
+      <div
+        style="font-size: 13px"
+        *ngIf="
+          isSubmitClick ||
+          userForm.controls['dateOfBirth'].touched ||
+          userForm.controls['dateOfBirth'].dirty
+        "
+      >
+        <div *ngIf="userForm.controls['dateOfBirth'].hasError('required')">
+          <div class="text-danger">*required</div>
+        </div>
       </div>
     </div>
 
@@ -123,12 +154,28 @@
         value="Otto"
         required
         formControlName="mobile"
+        [maxlength]="10"
+        (input)="onNumberType($event)"
       />
-      <div style="font-size: 13px">
-        @if ( isSubmitClick && userForm.controls['mobile'].errors?.['required'])
-        {
-        <div class="text-danger">*required</div>
-        }
+      <div
+        style="font-size: 13px"
+        *ngIf="
+          isSubmitClick ||
+          userForm.controls['mobile'].touched ||
+          userForm.controls['mobile'].dirty
+        "
+      >
+        <div *ngIf="userForm.controls['mobile'].hasError('required')">
+          <div class="text-danger">*required</div>
+        </div>
+        <div
+          *ngIf="
+            !userForm.controls['mobile'].hasError('required') &&
+            !isMobileNumberValid
+          "
+        >
+          <div class="text-danger">*Must be 10 digit</div>
+        </div>
       </div>
     </div>
 
@@ -143,11 +190,17 @@
         required
         formControlName="address"
       />
-      <div style="font-size: 13px">
-        @if ( isSubmitClick &&
-        userForm.controls['address'].errors?.['required']) {
-        <div class="text-danger">*required</div>
-        }
+      <div
+        style="font-size: 13px"
+        *ngIf="
+          isSubmitClick ||
+          userForm.controls['address'].touched ||
+          userForm.controls['address'].dirty
+        "
+      >
+        <div *ngIf="userForm.controls['address'].hasError('required')">
+          <div class="text-danger">*required</div>
+        </div>
       </div>
     </div>
 
@@ -167,11 +220,17 @@
           {{ con.countryName }}
         </option>
       </select>
-      <div style="font-size: 13px">
-        @if ( isSubmitClick &&
-        userForm.controls['countryId'].errors?.['required']) {
-        <div class="text-danger">*required</div>
-        }
+      <div
+        style="font-size: 13px"
+        *ngIf="
+          isSubmitClick ||
+          userForm.controls['countryId'].touched ||
+          userForm.controls['countryId'].dirty
+        "
+      >
+        <div *ngIf="userForm.controls['countryId'].hasError('required')">
+          <div class="text-danger">*required</div>
+        </div>
       </div>
     </div>
 
@@ -190,11 +249,17 @@
           {{ con.stateName }}
         </option>
       </select>
-      <div style="font-size: 13px">
-        @if ( isSubmitClick &&
-        userForm.controls['stateId'].errors?.['required']) {
-        <div class="text-danger">*required</div>
-        }
+      <div
+        style="font-size: 13px"
+        *ngIf="
+          isSubmitClick ||
+          userForm.controls['stateId'].touched ||
+          userForm.controls['stateId'].dirty
+        "
+      >
+        <div *ngIf="userForm.controls['stateId'].hasError('required')">
+          <div class="text-danger">*required</div>
+        </div>
       </div>
     </div>
 
@@ -203,17 +268,25 @@
         ZipCode
       </label>
       <input
-        type="text"
+        type="number"
         class="form-control"
         id="validationDefault05"
         required
         formControlName="zipCode"
+        [maxlength]="8"
+        (input)="onZipCodeChange($event)"
       />
-      <div style="font-size: 13px">
-        @if ( isSubmitClick &&
-        userForm.controls['zipCode'].errors?.['required']) {
-        <div class="text-danger">*required</div>
-        }
+      <div
+        style="font-size: 13px"
+        *ngIf="
+          isSubmitClick ||
+          userForm.controls['zipCode'].touched ||
+          userForm.controls['zipCode'].dirty
+        "
+      >
+        <div *ngIf="userForm.controls['zipCode'].hasError('required')">
+          <div class="text-danger">*required</div>
+        </div>
       </div>
     </div>
 
@@ -244,22 +317,35 @@
           Agree to terms and conditions
         </label>
 
-        <div style="font-size: 13px">
-          @if ( isSubmitClick &&
-          userForm.controls['isChecked'].errors?.['required']) {
-          <div class="text-danger">*required</div>
-          }
+        <div
+          style="font-size: 13px"
+          *ngIf="
+            isSubmitClick ||
+            userForm.controls['isChecked'].touched ||
+            userForm.controls['isChecked'].dirty
+          "
+        >
+          <div *ngIf="userForm.controls['isChecked'].hasError('required')">
+            <div class="text-danger">*required</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12">
-      <button
-        class="btn btn-primary"
-        type="submit"
-        (click)="onClickRegitster()"
-      >
-        Register
-      </button>
+    <div class="row col-12 my-3">
+      <div class="col-2">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          (click)="onClickRegitster()"
+        >
+          Register
+        </button>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-danger" (click)="onClickClearBtn()">
+          Clear
+        </button>
+      </div>
     </div>
   </form>
   <div>Already have an account? <a routerLink="/auth/Login">Log In</a></div>

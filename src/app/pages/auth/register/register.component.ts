@@ -36,6 +36,7 @@ export class RegisterComponent implements OnDestroy {
   userForm: FormGroup;
   isLoader: boolean = false;
   isSubmitClick: boolean = false;
+  isMobileNumberValid: boolean = false;
 
   private countryStateService = inject(CountryStateService);
   private userService = inject(UserService);
@@ -76,6 +77,26 @@ export class RegisterComponent implements OnDestroy {
     });
 
     this.subscriptions.add(sub);
+  }
+
+  // Clear form
+  onClickClearBtn() {
+    this.userForm = this.formBuilder.group({
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      userTypeId: ['', [Validators.required]],
+      dateOfBirth: ['', Validators.required],
+      mobile: ['', Validators.required],
+      address: ['', Validators.required],
+      zipCode: ['', Validators.required],
+      profileImage: [''],
+      stateId: ['', Validators.required],
+      countryId: ['', Validators.required],
+      isChecked: [true, [Validators.requiredTrue]],
+    });
+
+    this.selectedFile = null;
   }
 
   // Unsubscribe all services which are subscribed
@@ -123,10 +144,15 @@ export class RegisterComponent implements OnDestroy {
   // this fuction call whern user click on Register btn
   onClickRegitster() {
     this.isSubmitClick = true;
-
     if (this.userForm.invalid) {
       return;
     }
+    const mobilenumber = this.userForm.get('mobile')?.value.toString();
+    if (mobilenumber.length != 10) {
+      this.tostrService.showError('Mobile Number Should have 10 Number');
+      return;
+    }
+
     this.isLoader = true;
     if (this.selectedFile) {
       const sub = this.imageService.uploadImage$(this.selectedFile).subscribe({
@@ -190,5 +216,33 @@ export class RegisterComponent implements OnDestroy {
     });
 
     this.subscriptions.add(sub);
+  }
+
+  onNumberType(event: any): void {
+    let value = event.target.value;
+    value = value.replace(/\D/g, '');
+    if (value.length > 10) {
+      value = value.slice(0, 10);
+    }
+    event.target.value = value;
+
+    if (value.length == 10) {
+        this.isMobileNumberValid = true;
+    } else {
+        this.isMobileNumberValid = false;
+    }
+
+    this.userForm.controls['mobile'].setValue(value);
+  }
+
+  onZipCodeChange(event: any): void {
+    let value = event.target.value;
+    value = value.replace(/\D/g, '');
+    if (value.length > 8) {
+      value = value.slice(0, 8);
+    }
+    event.target.value = value;
+
+    this.userForm.controls['zipCode'].setValue(value);
   }
 }

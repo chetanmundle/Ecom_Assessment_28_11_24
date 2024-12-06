@@ -145,7 +145,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Enter Card Details</h5>
         <button
           type="button"
           class="btn-close"
@@ -161,11 +161,13 @@
                 >Cart Number</label
               >
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="exampleFormControlInput1"
                 placeholder="0000 0000 0000 0000"
                 formControlName="cardNumber"
+                [maxlength]="16"
+                (input)="onCardNumberInput($event)"
               />
             </div>
             <div class="row gap-3">
@@ -193,6 +195,8 @@
                   placeholder="CVV"
                   maxlength="3"
                   formControlName="cvv"
+                  [maxlength]="3"
+                  (input)="onCardCvvInput($event)"
                 />
               </div>
             </div>
@@ -225,7 +229,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addressModal">Modal title</h5>
+        <h5 class="modal-title" id="addressModal">Enter Delivery Address</h5>
         <button
           type="button"
           class="btn-close"
