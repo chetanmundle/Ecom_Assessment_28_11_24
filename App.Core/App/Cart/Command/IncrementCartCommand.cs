@@ -28,6 +28,11 @@ namespace App.Core.App.Cart.Command
         {
             var incrementCartDto = request.incrementCartDto;
 
+            if(incrementCartDto.PreviousQuntity >= 10)
+            {
+                return AppResponse.Response(false, "You Cannot Add More Than 10 Quntity",HttpStatusCodes.Conflict);
+            }
+
 
             var product = await _appDbContext.Set<Domain.Entities.Product>()
                                 .FirstOrDefaultAsync(p => p.ProductId == incrementCartDto.ProductId);

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EBefm6JNh31yX/A+Hu8QLKxhPNSbTyz61BFma8tzYGg=",
+  "Hash": "JiljMHRQ2a/DPfJxeWpyStnAiQqU8d59OGREJrTpnjA=",
   "Source": "Ecom_Assessment_Backend",
   "BasePath": "_content/Ecom_Assessment_Backend",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\02f76abb-9514-4da3-9883-b3ecb4d385f1.jpg"
+    },
+    {
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\270bfeb4-632a-4f11-b725-917cb3907693.png",
+      "SourceId": "Ecom_Assessment_Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "BasePath": "_content/Ecom_Assessment_Backend",
+      "RelativePath": "Images/270bfeb4-632a-4f11-b725-917cb3907693.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\270bfeb4-632a-4f11-b725-917cb3907693.png"
     },
     {
       "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\285b0bd9-5f9d-4abb-ae34-ae9255b52dc9.png",
@@ -167,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\5af076ba-4c8e-4196-8fa9-e4ef2f06a11f.png"
+    },
+    {
+      "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\879c4e04-1f45-4fa9-9892-808e7a0ca023.jpg",
+      "SourceId": "Ecom_Assessment_Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\",
+      "BasePath": "_content/Ecom_Assessment_Backend",
+      "RelativePath": "Images/879c4e04-1f45-4fa9-9892-808e7a0ca023.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\879c4e04-1f45-4fa9-9892-808e7a0ca023.jpg"
     },
     {
       "Identity": "D:\\Assessment\\Assessment_28_11_24_PawanSir\\Assessment_ECom_28_11_24_Backend\\Ecom_Assessment_Backend\\Ecom_Assessment_Backend\\wwwroot\\Images\\a032f4e5-5a8b-4f20-8aaa-d54efede00d3.jpg",

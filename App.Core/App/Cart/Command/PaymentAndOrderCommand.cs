@@ -1,5 +1,6 @@
 ﻿using App.Common.Constants;
 using App.Common.Models;
+using App.Core.Interface;
 using App.Core.Interfaces;
 using App.Core.Models.Card;
 using App.Core.Models.SalesMaster;
@@ -22,10 +23,12 @@ namespace App.Core.App.Cart.Command
     internal class PaymentAndOrderCommandHandler : IRequestHandler<PaymentAndOrderCommand, AppResponse<SalesMasterDto>>
     {
         private readonly IAppDbContext _appDbContext;
+        private readonly IEmailSmtpService _emailSmtpService;
 
-        public PaymentAndOrderCommandHandler(IAppDbContext appDbContext)
+        public PaymentAndOrderCommandHandler(IAppDbContext appDbContext,IEmailSmtpService emailSmtpService)
         {
             _appDbContext = appDbContext;
+            _emailSmtpService = emailSmtpService;
         }
 
         public async Task<AppResponse<SalesMasterDto>> Handle(PaymentAndOrderCommand request, CancellationToken cancellationToken)
@@ -46,9 +49,9 @@ namespace App.Core.App.Cart.Command
             }
 
             // Checking Valid User 
-            //var user = await _appDbContext.Set<Domain.Entities.User>()
-            //            .FirstOrDefaultAsync(u => u.UserId == paymentAndOrderDto.UserId);
-            //if (user is null) return AppResponse.Fail<SalesMasterDto>(null, "User is not Valid", HttpStatusCodes.NotFound);
+            var user = await _appDbContext.Set<Domain.Entities.User>()
+                        .FirstOrDefaultAsync(u => u.UserId == paymentAndOrderDto.UserId);
+            if (user is null) return AppResponse.Fail<SalesMasterDto>(null, "User is not Valid", HttpStatusCodes.NotFound);
 
 
             var cartDetailsList = await (from cartMaster in _appDbContext.Set<Domain.Entities.CartMaster>()
@@ -105,6 +108,8 @@ namespace App.Core.App.Cart.Command
             salesMaster.InvoiceId = "ORD" + salesMaster.Id.ToString().PadLeft(3, '0');
             await _appDbContext.SaveChangesAsync(cancellationToken);
 
+            string body = "Your Order is Confirmed.....!   <br><br><br>";
+
             foreach (var item in cartDetailsList)
             {
                 var product = await _appDbContext.Set<Domain.Entities.Product>()
@@ -121,6 +126,9 @@ namespace App.Core.App.Cart.Command
 
                 };
 
+                body += product.ProductName + " X " + salesDetails.SaleQuntity.ToString() + " = $" +
+                    (product.SellingPrice * salesDetails.SaleQuntity).ToString() + " <br>";
+
                 await _appDbContext.Set<Domain.Entities.SalesDetails>()
                        .AddAsync(salesDetails, cancellationToken);
 
@@ -133,8 +141,8 @@ namespace App.Core.App.Cart.Command
                 await _appDbContext.SaveChangesAsync(cancellationToken);
             }
 
-
-
+            body += " <br><br> Your SubTotal is  $" + subTotal.ToString() + "<br><br> Thankyou!!!";
+            _emailSmtpService.SendEmailForConfirmOrder(user.Email, user.FirstName, "Order Confirmation ECom", user.UserName, body);
 
             //var
             return AppResponse.Success<SalesMasterDto>(salesMaster.Adapt<SalesMasterDto>(),
