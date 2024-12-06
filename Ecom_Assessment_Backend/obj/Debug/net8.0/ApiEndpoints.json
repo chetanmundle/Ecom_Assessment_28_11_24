@@ -261,6 +261,22 @@
   },
   {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.SalesController",
+    "Method": "GetAllOrdersByUserId",
+    "RelativePath": "api/Sales/GetAllOrdersByUserId/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.SalesController",
     "Method": "GetInvoice",
     "RelativePath": "api/Sales/GetInvoice/{invoId}",
     "HttpMethod": "GET",
