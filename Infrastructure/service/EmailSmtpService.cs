@@ -21,7 +21,7 @@ namespace Infrastructure.service
         private bool enableSsl = true;             // Set to true if your SMTP requires SSL
         private bool isHtml = true;
         public bool SendEmailOtp(string emailSendTo, string name, string subject, int otp)
-        {         
+        {
 
             using var client = new SmtpClient(smtpHost, smtpPort)
             {
@@ -64,7 +64,7 @@ namespace Infrastructure.service
 
         }
 
-       
+
 
         public bool SendWlcomeEmail(string emailSendTo, string name, string subject, string username, string password)
         {
@@ -175,5 +175,38 @@ namespace Infrastructure.service
             client.Send(mailMessage);
             return true;
         }
+
+
+
+        public bool SendEmailForConfirmOrder(string emailSendTo, string name, string subject, string username, string bodyData)
+        {
+            //// Hardcoded SMTP configuration
+            //string smtpHost = "smtp.gmail.com"; // Change to your SMTP host
+            //int smtpPort = 587;                // Change to your SMTP port
+            //string smtpUsername = "chetanmundlesd@gmail.com"; // Your email address
+            //string smtpPassword = "wiiryglqlkmovzew"; // Your email password
+            //bool enableSsl = true;             // Set to true if your SMTP requires SSL
+            //bool isHtml = true;
+
+            using var client = new SmtpClient(smtpHost, smtpPort)
+            {
+                Credentials = new NetworkCredential(smtpUsername, smtpPassword),
+                EnableSsl = enableSsl
+            };
+
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress(smtpUsername, "ECom_Application"),
+                Subject = subject,
+                Body =bodyData,
+                IsBodyHtml = isHtml
+            };
+
+            mailMessage.To.Add(emailSendTo);
+
+            client.Send(mailMessage);
+            return true;
+        }
+
     }
 }
