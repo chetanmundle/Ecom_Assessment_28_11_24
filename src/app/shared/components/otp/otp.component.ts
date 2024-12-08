@@ -39,30 +39,57 @@ export class OtpComponent implements OnDestroy {
   }
 
   onInput(event: any, index: number) {
-    const inputElement = event.target;
+    const inputElement = event.target as HTMLInputElement;
     const nextInput =
       document.querySelectorAll<HTMLInputElement>('#otp > input')[index + 1];
     const prevInput =
       document.querySelectorAll<HTMLInputElement>('#otp > input')[index - 1];
-
+  
+    // Handle paste event
+    if (event.inputType === 'insertFromPaste') {
+      const pastedData = event.clipboardData?.getData('text') || inputElement.value;
+      if (pastedData && pastedData.length === 6) {
+        this.populateOtpFromPaste(pastedData);
+      }
+      return;
+    }
+  
     // Allow only one character
     if (inputElement.value.length > 1) {
       inputElement.value = inputElement.value[0];
+      this.otp[index] = inputElement.value; // Update the model
     }
-
-    // Focus next field if valid input
+  
+    // Handle valid input and move focus to the next field
     if (inputElement.value && nextInput) {
       nextInput.focus();
     }
-
+  
     // Handle backspace
-    if (event.inputType === 'deleteContentBackward' && prevInput) {
-      prevInput.focus();
+    if (event.inputType === 'deleteContentBackward') {
+      this.otp[index] = ''; // Clear the current value in the model
+      if (prevInput) {
+        prevInput.focus();
+      }
     }
   }
+  
+  // New method to populate OTP inputs on paste
+  populateOtpFromPaste(pastedOtp: string) {
+    const otpInputs = document.querySelectorAll<HTMLInputElement>('#otp > input');
+    this.otp = pastedOtp.split('').slice(0, 6); // Update the OTP array
+  
+    otpInputs.forEach((input, i) => {
+      input.value = this.otp[i] || ''; // Set value for each input
+    });
+  }
+  
+  
 
   validateOTP() {
     const otpCode = this.otp.join('');
+
+    console.log('otp : ', otpCode);
 
     if (!otpCode || otpCode.length !== 6) {
       this.tostr.showWarning('Enter the Correct Otp');

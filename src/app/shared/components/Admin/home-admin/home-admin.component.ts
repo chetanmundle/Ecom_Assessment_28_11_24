@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { AddProductModalComponent } from '../add-product-modal/add-product-modal.component';
 import { ViewProductModelComponent } from '../view-product-model/view-product-model.component';
 import { EditProductModelComponent } from '../edit-product-model/edit-product-model.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home-admin',
@@ -97,23 +98,41 @@ export class HomeAdminComponent implements OnInit, OnDestroy {
 
   // Delete PRoduct by ProductID
   onClickDelete(productId: number) {
-    if (!confirm('Do you Want to Delete this Product ?')) {
-      return;
-    }
-    this.productService.DeleteProductById$(productId).subscribe({
-      next: (res: AppResponse<any>) => {
-        if (res.isSuccess) {
-          this.tostR.showSuccess(res.message);
-          this.getAllProduct();
-        } else {
-          this.tostR.showError(res.message);
-        }
-      },
-      error: (err: Error) => {
-        console.log('Unable to delete : ', err);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const sub = this.productService
+          .DeleteProductById$(productId)
+          .subscribe({
+            next: (res: AppResponse<any>) => {
+              if (res.isSuccess) {
+                // this.tostR.showSuccess(res.message);
+                Swal.fire({
+                  title: 'Deleted!',
+                  text: 'Your file has been deleted.',
+                  icon: 'success',
+                });
+                this.getAllProduct();
+              } else {
+                this.tostR.showError(res.message);
+              }
+            },
+            error: (err: Error) => {
+              console.log('Unable to delete : ', err);
 
-        this.tostR.showError('Server Error...!');
-      },
+              this.tostR.showError('Server Error...!');
+            },
+          });
+
+        this.subscriptions.add(sub);
+      }
     });
   }
 

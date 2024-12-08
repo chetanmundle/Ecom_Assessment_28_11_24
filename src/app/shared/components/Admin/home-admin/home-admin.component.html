@@ -10,8 +10,12 @@
     </div>
   </div>
 
+  <div class="text-center mt-3" *ngIf="productList?.length === 0">
+    <h2>Not Item in Your List</h2>
+  </div>
+
   <!-- Table of All Products -->
-  <table class="table mt-3">
+  <table class="table mt-3" *ngIf="productList?.length !== 0">
     <thead>
       <tr>
         <th scope="col">Product Code</th>

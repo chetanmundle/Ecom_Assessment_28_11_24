@@ -239,4 +239,15 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
     this.userForm.controls['mobile'].setValue(value);
   }
+
+  // Handle not accept more that 25 letters
+  onInputText(event: any): void {
+    const input = event.target;
+    if (input.value.length > 25) {
+      input.value = input.value.slice(0, 25);
+      this.userForm.controls[input.getAttribute('formControlName')].setValue(
+        input.value
+      );
+    }
+  }
 }

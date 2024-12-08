@@ -20,6 +20,7 @@ import { ImageService } from '../../../../core/services/ImageService/image.servi
 import { AppResponse } from '../../../../core/models/interface/AppResponse';
 import { MyToastServiceService } from '../../../../core/services/MyToastService/my-toast-service.service';
 import { CommonModule } from '@angular/common';
+import { priceComparisonValidator } from './priceComparisonValidator';
 
 @Component({
   selector: 'app-add-product-modal',
@@ -44,17 +45,20 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
   private tostR = inject(MyToastServiceService);
 
   constructor(private formBuilder: FormBuilder) {
-    this.productForm = this.formBuilder.group({
-      productName: ['', [Validators.required]],
-      productImage: [''],
-      category: ['', [Validators.required]],
-      brand: ['', [Validators.required]],
-      sellingPrice: ['', [Validators.required]],
-      purchasePrice: ['', [Validators.required]],
-      purchaseDate: ['', [Validators.required]],
-      stock: ['', [Validators.required]],
-      //   createdBy: number;
-    });
+    this.productForm = this.formBuilder.group(
+      {
+        productName: ['', [Validators.required]],
+        productImage: [''],
+        category: ['', [Validators.required]],
+        brand: ['', [Validators.required]],
+        sellingPrice: ['', [Validators.required]],
+        purchasePrice: ['', [Validators.required]],
+        purchaseDate: ['', [Validators.required]],
+        stock: ['', [Validators.required]],
+        //   createdBy: number;
+      },
+      { validators: priceComparisonValidator() }
+    );
   }
 
   onClickCloseBtn(value: boolean) {
@@ -151,17 +155,20 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
   }
 
   onClickReset() {
-    this.productForm = this.formBuilder.group({
-      productName: ['', [Validators.required]],
-      productImage: [''],
-      category: ['', [Validators.required]],
-      brand: ['', [Validators.required]],
-      sellingPrice: ['', [Validators.required]],
-      purchasePrice: ['', [Validators.required]],
-      purchaseDate: ['', [Validators.required]],
-      stock: ['', [Validators.required]],
-      //   createdBy: number;
-    });
+    this.productForm = this.formBuilder.group(
+      {
+        productName: ['', [Validators.required]],
+        productImage: [''],
+        category: ['', [Validators.required]],
+        brand: ['', [Validators.required]],
+        sellingPrice: ['', [Validators.required]],
+        purchasePrice: ['', [Validators.required]],
+        purchaseDate: ['', [Validators.required]],
+        stock: ['', [Validators.required]],
+        //   createdBy: number;
+      },
+      { validators: priceComparisonValidator() }
+    );
 
     this.selectedFile = null;
   }
@@ -195,5 +202,16 @@ export class AddProductModalComponent implements OnInit, OnDestroy {
     event.target.value = value;
 
     this.productForm.controls['stock'].setValue(value);
+  }
+
+  // Handle not accept more that 25 letters
+  onInputText(event: any): void {
+    const input = event.target;
+    if (input.value.length > 25) {
+      input.value = input.value.slice(0, 25);
+      this.productForm.controls[input.getAttribute('formControlName')].setValue(
+        input.value
+      );
+    }
   }
 }

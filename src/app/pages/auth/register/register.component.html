@@ -13,6 +13,8 @@
         id="validationDefault01"
         formControlName="firstName"
         required
+        maxlength="25"
+        (input)="onInputText($event)"
       />
       <div
         style="font-size: 13px"
@@ -40,6 +42,8 @@
         id="validationDefault02"
         formControlName="lastName"
         required
+        maxlength="25"
+        (input)="onInputText($event)"
       />
       <div
         style="font-size: 13px"
@@ -68,6 +72,8 @@
           aria-describedby="inputGroupPrepend2"
           formControlName="email"
           required
+          maxlength="25"
+          (input)="onInputText($event)"
         />
       </div>
       <div style="font-size: 13px">

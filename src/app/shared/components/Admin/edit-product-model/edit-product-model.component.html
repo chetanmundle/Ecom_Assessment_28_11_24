@@ -22,6 +22,8 @@
               id="productname"
               placeholder="Product Name"
               formControlName="productName"
+              maxlength="25"
+              (input)="onInputText($event)"
             />
             <div style="font-size: 13px">
               <div
@@ -53,9 +55,11 @@
               id="Category"
               placeholder="Category"
               formControlName="category"
+              maxlength="25"
+              (input)="onInputText($event)"
             />
             <div style="font-size: 13px">
-                <div
+              <div
                 *ngIf="
                   isSubmitClick ||
                   productForm.controls['category'].touched ||
@@ -63,9 +67,7 @@
                 "
               >
                 <div
-                  *ngIf="
-                    productForm.controls['category'].hasError('required')
-                  "
+                  *ngIf="productForm.controls['category'].hasError('required')"
                 >
                   <div class="text-danger">*required</div>
                 </div>
@@ -87,59 +89,25 @@
               id="Brand"
               placeholder="Brand"
               formControlName="brand"
+              maxlength="25"
+              (input)="onInputText($event)"
             />
             <div style="font-size: 13px">
-                <div
+              <div
                 *ngIf="
                   isSubmitClick ||
                   productForm.controls['brand'].touched ||
                   productForm.controls['brand'].dirty
                 "
               >
-                <div
-                  *ngIf="
-                    productForm.controls['brand'].hasError('required')
-                  "
-                >
+                <div *ngIf="productForm.controls['brand'].hasError('required')">
                   <div class="text-danger">*required</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-6">
-          <div class="mb-1">
-            <label for="SellingPrice" class="form-label form-labelStart">
-              Selling Price
-            </label>
-            <input
-              type="number"
-              class="form-control"
-              id="SellingPrice"
-              placeholder="SellingPrice"
-              formControlName="sellingPrice"
-            />
-            <div style="font-size: 13px">
-                <div
-                *ngIf="
-                  isSubmitClick ||
-                  productForm.controls['sellingPrice'].touched ||
-                  productForm.controls['sellingPrice'].dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    productForm.controls['sellingPrice'].hasError('required')
-                  "
-                >
-                  <div class="text-danger">*required</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row col-12">
+
         <div class="col-6">
           <div class="mb-1">
             <label for="PurchasePrice" class="form-label form-labelStart">
@@ -153,7 +121,7 @@
               formControlName="purchasePrice"
             />
             <div style="font-size: 13px">
-                <div
+              <div
                 *ngIf="
                   isSubmitClick ||
                   productForm.controls['purchasePrice'].touched ||
@@ -171,6 +139,50 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row col-12">
+        <div class="col-6">
+          <div class="mb-1">
+            <label for="SellingPrice" class="form-label form-labelStart">
+              Selling Price
+            </label>
+            <input
+              type="number"
+              class="form-control"
+              id="SellingPrice"
+              placeholder="SellingPrice"
+              formControlName="sellingPrice"
+            />
+            <div style="font-size: 13px">
+              <div
+                *ngIf="
+                  isSubmitClick ||
+                  productForm.controls['sellingPrice'].touched ||
+                  productForm.controls['sellingPrice'].dirty
+                "
+              >
+                <div
+                  *ngIf="
+                    productForm.controls['sellingPrice'].hasError('required')
+                  "
+                >
+                  <div class="text-danger">*required</div>
+                </div>
+              </div>
+              <div
+                *ngIf="
+                  productForm.hasError('priceMismatch') &&
+                  !productForm.controls['sellingPrice'].hasError('required')
+                "
+              >
+                <div class="text-danger">
+                  * Selling Price should be greater than Purchase Price
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="col-6">
           <div class="mb-1">
             <label for="PurchaseDate" class="form-label form-labelStart">
@@ -184,7 +196,7 @@
               [max]="todaysDate()"
             />
             <div style="font-size: 13px">
-                <div
+              <div
                 *ngIf="
                   isSubmitClick ||
                   productForm.controls['purchaseDate'].touched ||
@@ -217,18 +229,14 @@
               formControlName="stock"
             />
             <div style="font-size: 13px">
-                <div
+              <div
                 *ngIf="
                   isSubmitClick ||
                   productForm.controls['stock'].touched ||
                   productForm.controls['stock'].dirty
                 "
               >
-                <div
-                  *ngIf="
-                    productForm.controls['stock'].hasError('required')
-                  "
-                >
+                <div *ngIf="productForm.controls['stock'].hasError('required')">
                   <div class="text-danger">*required</div>
                 </div>
               </div>

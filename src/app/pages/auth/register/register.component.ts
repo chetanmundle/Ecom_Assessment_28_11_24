@@ -227,9 +227,9 @@ export class RegisterComponent implements OnDestroy {
     event.target.value = value;
 
     if (value.length == 10) {
-        this.isMobileNumberValid = true;
+      this.isMobileNumberValid = true;
     } else {
-        this.isMobileNumberValid = false;
+      this.isMobileNumberValid = false;
     }
 
     this.userForm.controls['mobile'].setValue(value);
@@ -244,5 +244,16 @@ export class RegisterComponent implements OnDestroy {
     event.target.value = value;
 
     this.userForm.controls['zipCode'].setValue(value);
+  }
+
+  // Handle not accept more that 25 letters
+  onInputText(event: any): void {
+    const input = event.target;
+    if (input.value.length > 25) {
+      input.value = input.value.slice(0, 25);
+      this.userForm.controls[input.getAttribute('formControlName')].setValue(
+        input.value
+      );
+    }
   }
 }

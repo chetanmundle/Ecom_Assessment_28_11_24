@@ -22,6 +22,8 @@
               id="productname"
               placeholder="Product Name"
               formControlName="productName"
+              maxlength="25"
+              (input)="onInputText($event)"
             />
             <div
               style="font-size: 13px"
@@ -50,6 +52,8 @@
               id="Category"
               placeholder="Category"
               formControlName="category"
+              maxlength="25"
+              (input)="onInputText($event)"
             />
             <div
               style="font-size: 13px"
@@ -81,6 +85,8 @@
               id="Brand"
               placeholder="Brand"
               formControlName="brand"
+              maxlength="25"
+              (input)="onInputText($event)"
             />
             <div
               style="font-size: 13px"
@@ -96,6 +102,41 @@
             </div>
           </div>
         </div>
+
+        <div class="col-6">
+          <div class="mb-1">
+            <label for="PurchasePrice" class="form-label form-labelStart">
+              Purchase Price
+            </label>
+            <input
+              type="number"
+              class="form-control"
+              id="PurchasePrice"
+              placeholder="PurchasePrice"
+              formControlName="purchasePrice"
+              [maxlength]="7"
+              (input)="onPurchasegPriceChange($event)"
+            />
+            <div
+              style="font-size: 13px"
+              *ngIf="
+                isSubmitClick ||
+                productForm.controls['purchasePrice'].touched ||
+                productForm.controls['purchasePrice'].dirty
+              "
+            >
+              <div
+                *ngIf="
+                  productForm.controls['purchasePrice'].hasError('required')
+                "
+              >
+                <div class="text-danger">*required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row col-12">
         <div class="col-6">
           <div class="mb-1">
             <label for="SellingPrice" class="form-label form-labelStart">
@@ -118,42 +159,27 @@
                 productForm.controls['sellingPrice'].dirty
               "
             >
-              <div *ngIf="productForm.controls['sellingPrice'].hasError('required')">
+              <div
+                *ngIf="
+                  productForm.controls['sellingPrice'].hasError('required')
+                "
+              >
                 <div class="text-danger">*required</div>
+              </div>
+              <div
+                *ngIf="
+                  productForm.hasError('priceMismatch') &&
+                  !productForm.controls['sellingPrice'].hasError('required')
+                "
+              >
+                <div class="text-danger">
+                  * Selling Price should be greater than Purchase Price
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row col-12">
-        <div class="col-6">
-          <div class="mb-1">
-            <label for="PurchasePrice" class="form-label form-labelStart">
-              Purchase Price
-            </label>
-            <input
-              type="number"
-              class="form-control"
-              id="PurchasePrice"
-              placeholder="PurchasePrice"
-              formControlName="purchasePrice"
-              [maxlength]="7"
-              (input)="onPurchasegPriceChange($event)"
-            />
-            <div
-            style="font-size: 13px"
-            *ngIf="
-              isSubmitClick ||
-              productForm.controls['purchasePrice'].touched ||
-              productForm.controls['purchasePrice'].dirty
-            "
-          >
-            <div *ngIf="productForm.controls['purchasePrice'].hasError('required')">
-              <div class="text-danger">*required</div>
-            </div>
-          </div>
-          </div>
-        </div>
+
         <div class="col-6">
           <div class="mb-1">
             <label for="PurchaseDate" class="form-label form-labelStart">
@@ -167,17 +193,21 @@
               [attr.max]="todaysDate"
             />
             <div
-            style="font-size: 13px"
-            *ngIf="
-              isSubmitClick ||
-              productForm.controls['purchaseDate'].touched ||
-              productForm.controls['purchaseDate'].dirty
-            "
-          >
-            <div *ngIf="productForm.controls['purchaseDate'].hasError('required')">
-              <div class="text-danger">*required</div>
+              style="font-size: 13px"
+              *ngIf="
+                isSubmitClick ||
+                productForm.controls['purchaseDate'].touched ||
+                productForm.controls['purchaseDate'].dirty
+              "
+            >
+              <div
+                *ngIf="
+                  productForm.controls['purchaseDate'].hasError('required')
+                "
+              >
+                <div class="text-danger">*required</div>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>

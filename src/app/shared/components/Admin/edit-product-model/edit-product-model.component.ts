@@ -23,6 +23,7 @@ import { ImageService } from '../../../../core/services/ImageService/image.servi
 import { MyToastServiceService } from '../../../../core/services/MyToastService/my-toast-service.service';
 import { ProductService } from '../../../../core/services/ProductService/product.service';
 import { CommonModule } from '@angular/common';
+import { priceComparisonValidator } from '../add-product-modal/priceComparisonValidator';
 
 @Component({
   selector: 'app-edit-product-model',
@@ -47,17 +48,21 @@ export class EditProductModelComponent implements OnInit, OnDestroy {
   private tostR = inject(MyToastServiceService);
 
   constructor(private formBuilder: FormBuilder) {
-    this.productForm = this.formBuilder.group({
-      productName: ['', [Validators.required]],
-      productImage: [''],
-      category: ['', [Validators.required]],
-      brand: ['', [Validators.required]],
-      sellingPrice: ['', [Validators.required]],
-      purchasePrice: ['', [Validators.required]],
-      purchaseDate: ['', [Validators.required]],
-      stock: ['', [Validators.required]],
-      //   createdBy: number;
-    });
+    this.productForm = this.formBuilder.group(
+      {
+        productName: ['', [Validators.required]],
+        productImage: [''],
+        category: ['', [Validators.required]],
+        brand: ['', [Validators.required]],
+        sellingPrice: ['', [Validators.required]],
+        purchasePrice: ['', [Validators.required]],
+        purchaseDate: ['', [Validators.required]],
+        stock: ['', [Validators.required]],
+
+        //   createdBy: number;
+      },
+      { validators: priceComparisonValidator() }
+    );
   }
   ngOnInit(): void {
     this.productForm.get('productName')?.setValue(this.product?.productName);
@@ -177,5 +182,16 @@ export class EditProductModelComponent implements OnInit, OnDestroy {
     const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
     const year = today.getFullYear();
     return `${year}-${month}-${day}`; // Returns the date in YYYY-MM-DD format
+  }
+
+  // Handle not accept more that 25 letters
+  onInputText(event: any): void {
+    const input = event.target;
+    if (input.value.length > 25) {
+      input.value = input.value.slice(0, 25);
+      this.productForm.controls[input.getAttribute('formControlName')].setValue(
+        input.value
+      );
+    }
   }
 }
