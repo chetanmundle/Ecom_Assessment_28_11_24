@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ecom_Assessment_Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ceea2657ca1bc6e833a10c50e7d0ef88eef3d460")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7fadda278157ba2feb6e9c124828bd7426be8221")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ecom_Assessment_Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ecom_Assessment_Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
