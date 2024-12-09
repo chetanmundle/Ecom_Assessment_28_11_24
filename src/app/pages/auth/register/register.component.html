@@ -14,7 +14,7 @@
         formControlName="firstName"
         required
         maxlength="25"
-        (input)="onInputText($event)"
+        (input)="onInputText($event,25)"
       />
       <div
         style="font-size: 13px"
@@ -43,7 +43,7 @@
         formControlName="lastName"
         required
         maxlength="25"
-        (input)="onInputText($event)"
+        (input)="onInputText($event,25)"
       />
       <div
         style="font-size: 13px"
@@ -73,7 +73,7 @@
           formControlName="email"
           required
           maxlength="25"
-          (input)="onInputText($event)"
+          (input)="onInputText($event, 50)"
         />
       </div>
       <div style="font-size: 13px">
@@ -87,7 +87,7 @@
           <div *ngIf="userForm.controls['email'].hasError('required')">
             <div class="text-danger">*required</div>
           </div>
-          <div *ngIf="userForm.controls['email'].hasError('email')">
+          <div *ngIf="userForm.controls['email'].hasError('invalidEmail')">
             <div class="text-danger">* Email Format</div>
           </div>
         </div>
@@ -363,7 +363,3 @@
   <div class="loader"></div>
 </div>
 }
-
-<!-- @if (isLoader) {
-<app-loader class="loader-backdrop"></app-loader>
-} -->

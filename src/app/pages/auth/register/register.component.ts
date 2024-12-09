@@ -19,6 +19,7 @@ import { UserWithoutPassDto } from '../../../core/models/interface/User/UserWith
 import { MyToastServiceService } from '../../../core/services/MyToastService/my-toast-service.service';
 import { Router, RouterLink } from '@angular/router';
 import { LoaderComponent } from '../../../shared/components/loader/loader.component';
+import { customEmailValidator } from './EmailValidation.validation';
 
 @Component({
   selector: 'app-register',
@@ -50,7 +51,7 @@ export class RegisterComponent implements OnDestroy {
     this.userForm = this.formBuilder.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, customEmailValidator()]],
       userTypeId: ['', [Validators.required]],
       dateOfBirth: ['', Validators.required],
       mobile: ['', Validators.required],
@@ -84,7 +85,7 @@ export class RegisterComponent implements OnDestroy {
     this.userForm = this.formBuilder.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, customEmailValidator()]],
       userTypeId: ['', [Validators.required]],
       dateOfBirth: ['', Validators.required],
       mobile: ['', Validators.required],
@@ -247,10 +248,10 @@ export class RegisterComponent implements OnDestroy {
   }
 
   // Handle not accept more that 25 letters
-  onInputText(event: any): void {
+  onInputText(event: any, length: number): void {
     const input = event.target;
-    if (input.value.length > 25) {
-      input.value = input.value.slice(0, 25);
+    if (input.value.length > length) {
+      input.value = input.value.slice(0, length);
       this.userForm.controls[input.getAttribute('formControlName')].setValue(
         input.value
       );

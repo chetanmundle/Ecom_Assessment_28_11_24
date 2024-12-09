@@ -5,7 +5,11 @@ export function priceComparisonValidator(): ValidatorFn {
     const purchasePrice = control.get('purchasePrice')?.value;
     const sellingPrice = control.get('sellingPrice')?.value;
 
-    if (purchasePrice && sellingPrice && sellingPrice <= purchasePrice) {
+    if (
+      purchasePrice &&
+      sellingPrice &&
+      Number(sellingPrice) <= Number(purchasePrice)
+    ) {
       return { priceMismatch: true }; // Custom error
     }
     return null;
