@@ -14,7 +14,7 @@
                   class="rounded-circle"
                   width="150"
                   height="150"
-                  style="border: 1px solid blue;"
+                  style="border: 1px solid blue"
                 />
               </ng-container>
 
@@ -67,7 +67,7 @@
                       placeholder="firstName"
                       formControlName="firstName"
                       maxlength="25"
-                      (input)="onInputText($event)"
+                      (input)="onInputText($event, 25)"
                     />
                     <div
                       style="font-size: 13px"
@@ -103,8 +103,8 @@
                       id="exampleFormControlInput1"
                       placeholder="lastname"
                       formControlName="lastName"
-                       maxlength="25"
-                      (input)="onInputText($event)"
+                      maxlength="25"
+                      (input)="onInputText($event, 25)"
                     />
                     <div
                       style="font-size: 13px"
@@ -140,8 +140,8 @@
                       id="exampleFormControlInput1"
                       placeholder="email"
                       formControlName="email"
-                       maxlength="25"
-                      (input)="onInputText($event)"
+                      maxlength="50"
+                      (input)="onInputText($event, 50)"
                     />
                     <div
                       style="font-size: 13px"

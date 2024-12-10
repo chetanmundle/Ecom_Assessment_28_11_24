@@ -53,7 +53,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
       dateOfBirth: ['', Validators.required],
       mobile: ['', Validators.required],
       address: ['', Validators.required],
-      profileImage: ['', Validators.required],
+      profileImage: [''],
     });
   }
 
@@ -145,6 +145,14 @@ export class ProfileComponent implements OnInit, OnDestroy {
   // call when click on update nad save the image
   onClickUpdate() {
     if (this.userForm.invalid) {
+      console.log(this.userForm.get('firstName')?.errors);
+      console.log(this.userForm.get('lastName')?.errors);
+      console.log(this.userForm.get('email')?.errors);
+      console.log(this.userForm.get('dateOfBirth')?.errors);
+      console.log(this.userForm.get('mobile')?.errors);
+      console.log(this.userForm.get('address')?.errors);
+      console.log(this.userForm.get('profileImage')?.errors);
+
       return;
     }
     this.isLoader = true;
@@ -241,10 +249,10 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   // Handle not accept more that 25 letters
-  onInputText(event: any): void {
+  onInputText(event: any, length: number): void {
     const input = event.target;
-    if (input.value.length > 25) {
-      input.value = input.value.slice(0, 25);
+    if (input.value.length > length) {
+      input.value = input.value.slice(0, length);
       this.userForm.controls[input.getAttribute('formControlName')].setValue(
         input.value
       );

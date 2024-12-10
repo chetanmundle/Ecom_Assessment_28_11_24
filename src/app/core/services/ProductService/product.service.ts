@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AppResponse } from '../../models/interface/AppResponse';
 import {
   CreateProductDto,
@@ -14,6 +14,15 @@ import {
 export class ProductService {
   private Url = 'https://localhost:7035/api/Product';
   private http = inject(HttpClient);
+
+  searchWordSubjectB$: BehaviorSubject<string> = new BehaviorSubject<string>(
+    ''
+  );
+
+  // Emit data in SearchWordSubjectB$
+  EmitDataInSearchordSubjectB(searchWord: string) {
+    this.searchWordSubjectB$.next(searchWord);
+  }
 
   // Get all product by User Id
   GetProductByUserId$(userId: number): Observable<AppResponse<ProductDto[]>> {
@@ -48,7 +57,9 @@ export class ProductService {
   }
 
   // Get all products
-  GetAllProducts$(): Observable<AppResponse<ProductDto[]>> {
-    return this.http.get<AppResponse<ProductDto[]>>(`${this.Url}/GetAllProducts`);
+  GetAllProducts$(searchWord: string): Observable<AppResponse<ProductDto[]>> {
+    return this.http.get<AppResponse<ProductDto[]>>(
+      `${this.Url}/GetAllProducts/${searchWord}`
+    );
   }
 }

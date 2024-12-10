@@ -7,11 +7,13 @@ import { Router, RouterLink } from '@angular/router';
 import { UserDataDto } from '../../../core/models/classes/User/UserDataDto';
 import { CartService } from '../../../core/services/CartService/cart.service';
 import { CartItems } from '../../../core/models/classes/Cart/Cart.model';
+import { FormsModule } from '@angular/forms';
+import { ProductService } from '../../../core/services/ProductService/product.service';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
 })
@@ -19,8 +21,10 @@ export class NavBarComponent implements OnDestroy, OnInit {
   loggedUser?: UserDataDto;
   subscriptions: Subscription = new Subscription();
   cartItemCount: number = 0;
+  searchWord: string = '';
 
   private userService = inject(UserService);
+  private productService = inject(ProductService);
   private router = inject(Router);
   private cartService = inject(CartService);
 
@@ -64,5 +68,10 @@ export class NavBarComponent implements OnDestroy, OnInit {
     localStorage.removeItem('accessToken');
     this.userService.resetLoggedUser();
     this.router.navigateByUrl('/auth/Login');
+  }
+
+  // Call when type something in  search bar
+  onSearchByWord() {
+    this.productService.EmitDataInSearchordSubjectB(this.searchWord);
   }
 }

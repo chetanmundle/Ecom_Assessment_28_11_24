@@ -55,13 +55,21 @@
           </li> -->
         </ul>
         <div class="d-flex">
-          <!-- <input
+          <input
             class="form-control me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
+            [(ngModel)]="searchWord"
+            (input)="onSearchByWord()"
           />
-          <button class="btn btn-outline-success" type="submit">Search</button> -->
+          <button
+            class="btn btn-outline-success"
+            type="submit"
+            (click)="onSearchByWord()"
+          >
+            Search
+          </button>
 
           <!-- for cart icon -->
           <div

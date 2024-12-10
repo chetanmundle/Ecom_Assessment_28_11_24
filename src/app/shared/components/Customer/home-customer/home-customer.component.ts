@@ -1,7 +1,7 @@
 import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { UserDataDto } from '../../../../core/models/classes/User/UserDataDto';
 import { ProductDto } from '../../../../core/models/interface/Product/Product';
-import { Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
 import { ProductService } from '../../../../core/services/ProductService/product.service';
 import { AppResponse } from '../../../../core/models/interface/AppResponse';
 import { CommonModule } from '@angular/common';
@@ -33,7 +33,25 @@ export class HomeCustomerComponent implements OnInit, OnDestroy {
   private tostR = inject(ToastrService);
 
   ngOnInit(): void {
-    const sub = this.productService.GetAllProducts$().subscribe({
+    // subscribing to searchSubject
+    this.productService.searchWordSubjectB$
+      .pipe(debounceTime(500), distinctUntilChanged())
+      .subscribe((word: string) => {
+        this.GetAllProduct(word);
+      });
+
+    // Get all cartItems
+    const sub1 = this.cartService.cartItems$.subscribe({
+      next: (res: CartItems[]) => {
+        this.cartItemsList = res;
+        // console.log("cart data : ",this.cartItemsList);
+      },
+    });
+  }
+
+  // Get Product Method
+  GetAllProduct(searchWord: string) {
+    const sub = this.productService.GetAllProducts$(searchWord).subscribe({
       next: (res: AppResponse<ProductDto[]>) => {
         if (res.isSuccess) {
           this.productList = res.data;
@@ -46,13 +64,6 @@ export class HomeCustomerComponent implements OnInit, OnDestroy {
     });
 
     this.subscription.add(sub);
-
-    const sub1 = this.cartService.cartItems$.subscribe({
-      next: (res: CartItems[]) => {
-        this.cartItemsList = res;
-        // console.log("cart data : ",this.cartItemsList);
-      },
-    });
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

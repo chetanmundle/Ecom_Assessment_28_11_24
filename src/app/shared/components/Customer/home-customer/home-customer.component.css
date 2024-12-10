@@ -1,0 +1,24 @@
+/* Add this CSS to your styles */
+.main-card {
+
+    transition: border 0.3s ease; /* Smooth transition effect */
+  }
+  
+  .main-card:hover {
+    border: 1px solid black; /* Change border to green on hover */
+  }
+  
+
+  /* Apply initial styles to the button */
+.btn {
+    border: 1px solid green;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+
+  .btn:hover {
+    transform: translateY(-5px) scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+  }
+  
