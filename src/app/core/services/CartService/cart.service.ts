@@ -10,6 +10,7 @@ import {
   IncrementDecrementCart,
   PaymentAndOrderDto,
   PaymentAndOrderResponseDto,
+  StripeRequestDto,
 } from '../../models/interface/Cart/CartDto.model';
 
 @Injectable({
@@ -112,6 +113,16 @@ export class CartService {
   ): Observable<AppResponse<PaymentAndOrderResponseDto>> {
     return this.http.post<AppResponse<PaymentAndOrderResponseDto>>(
       `${this.Url}/PaymentAndPlaceOrder`,
+      payload
+    );
+  }
+
+  // payment with the help of strip
+  StripePaymentAndOrder$(
+    payload: StripeRequestDto
+  ): Observable<AppResponse<PaymentAndOrderResponseDto>> {
+    return this.http.post<AppResponse<PaymentAndOrderResponseDto>>(
+      `${this.Url}/StripePaymentAndPlaceOrder`,
       payload
     );
   }

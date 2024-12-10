@@ -48,7 +48,7 @@ export class ProductService {
   }
 
   // Get all products
-  GetAllProducts(): Observable<AppResponse<ProductDto[]>> {
+  GetAllProducts$(): Observable<AppResponse<ProductDto[]>> {
     return this.http.get<AppResponse<ProductDto[]>>(`${this.Url}/GetAllProducts`);
   }
 }

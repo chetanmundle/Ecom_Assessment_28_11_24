@@ -48,4 +48,17 @@ export interface PaymentAndOrderResponseDto {
   deliveryZipCode: number;
   deliveryState: string;
   deliveryCountry: string;
+  paymentId: string;
+}
+
+export interface StripeRequestDto {
+  userId: number;
+  sourceToken: string;
+  amount: number;
+  customerName: string;
+  customerEmail: string;
+  address: string;
+  stateName: string;
+  countryName: string;
+  zipCode: number;
 }

@@ -1,4 +1,13 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { CartService } from '../../../../core/services/CartService/cart.service';
 import { Subscription } from 'rxjs';
 import {
@@ -6,6 +15,7 @@ import {
   IncrementDecrementCart,
   PaymentAndOrderDto,
   PaymentAndOrderResponseDto,
+  StripeRequestDto,
 } from '../../../../core/models/interface/Cart/CartDto.model';
 import { UserDataDto } from '../../../../core/models/classes/User/UserDataDto';
 import { UserService } from '../../../../core/services/UserService/user.service';
@@ -21,6 +31,7 @@ import {
 } from '@angular/forms';
 import { Modal } from 'bootstrap';
 import { DeliveryAddress } from '../../../../core/models/interface/User/Addres.model';
+import { AngularStripeService } from '@fireflysemantics/angular-stripe-service';
 
 @Component({
   selector: 'app-cart',
@@ -29,10 +40,27 @@ import { DeliveryAddress } from '../../../../core/models/interface/User/Addres.m
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
-export class CartComponent implements OnInit, OnDestroy {
+export class CartComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('cardNumber', { static: false }) cardNumber!: ElementRef;
+  @ViewChild('expiryInput', { static: false }) expiryInput!: ElementRef;
+  @ViewChild('cvvInput', { static: false }) cvvInput!: ElementRef;
   cartItemsList?: CartITemsWithDetails[];
   loggedUser?: UserDataDto;
   cardDetailsForm: FormGroup;
+
+  stripe: any;
+  cardNumberElement: any;
+  cardExpiryElement: any;
+  cardCvcElement: any;
+  stripeToken: any;
+  error: any;
+  errorbutton: boolean = false;
+
+  stripePaymentData:
+    | { amount: any; customerName: string; customerEmail: string }
+    | undefined;
+  publisherKey =
+    'pk_test_51QU2VaF4gzQPjLrK4QIWMoZft48fZHDBwvoXin0fMlDU3g4eq5XrFYF1De1N3MfLwkT7OOsepFFIycYIzOdu9yew0058GtKDcz';
 
   deliveryAddressForm: FormGroup;
   address?: string;
@@ -49,7 +77,11 @@ export class CartComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription = new Subscription();
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private stripeService: AngularStripeService,
+    private cd: ChangeDetectorRef // private service: PaymentService
+  ) {
     this.cardDetailsForm = this.formBuilder.group({
       cardNumber: [''],
       expiryDate: [''],
@@ -193,63 +225,124 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   //Make the Order
-  onClickPayBtn() {
+  async onClickPayBtn() {
     if (!this.loggedUser) {
       return;
     }
-
     if (this.cartItemsList?.length === 0) {
       this.tostR.showWarning('Your cart is empty');
       return;
     }
+
+    // Ensure card elements are valid
     if (
-      this.cardDetailsForm.get('cardNumber')?.value.toString().length !== 16
+      !this.cardNumberElement ||
+      !this.cardExpiryElement ||
+      !this.cardCvcElement
     ) {
-      this.tostR.showWarning('CartNumber Must be 16 Number');
+      alert('Stripe Elements are not initialized correctly');
       return;
     }
-
-    if (!this.cardDetailsForm.get('expiryDate')?.value.length) {
-      this.tostR.showWarning('Expiry Date is Required');
-      return;
-    }
-
-    if (this.cardDetailsForm.get('cvv')?.value.toString().length != 3) {
-      this.tostR.showWarning('CVV Must be 3 Number');
-      return;
-    }
-
-    const [year, month] = this.cardDetailsForm
-      .get('expiryDate')
-      ?.value.split('-');
-    const formatedExpiryDate = new Date(
-      Number(year),
-      Number(month) - 1,
-      1,
-      6,
-      7,
-      18,
-      542
-    );
-
-    const isoString = formatedExpiryDate.toISOString();
-
-    console.log(isoString);
-
-    const payload: PaymentAndOrderDto = {
-      cardNumber: this.cardDetailsForm.get('cardNumber')?.value.toString(),
-      userId: this.loggedUser?.userId,
-      cvv: Number(this.cardDetailsForm.get('cvv')?.value),
-      expiryDate: isoString,
-      address: this.address || this.loggedUser.address,
-      stateName: this.loggedUser.stateName,
-      countryName: this.loggedUser.countryName,
-      zipCode: Number(this.zipCode) || this.loggedUser.zipCode,
-    };
 
     this.isLoader = true;
+    // Create the token for the card details entered by the user
+    const { token, error } = await this.stripe.createToken(
+      this.cardNumberElement
+    );
+    if (token != undefined) {
+      this.stripeToken = token;
+      this.payment();
+    } else {
+      this.isLoader = false;
+      alert(error.message);
+    }
 
-    const sub = this.cartService.PaymentAndOrder$(payload).subscribe({
+    // if (
+    //   this.cardDetailsForm.get('cardNumber')?.value.toString().length !== 16
+    // ) {
+    //   this.tostR.showWarning('CartNumber Must be 16 Number');
+    //   return;
+    // }
+
+    // if (!this.cardDetailsForm.get('expiryDate')?.value.length) {
+    //   this.tostR.showWarning('Expiry Date is Required');
+    //   return;
+    // }
+
+    // if (this.cardDetailsForm.get('cvv')?.value.toString().length != 3) {
+    //   this.tostR.showWarning('CVV Must be 3 Number');
+    //   return;
+    // }
+
+    // const [year, month] = this.cardDetailsForm
+    //   .get('expiryDate')
+    //   ?.value.split('-');
+    // const formatedExpiryDate = new Date(
+    //   Number(year),
+    //   Number(month) - 1,
+    //   1,
+    //   6,
+    //   7,
+    //   18,
+    //   542
+    // );
+
+    // const isoString = formatedExpiryDate.toISOString();
+
+    // console.log(isoString);
+
+    // const payload: PaymentAndOrderDto = {
+    //   cardNumber: this.cardDetailsForm.get('cardNumber')?.value.toString(),
+    //   userId: this.loggedUser?.userId,
+    //   cvv: Number(this.cardDetailsForm.get('cvv')?.value),
+    //   expiryDate: isoString,
+    //   address: this.address || this.loggedUser.address,
+    //   stateName: this.loggedUser.stateName,
+    //   countryName: this.loggedUser.countryName,
+    //   zipCode: Number(this.zipCode) || this.loggedUser.zipCode,
+    // };
+
+    // this.isLoader = true;
+
+    // const sub = this.cartService.PaymentAndOrder$(payload).subscribe({
+    //   next: (res: AppResponse<PaymentAndOrderResponseDto>) => {
+    //     if (res.isSuccess) {
+    //       this.isLoader = false;
+    //       this.closeModal();
+    //       this.tostR.showSuccess(res.message);
+    //       this.cartService.ResetCart();
+    //       this.router.navigate(['org/Customer/Invoice', res.data.id]);
+    //     } else {
+    //       this.isLoader = false;
+    //       this.tostR.showError(res.message);
+    //     }
+    //   },
+    //   error: (err: Error) => {
+    //     console.log('Error to Order : ', err);
+    //     this.isLoader = false;
+    //     this.tostR.showError('Server Error...!');
+    //   },
+    // });
+  }
+
+  payment() {
+    if (!this.loggedUser) {
+      return;
+    }
+    this.isLoader = true;
+    const data: StripeRequestDto = {
+      sourceToken: this.stripeToken.id.toString(),
+      amount: this.getSubTotal(),
+      customerName: this.loggedUser.firstName,
+      customerEmail: this.loggedUser.email,
+      address: this.address ?? this.loggedUser.address,
+      countryName: this.loggedUser.countryName,
+      stateName: this.loggedUser.stateName,
+      userId: this.loggedUser.userId,
+      zipCode: this.zipCode ?? this.loggedUser.zipCode,
+    };
+
+    this.cartService.StripePaymentAndOrder$(data).subscribe({
       next: (res: AppResponse<PaymentAndOrderResponseDto>) => {
         if (res.isSuccess) {
           this.isLoader = false;
@@ -268,6 +361,80 @@ export class CartComponent implements OnInit, OnDestroy {
         this.tostR.showError('Server Error...!');
       },
     });
+
+    // this.cartService.StripePaymentAndOrder$(data).subscribe((response: any) => {
+    //   console.log('Response : ', response);
+
+    //   if (response.success == true) {
+    //     alert('Payment Successful');
+    //   } else {
+    //     alert(response.message);
+    //   }
+    // });
+  }
+
+  ngAfterViewInit() {
+    this.initializeStripe();
+  }
+
+  initializeStripe() {
+    this.stripeService.setPublishableKey(this.publisherKey).then((stripe) => {
+      this.stripe = stripe;
+      const elements = stripe.elements();
+
+      // Initialize the Card Number element
+      this.cardNumberElement = elements.create('cardNumber', {
+        placeholder: 'Card Number',
+      });
+
+      // Initialize the Expiry Date element
+      this.cardExpiryElement = elements.create('cardExpiry', {
+        placeholder: 'MM/YY',
+      });
+
+      // Initialize the CVV element
+      this.cardCvcElement = elements.create('cardCvc', {
+        placeholder: 'CVV',
+      });
+
+      // Mount the elements to their respective HTML div containers
+      this.cardNumberElement.mount(this.cardNumber.nativeElement);
+      this.cardExpiryElement.mount(this.expiryInput.nativeElement);
+      this.cardCvcElement.mount(this.cvvInput.nativeElement);
+
+      // Event listener to handle errors
+      this.cardNumberElement.addEventListener(
+        'change',
+        this.onChange.bind(this)
+      );
+      this.cardExpiryElement.addEventListener(
+        'change',
+        this.onChange.bind(this)
+      );
+      this.cardCvcElement.addEventListener('change', this.onChange.bind(this));
+    });
+  }
+
+  // Handle changes in the input fields and show errors if any
+  onChange({ error }: { error: Error }) {
+    if (error) {
+      this.error = error.message;
+      this.errorbutton = false;
+    } else {
+      this.error = null;
+      this.errorbutton = true;
+    }
+    this.cd.detectChanges();
+  }
+
+  resetCard() {
+    // Unmount the card elements
+    this.cardNumberElement.unmount();
+    this.cardExpiryElement.unmount();
+    this.cardCvcElement.unmount();
+
+    // Reinitialize the Stripe elements
+    this.initializeStripe();
   }
 
   // Function to open the modal CArdModal

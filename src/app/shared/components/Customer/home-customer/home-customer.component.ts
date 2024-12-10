@@ -33,7 +33,7 @@ export class HomeCustomerComponent implements OnInit, OnDestroy {
   private tostR = inject(ToastrService);
 
   ngOnInit(): void {
-    const sub = this.productService.GetAllProducts().subscribe({
+    const sub = this.productService.GetAllProducts$().subscribe({
       next: (res: AppResponse<ProductDto[]>) => {
         if (res.isSuccess) {
           this.productList = res.data;

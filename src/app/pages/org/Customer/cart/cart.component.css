@@ -171,3 +171,20 @@ a:hover{
 
 
 /*  Test from here */
+#card-number, #card-expiry, #card-cvv {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  #card-number {
+    margin-bottom: 10px;
+  }
+  
+  #card-expiry, #card-cvv {
+    margin-bottom: 10px;
+  }
+  
