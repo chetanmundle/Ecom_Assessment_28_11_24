@@ -220,11 +220,17 @@
   {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.ProductController",
     "Method": "GetAllProducts",
-    "RelativePath": "api/Product/GetAllProducts",
+    "RelativePath": "api/Product/GetAllProducts/{searchWord}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "searchWord",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

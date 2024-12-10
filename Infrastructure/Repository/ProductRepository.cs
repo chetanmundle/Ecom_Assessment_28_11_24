@@ -49,12 +49,17 @@ namespace Infrastructure.Repository
         }
 
         //Get All Products
-        public async Task<AppResponse<IEnumerable<ProductDto>>> GetAllProduct()
+        public async Task<AppResponse<IEnumerable<ProductDto>>> GetAllProduct(string word = "")
         {
-            var query = @"Select * from Products where IsDeleted = 0 and Stock > 0";
+            var query = @"Select * from Products where ProductName like @searchWord and IsDeleted = 0 and Stock > 0";
             var conn = _appDbContext.GetConnection();
 
-            var productList = await conn.QueryAsync(query);
+            var search = new
+            {
+                searchWord = "%" + word + "%",
+            };
+
+            var productList = await conn.QueryAsync(query, search);
 
             return AppResponse.Success(productList.Adapt<IEnumerable<ProductDto>>(), "Product Fetch Successfully", HttpStatusCodes.OK);
         }

@@ -69,11 +69,11 @@ namespace Ecom_Assessment_Backend.Controllers
         }
 
         //Get all products
-        [HttpGet("[action]")]
+        [HttpGet("[action]/{searchWord?}")]
         [Authorize(Roles = "Customer")]
-        public async Task<IActionResult> GetAllProducts()
+        public async Task<IActionResult> GetAllProducts(string searchWord = "")
         {
-            var result = await _productRepository.GetAllProduct();
+            var result = await _productRepository.GetAllProduct(searchWord);
             return Ok(result);
         }
     }
