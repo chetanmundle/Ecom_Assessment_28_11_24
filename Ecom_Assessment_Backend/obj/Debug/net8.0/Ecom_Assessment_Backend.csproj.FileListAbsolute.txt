@@ -38,7 +38,6 @@ D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Microsoft.OpenApi.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Mono.TextTemplating.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -51,13 +50,10 @@ D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\System.Composition.TypedParts.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\System.Data.SqlClient.dll
-D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\System.Drawing.Common.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\System.Memory.Data.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\System.Runtime.Caching.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\System.Windows.Extensions.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -116,17 +112,12 @@ D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\App.Core.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Domain.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Infrastructure.dll
@@ -484,3 +475,4 @@ D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\SendGrid.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\StarkbankEcdsa.dll
 D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\obj\Debug\net8.0\Ecom_Assessment_Backend.sourcelink.json
+D:\Assessment\Assessment_28_11_24_PawanSir\Assessment_ECom_28_11_24_Backend\Ecom_Assessment_Backend\Ecom_Assessment_Backend\bin\Debug\net8.0\Stripe.net.dll

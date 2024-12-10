@@ -3,6 +3,7 @@ using App.Core.Interface;
 using App.Core.Interfaces;
 using App.Core.Models.Card;
 using App.Core.Models.Cart;
+using App.Core.Models.Stripe;
 using Infrastructure.Repository;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -88,6 +89,15 @@ namespace Ecom_Assessment_Backend.Controllers
         public async Task<IActionResult> PaymentAndPlaceOrder(PaymentAndOrderDto paymentAndOrderDto)
         {
             var result = await _mediator.Send(new PaymentAndOrderCommand { PaymentAndOrderDto = paymentAndOrderDto });
+            return Ok(result);
+        }
+
+        // Payment and Place Order
+        [HttpPost("[action]")]
+        [Authorize(Roles = "Customer")]
+        public async Task<IActionResult> StripePaymentAndPlaceOrder(Striprequestmodel paymentAndOrderDto)
+        {
+            var result = await _mediator.Send(new StripPaymentAndOrderCommand { stripeModel = paymentAndOrderDto });
             return Ok(result);
         }
     }

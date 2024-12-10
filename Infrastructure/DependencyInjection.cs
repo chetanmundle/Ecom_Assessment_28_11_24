@@ -32,6 +32,9 @@ namespace Infrastructure
             // Encription/ Decription Service
             services.AddScoped<IEncryptionService, EncryptionService>();
 
+            // Register Payment service
+            services.AddTransient<IStripePaymentService, StripePaymentService>();
+
             //Register Email
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IEmailSmtpService, EmailSmtpService>();

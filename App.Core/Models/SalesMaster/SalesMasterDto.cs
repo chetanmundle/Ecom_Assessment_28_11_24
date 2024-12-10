@@ -17,5 +17,6 @@ namespace App.Core.Models.SalesMaster
         public int? DeliveryZipCode { get; set; }
         public string DeliveryState { get; set; }
         public string DeliveryCountry { get; set; }
+        public string PaymentId { get; set; }
     }
 }

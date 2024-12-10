@@ -112,6 +112,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.CartController",
+    "Method": "StripePaymentAndPlaceOrder",
+    "RelativePath": "api/Cart/StripePaymentAndPlaceOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paymentAndOrderDto",
+        "Type": "App.Core.Models.Stripe.Striprequestmodel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.CountryStateController",
     "Method": "GetAllCountries",
     "RelativePath": "api/CountryState/GetAllCountries",
