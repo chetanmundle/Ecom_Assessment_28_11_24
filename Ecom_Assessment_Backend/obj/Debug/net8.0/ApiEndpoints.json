@@ -235,6 +235,22 @@
   },
   {
     "ContainingType": "Ecom_Assessment_Backend.Controllers.ProductController",
+    "Method": "GetDeletedProcutByUserId",
+    "RelativePath": "api/Product/GetDeletedProcutByUserId/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.ProductController",
     "Method": "GetProcutByUserId",
     "RelativePath": "api/Product/GetProcutByUserId/{userId}",
     "HttpMethod": "GET",
@@ -254,6 +270,22 @@
     "Method": "GetProductById",
     "RelativePath": "api/Product/GetProductById/{productId}",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.ProductController",
+    "Method": "RestoreProductByProductId",
+    "RelativePath": "api/Product/RestoreProductByProductId/{productId}",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -291,6 +323,22 @@
     "Parameters": [
       {
         "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecom_Assessment_Backend.Controllers.SalesController",
+    "Method": "GetAllOrdersOfCutomerByAdminId",
+    "RelativePath": "api/Sales/GetAllOrdersOfCutomerByAdminId/{adminId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "adminId",
         "Type": "System.Int32",
         "IsRequired": true
       }

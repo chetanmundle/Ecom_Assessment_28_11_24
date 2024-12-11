@@ -36,5 +36,14 @@ namespace Ecom_Assessment_Backend.Controllers
             var result = await _salesRepository.GetAllOrdersByUserIdAsync(userId);
             return Ok(result);
         }
+
+
+        [HttpGet("[action]/{adminId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAllOrdersOfCutomerByAdminId(int adminId)
+        {
+            var result = await _salesRepository.GetAllCutomerOdersByAdminIdAsync(adminId);
+            return Ok(result);
+        }
     }
 }

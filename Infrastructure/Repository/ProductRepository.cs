@@ -4,6 +4,7 @@ using App.Core.Interface;
 using App.Core.Interfaces;
 using App.Core.Models.Product;
 using Dapper;
+using Domain.Entities;
 using Mapster;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -62,6 +63,19 @@ namespace Infrastructure.Repository
             var productList = await conn.QueryAsync(query, search);
 
             return AppResponse.Success(productList.Adapt<IEnumerable<ProductDto>>(), "Product Fetch Successfully", HttpStatusCodes.OK);
+        }
+
+        //Get all deleted Product By Id
+        public async Task<AppResponse<IEnumerable<ProductDto>>> GetAllDeletedProductByUserIdAsync(int userId)
+        {
+            var query = @"Select * From Products Where CreatedBy = @UserId and IsDeleted = 1";
+            var conn = _appDbContext.GetConnection();
+
+            var deletedProductList = await conn.QueryAsync(query, new { UserId = userId });
+
+            var productDto = deletedProductList.Adapt<IEnumerable<ProductDto>>();
+
+            return AppResponse.Success<IEnumerable<ProductDto>>(productDto);
         }
     }
 }

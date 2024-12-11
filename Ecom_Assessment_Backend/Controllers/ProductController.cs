@@ -1,4 +1,5 @@
-﻿using App.Core.App.Product.Command;
+﻿using App.Common.Models;
+using App.Core.App.Product.Command;
 using App.Core.Interface;
 using App.Core.Models.Product;
 using MediatR;
@@ -74,6 +75,25 @@ namespace Ecom_Assessment_Backend.Controllers
         public async Task<IActionResult> GetAllProducts(string searchWord = "")
         {
             var result = await _productRepository.GetAllProduct(searchWord);
+            return Ok(result);
+        }
+
+
+        // Api for get all deleted product 
+        [HttpGet("[action]/{userId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetDeletedProcutByUserId(int userId)
+        {
+            var result = await _productRepository.GetAllDeletedProductByUserIdAsync(userId);
+            return Ok(result);
+        }
+
+        // Api for Restore the Product
+        [HttpPatch("[action]/{productId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> RestoreProductByProductId(int productId)
+        {
+            var result = await _mediator.Send(new RestoreProductCommand { productId = productId });
             return Ok(result);
         }
     }
