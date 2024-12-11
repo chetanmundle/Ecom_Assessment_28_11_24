@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {
+  CustomerOrderForAdminDto,
   InvoiceDto,
   SalesMasterDto,
 } from '../../models/interface/Sales/sales.model';
@@ -28,6 +29,15 @@ export class SalesService {
   ): Observable<AppResponse<SalesMasterDto[]>> {
     return this.http.get<AppResponse<SalesMasterDto[]>>(
       `${this.Url}/GetAllOrdersByUserId/${userId}`
+    );
+  }
+
+  // Get all customerOrders by adminId
+  GetAllCustomerOrderByAdminId$(
+    adminId: number
+  ): Observable<AppResponse<CustomerOrderForAdminDto[]>> {
+    return this.http.get<AppResponse<CustomerOrderForAdminDto[]>>(
+      `${this.Url}/GetAllOrdersOfCutomerByAdminId/${adminId}`
     );
   }
 }

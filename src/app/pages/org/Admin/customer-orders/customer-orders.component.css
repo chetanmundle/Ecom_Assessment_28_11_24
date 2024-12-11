@@ -1,0 +1,15 @@
+/* Adding some custom styles */
+.order-card {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  /* Hover effect to scale the card */
+  .order-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px  solid green;
+  }
+
+  
+

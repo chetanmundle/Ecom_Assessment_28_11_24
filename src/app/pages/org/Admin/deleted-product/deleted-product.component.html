@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="text-center mt-3" *ngIf="deletedProductList?.length === 0">
+    <h2>Not Item in Your List</h2>
+  </div>
+
+  <!-- Table of All Products -->
+  <table class="table mt-3" *ngIf="deletedProductList?.length !== 0">
+    <thead>
+      <tr>
+        <th scope="col">Product Code</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Selling Price</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Restore</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of deletedProductList; let i = index">
+        <td>{{ prod.productCode }}</td>
+        <td>{{ prod.productName }}</td>
+        <td>{{ prod.category }}</td>
+        <td>{{ prod.brand }}</td>
+        <td>{{ prod.sellingPrice }}</td>
+        <td>{{ prod.stock }}</td>
+        <td>
+          <button
+            class="btn btn-success"
+            (click)="onclickRestore(prod.productId)"
+          >
+            Restore
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

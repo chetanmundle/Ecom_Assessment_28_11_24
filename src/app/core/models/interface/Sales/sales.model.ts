@@ -33,3 +33,21 @@ export interface SalesMasterDto {
   deliveryState: string;
   deliveryCountry: string;
 }
+
+export interface CustomerOrderForAdminDto {
+  userId: number;
+  firstName: string;
+  lastName: string;
+  mobile: string;
+  deliveryAddress: string;
+  deliveryZipCode: number;
+  deliveryState: string;
+  deliveryCountry: string;
+  invoiceDate: string;
+  salesDetailsId: number;
+  saleQuntity: number;
+  sellingPrice: number;
+  productId: number;
+  productName: string;
+  productCode: string;
+}

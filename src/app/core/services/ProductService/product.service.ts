@@ -62,4 +62,21 @@ export class ProductService {
       `${this.Url}/GetAllProducts/${searchWord}`
     );
   }
+
+  // Get all Deleted Product by AdminId
+  GetAllDeletedProductByAdminId$(
+    userid: number
+  ): Observable<AppResponse<ProductDto[]>> {
+    return this.http.get<AppResponse<ProductDto[]>>(
+      `${this.Url}/GetDeletedProcutByUserId/${userid}`
+    );
+  }
+
+  // Restore the Deleted Product
+  RestoreDeletedProduct$(productId: number): Observable<AppResponse<null>> {
+    return this.http.patch<AppResponse<null>>(
+      `${this.Url}/RestoreProductByProductId/${productId}`,
+      null
+    );
+  }
 }

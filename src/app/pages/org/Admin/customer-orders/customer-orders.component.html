@@ -1,0 +1,36 @@
+<div class="container mt-2">
+  <h2 class="text-center ">Customer Orders</h2>
+
+  <!-- Loop over orders -->
+  <div
+    *ngFor="let order of customerOrdersList"
+    class="card my-4 mx-5 order-card"
+  >
+    <!-- <div class="card-header">
+      <strong>Order ID: </strong>
+    </div> -->
+    <div class="card-body row">
+      <!-- Order Details -->
+      <p class="col-6">
+        <strong>Customer Name:</strong> {{ order.firstName }}
+        {{ order.lastName }}
+      </p>
+      <p class="col-6">
+        <strong>Product Name:</strong> {{ order.productName }}
+      </p>
+      <p class="col-6">
+        <strong>Product Code:</strong> {{ order.productCode }}
+      </p>
+      <p class="col-6"><strong>Quantity:</strong> {{ order.saleQuntity }}</p>
+      <p class="col-6">
+        <strong>Order Date: </strong> {{ order.invoiceDate | date : "short" }}
+      </p>
+      <p class="col-6"><strong>Price:</strong> $ {{ order.sellingPrice }}</p>
+      <p>
+        <strong>Customer Address:</strong> {{ order.deliveryAddress }},
+        {{ order.deliveryState }}, {{ order.deliveryCountry }},
+        {{ order.deliveryZipCode }}, {{ order.mobile }},
+      </p>
+    </div>
+  </div>
+</div>

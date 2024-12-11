@@ -11,6 +11,8 @@ import { CartComponent } from './pages/org/Customer/cart/cart.component';
 import { ProfileComponent } from './pages/org/profile/profile.component';
 import { InvoiceComponent } from './pages/org/Customer/invoice/invoice.component';
 import { OrdersComponent } from './pages/org/Customer/orders/orders.component';
+import { DeletedProductComponent } from './pages/org/Admin/deleted-product/deleted-product.component';
+import { CustomerOrdersComponent } from './pages/org/Admin/customer-orders/customer-orders.component';
 
 export const routes: Routes = [
   {
@@ -75,8 +77,23 @@ export const routes: Routes = [
         canActivate: [authGuard],
         data: { roles: ['Customer'] },
       },
+      {
+        path: 'Admin/Deleted-Products',
+        component: DeletedProductComponent,
+        title: 'Deleted Product Page',
+        canActivate: [authGuard],
+        data: { roles: ['Admin'] },
+      },
+      {
+        path: 'Admin/Customer-Orders',
+        component: CustomerOrdersComponent,
+        title: 'Customer Order Page',
+        canActivate: [authGuard],
+        data: { roles: ['Admin'] },
+      },
     ],
   },
+
   {
     path: '**',
     component: PageNotFoundComponent,

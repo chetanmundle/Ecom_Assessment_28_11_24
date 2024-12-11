@@ -29,12 +29,28 @@
               >Home</a
             >
           </li>
+
           <li class="nav-item">
             <a class="nav-link" routerLink="/org/Profile">Profile</a>
           </li>
+
           <li class="nav-item" *ngIf="loggedUser?.userTypeName === 'Customer'">
             <a class="nav-link" routerLink="/org/Customer/Orders">Orders</a>
           </li>
+
+          @if (loggedUser?.userTypeName === 'Admin') {
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/org/Admin/Deleted-Products"
+              >Deleted-Product</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/org/Admin/Customer-Orders"
+              >Customer-Orders</a
+            >
+          </li>
+          }
+
           <!-- <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -55,6 +71,7 @@
           </li> -->
         </ul>
         <div class="d-flex">
+          @if (loggedUser?.userTypeName === 'Customer') {
           <input
             class="form-control me-2"
             type="search"
@@ -70,6 +87,7 @@
           >
             Search
           </button>
+          }
 
           <!-- for cart icon -->
           <div
